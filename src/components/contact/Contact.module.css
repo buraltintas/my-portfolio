@@ -1,0 +1,97 @@
+.contact {
+  width: 90rem;
+  height: 25rem;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  /* background-color: #d2cbcd; */
+  background: rgb(210, 203, 205);
+  background: linear-gradient(
+    96deg,
+    rgba(210, 203, 205, 1) 0%,
+    rgba(210, 203, 205, 1) 93%
+  );
+  border-radius: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.heading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 4rem;
+}
+
+.icons {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.iconGithub {
+  width: 8rem;
+  fill: #161b22;
+  transition: all 0.3s;
+}
+
+.iconTwitter {
+  width: 8rem;
+  fill: #1d9bf0;
+  transition: all 0.3s;
+}
+
+.iconLinkedin {
+  width: 8rem;
+  fill: #0b66c2;
+  transition: all 0.3s;
+}
+
+.iconMail {
+  width: 8rem;
+  fill: #1e92d9;
+  color: #1e92d9;
+  transition: all 0.3s;
+}
+
+.iconGithub:hover,
+.iconLinkedin:hover,
+.iconTwitter:hover,
+.iconMail:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 58em) {
+  .contact {
+    width: 95%;
+  }
+
+  .heading {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 37em) {
+  .icons {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 29em) {
+  .icons {
+    gap: 2rem;
+  }
+
+  .iconGithub,
+  .iconLinkedin,
+  .iconMail,
+  .iconTwitter {
+    width: 6rem;
+  }
+}
+
+@media (max-width: 43em) {
+  .heading {
+    font-size: 3rem;
+  }
+}

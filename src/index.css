@@ -15,6 +15,20 @@ body {
   color: #655560;
 }
 
-.main {
-  position: relative;
+@media (max-width: 20em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 17.2em) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 16.6em) {
+  html {
+    font-size: 30%;
+  }
 }

@@ -1,7 +1,5 @@
 .header {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
+  position: fixed;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -39,12 +37,35 @@
   color: #c3c6c7;
   cursor: pointer;
   transition: all 0.3s;
+  width: 10rem;
 }
 
 .button:hover {
   border: 1px solid #a4969b;
   border-radius: 0.4rem;
   color: #f3f4f4;
+}
+
+.lang {
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag {
+  width: 4rem;
+}
+
+@media (max-width: 43em) {
+  .header {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .buttons {
+    display: none;
+  }
 }
 
 @media (max-width: 37em) {
@@ -57,5 +78,10 @@
 @media (max-width: 25em) {
   .header {
     clip-path: none;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: none;
   }
 }
