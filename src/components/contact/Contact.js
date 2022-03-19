@@ -6,6 +6,7 @@ const Contact = (props) => {
       <h1 className={styles.heading}>
         {props.engLang ? "Contact" : "İletişim"}
       </h1>
+      <h2 className={styles.emailText}>burak.altintas@yahoo.com.tr</h2>
       <div className={styles.icons}>
         <a
           className={styles.iconTwitter}
