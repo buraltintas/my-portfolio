@@ -9,7 +9,7 @@ function App() {
   const projects = useRef();
   const contact = useRef();
 
-  const [engLang, setEngLang] = useState(false);
+  const [engLang, setEngLang] = useState(true);
 
   const engLangTrue = () => {
     setEngLang(true);
