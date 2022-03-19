@@ -67,7 +67,7 @@ function App() {
       </div>
 
       <div ref={contact}>
-        <Contact />
+        <Contact engLang={engLang} />
       </div>
     </main>
   );
