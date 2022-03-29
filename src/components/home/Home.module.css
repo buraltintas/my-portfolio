@@ -7,9 +7,9 @@
   /* background-color: #d2cbcd; */
   background: rgb(210, 203, 205);
   background: linear-gradient(
-    96deg,
-    rgba(210, 203, 205, 1) 0%,
-    rgba(210, 203, 205, 1) 93%
+    180deg,
+    rgba(210, 203, 205, 1) 64%,
+    rgba(147, 142, 144, 1) 100%
   );
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
@@ -28,10 +28,6 @@
 
 .icon {
   width: 3rem;
-}
-
-.icon:hover {
-  transform: scale(1.1);
 }
 
 .heading {
@@ -76,10 +72,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-  padding: 0.2rem 1rem;
+  padding: 0.3rem 1rem;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .ctaButton:hover {
+  transform: translateY(-0.3rem);
   border-radius: 0.4rem;
   color: #e7eaec;
   background-color: #5b9fd8;
@@ -92,11 +90,13 @@
   width: 40%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .img {
   width: 80%;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 29px 15px -18px;
+  z-index: 2;
 }
 
 @media (max-width: 58em) {

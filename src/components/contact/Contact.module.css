@@ -67,6 +67,32 @@
   transform: scale(1.1);
 }
 
+.button {
+  background-color: #5b9fd8;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  font-family: 'Source Code Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  color: #e7eaec;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0.3rem 1rem;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.button:hover {
+  transform: translateY(-0.3rem);
+  border-radius: 0.4rem;
+  color: #e7eaec;
+  background-color: #5b9fd8;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
 @media (max-width: 58em) {
   .contact {
     width: 95%;

@@ -1,6 +1,5 @@
 import styles from "./Header.module.css";
 import logo from "./logo.png";
-
 import tr from "./tr.png";
 import eng from "./eng.png";
 
@@ -28,7 +27,12 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src={logo} alt="Logo" onClick={() => window.location.reload()} />
+        <img
+          className={styles.logoImg}
+          src={logo}
+          alt="Logo"
+          onClick={() => window.location.reload()}
+        />
       </div>
       <div className={styles.buttons}>
         <button onClick={props.scrollTop} className={styles.button}>
