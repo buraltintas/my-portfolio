@@ -10,11 +10,21 @@
   background: rgb(53, 54, 68);
   background: linear-gradient(
     83deg,
-    rgba(53, 54, 68, 1) 47%,
-    rgb(112, 108, 109) 75%
+    rgba(53, 54, 68, 0.6) 47%,
+    rgba(112, 108, 109, 0.6) 75%
   );
 
   clip-path: polygon(0 0, 100% 0, 100% 66%, 82% 100%, 51% 74%, 0 100%);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.logo h1 {
+  color: #c3c6c7;
 }
 
 .logo img {
@@ -22,7 +32,8 @@
 }
 
 .logoImg {
-  width: 20rem;
+  width: 6rem;
+  height: 6rem;
 }
 
 .buttons {
@@ -35,9 +46,9 @@
   background-color: transparent;
   border: 1px solid transparent;
   font-size: 1.7rem;
-  font-family: "Source Code Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: 'Source Code Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   color: #c3c6c7;
   cursor: pointer;
   transition: all 0.3s;

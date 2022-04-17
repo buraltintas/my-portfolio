@@ -7,18 +7,26 @@
   margin: 5rem auto;
   padding-top: 3rem;
 
-  background: rgb(210, 203, 205);
+  /* background: rgb(210, 203, 205);
   background: linear-gradient(
     96deg,
     rgba(210, 203, 205, 1) 0%,
     rgba(210, 203, 205, 1) 93%
-  );
+  ); */
+
+  background: rgba(231, 234, 236, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .heading {
   text-align: center;
   padding: 3rem;
   font-size: 4rem;
+  color: #f3f4f4;
 }
 
 .card {
@@ -38,6 +46,7 @@
 
 .title {
   font-size: 2.6rem;
+  color: #f3f4f4;
 }
 
 .text {
@@ -61,13 +70,15 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+  color: #f3f4f4;
 }
 
 .button,
 .button:link,
 .button:visited {
   text-decoration: none;
-  color: #5b9fd8;
+  /* color: #5b9fd8; */
+  color: #f3f4f4;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -88,7 +99,7 @@
 }
 
 .button:hover {
-  border-bottom: 1px solid #5b9fd8;
+  border-bottom: 1px solid #f3f4f4;
 }
 
 @media (max-width: 58em) {

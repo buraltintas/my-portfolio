@@ -1,29 +1,68 @@
 .home {
   position: relative;
   width: 90rem;
-  height: 70vh;
+
   padding-bottom: 2rem;
   margin: 0 auto;
   /* background-color: #d2cbcd; */
-  background: rgb(210, 203, 205);
+  /* background: rgb(210, 203, 205);
   background: linear-gradient(
     180deg,
     rgba(210, 203, 205, 1) 64%,
     rgba(147, 142, 144, 1) 100%
-  );
+  ); */
+
+  background: rgba(231, 234, 236, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main {
+  margin-top: 6rem;
   display: flex;
 }
 
 .icons {
-  width: 100%;
-  position: absolute;
+  width: 75%;
+  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  bottom: 3rem;
+  /* bottom: 3rem;
+  left: 50%;
+  transform: translate(-50%, 0); */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  background: rgba(36, 35, 35, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.badges {
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 95%;
+
+  bottom: 1rem;
 }
 
 .icon {
@@ -38,20 +77,24 @@
   gap: 2rem;
   transform: translateX(3rem);
   justify-content: center;
+  color: #f3f4f4;
 }
 
 .hello {
   font-size: 4rem;
   margin-bottom: -1.6rem;
+  color: #f3f4f4;
 }
 
 .title {
   letter-spacing: 4px;
+  color: #f3f4f4;
 }
 
 .text {
   margin-top: 3rem;
   font-size: 2rem;
+  color: #f3f4f4;
 }
 
 .ctaButtons {
@@ -61,13 +104,13 @@
 }
 
 .ctaButton {
-  background-color: #e7eaec;
+  background-color: rgba(231, 234, 236, 0.553);
   border: 1px solid transparent;
   border-radius: 1rem;
   font-size: 1.7rem;
-  font-family: "Source Code Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: 'Source Code Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   color: #5b9fd8;
   font-weight: 600;
   cursor: pointer;
@@ -106,16 +149,14 @@
 }
 
 @media (max-width: 43em) {
-  .home {
+  .main {
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    padding-bottom: 2rem;
   }
 
   .img {
     width: 100%;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
   }
 
   .heading {

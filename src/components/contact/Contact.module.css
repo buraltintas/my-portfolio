@@ -5,12 +5,20 @@
   margin: 0 auto;
   margin-bottom: 6rem;
   /* background-color: #d2cbcd; */
-  background: rgb(210, 203, 205);
+  /* background: rgb(210, 203, 205);
   background: linear-gradient(
     96deg,
     rgba(210, 203, 205, 1) 0%,
     rgba(210, 203, 205, 1) 93%
-  );
+  ); */
+
+  background: rgba(231, 234, 236, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
@@ -19,11 +27,13 @@
   text-align: center;
   padding-top: 3rem;
   font-size: 4rem;
+  color: #f3f4f4;
 }
 
 .emailText {
   text-align: center;
   font-size: 1.6rem;
+  color: #f3f4f4;
 }
 
 .icons {
