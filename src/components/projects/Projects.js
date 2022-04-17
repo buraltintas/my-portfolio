@@ -94,8 +94,22 @@ const Projects = (props) => {
         'https://camo.githubusercontent.com/0fee227794a6367609eb6d175dfff23f654bdd3cb7844314e8299cdad9bdb98d/68747470733a2f2f692e6962622e636f2f59324d4a4c73672f456b72616e2d5265736d692d323032322d30342d30342d30392d32372d31392e706e673f7261773d74727565',
       link: 'https://math-game-burak.netlify.app/',
       github: 'https://github.com/buraltintas/math-game',
-      descEN: 'Practice game for new learners of multiplication.',
-      descTR: 'Çarpma işlemini yeni öğrenenler için alıştırma oyunu.',
+      descEN:
+        'Practice game for new learners of multiplication. For desktop use only, not responsive.',
+      descTR:
+        'Çarpma işlemini yeni öğrenenler için alıştırma oyunu. Geniş ekran ile kullanılmalır.',
+    },
+    {
+      nameEN: 'Register Page',
+      nameTR: 'Kayıt Ekranı',
+      image:
+        'https://camo.githubusercontent.com/a5852b05d632f475e36e2616be50a2a4d04bbcdf0aea0270a506c1363e02e6f4/68747470733a2f2f692e6962622e636f2f383250434b644b2f456b72616e2d5265736d692d323032322d30342d31332d31322d30322d30322e706e673f7261773d74727565',
+      link: 'https://register-page-burak.netlify.app/',
+      github: 'https://github.com/buraltintas/register-page',
+      descEN:
+        'Register page for new users. Form control is handled by Formik and validation is handled by Yup. For desktop use only, not responsive.',
+      descTR:
+        'Formik ve Yup kullanılarak oluşturulmuş kullanıcı kayıt ekranı. Geniş ekran ile kullanılmalır.',
     },
     {
       nameEN: 'Mars',
