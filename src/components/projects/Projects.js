@@ -12,6 +12,16 @@ import marvel from './marvel.png';
 const Projects = (props) => {
   const projectsData = [
     {
+      nameEN: '2nd Hand Project',
+      nameTR: '2. El Projesi',
+      descEN: 'A web application for selling second hand products.',
+      descTR: 'İkinci el ürünleri satmak için bir web uygulaması.',
+      image:
+        'https://camo.githubusercontent.com/ed4b59f304845003adcf34f687a4873ae08e1952cbd69e91681cf12be4649b5d/68747470733a2f2f692e6962622e636f2f427273474438442f53637265656e2d53686f742d323032322d30342d32392d61742d31342d30392d33392e706e67',
+      link: 'https://2nd-hand-project.netlify.app/',
+      github: 'https://github.com/buraltintas/2nd-hand-project',
+    },
+    {
       nameEN: 'BootChat',
       nameTR: 'BootChat',
       image:
@@ -51,8 +61,9 @@ const Projects = (props) => {
       image: marvel,
       link: 'https://marvel-by-burak.netlify.app/',
       github: 'https://github.com/buraltintas/marvel',
-      descEN: 'You can see Marvel characters with pagination.',
-      descTR: 'Marvel karakterlerini sayfalama ile görebilirsiniz.',
+      descEN: 'You can find Marvel characters with pagination and search bar.',
+      descTR:
+        'Marvel karakterlerini sayfalama ve arama çubuğu ile bulup görüntüleyebilirsiniz.',
     },
     {
       nameEN: 'Travel Guide',

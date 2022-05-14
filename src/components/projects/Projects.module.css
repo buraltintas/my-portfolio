@@ -51,6 +51,8 @@
 
 .text {
   font-size: 1.6rem;
+  font-weight: bold;
+  color: rgba(243, 244, 244, 0.75);
 }
 
 .img {
