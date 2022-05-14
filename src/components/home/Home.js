@@ -6,7 +6,7 @@ const Home = (props) => {
   const techs = [
     'context-api',
     'redux-toolkit',
-    'react-router',
+    'react-router-dom',
     'axios',
     'formik',
     'yup',
@@ -17,6 +17,8 @@ const Home = (props) => {
     'css-modules',
     'apexcharts',
     'leaflet',
+    'react-dropzone',
+    'react-cookie',
   ];
 
   return (
