@@ -126,7 +126,7 @@ const Projects = (props) => {
       nameEN: 'Mars',
       nameTR: 'Mars',
       image: mars,
-      link: 'https://mars-burak.netlify.app/',
+      link: 'https://mars-altintas.netlify.app/',
       github: 'https://github.com/buraltintas/mars',
       descEN: `My son Mars' very first web page. You can find remaining days to birth, family and playmates photos and you can send a message to Mars.`,
       descTR:
