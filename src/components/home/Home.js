@@ -4,6 +4,7 @@ import burak from './burak-removebg-preview.png';
 
 const Home = (props) => {
   const techs = [
+    'react-native',
     'context-api',
     'redux-toolkit',
     'react-router-dom',
