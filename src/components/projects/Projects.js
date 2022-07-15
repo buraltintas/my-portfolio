@@ -34,6 +34,18 @@ const Projects = (props) => {
         'Google hesabınızla giriş yaparak kullanıcılarla anında mesajlaşabilirsiniz.',
     },
     {
+      nameEN: 'My Super Notes',
+      nameTR: 'My Super Notes',
+      image:
+        'https://camo.githubusercontent.com/d9d78a385806b02bce1404d60b7ee0d71d61d407bcfc173fade94388826f2d36/68747470733a2f2f692e6962622e636f2f356b536e4c744b2f322e706e673f7261773d74727565',
+      link: 'https://my-super-notes.netlify.app/',
+      github: 'https://github.com/buraltintas/my-super-notes-app',
+      descEN:
+        'Simple and fast taking note application that you can login with your Google account.',
+      descTR:
+        'Google hesabınızla giriş yaparak kullanabileceğiniz not alma uygulaması.',
+    },
+    {
       nameEN: 'Grocery List',
       nameTR: 'Market Listesi',
       image: marketlist,
