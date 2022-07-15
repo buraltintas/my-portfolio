@@ -16,8 +16,7 @@ const Projects = (props) => {
       nameTR: '2. El Projesi',
       descEN: 'A web application for selling second hand products.',
       descTR: 'İkinci el ürünleri satmak için bir web uygulaması.',
-      image:
-        'https://camo.githubusercontent.com/ed4b59f304845003adcf34f687a4873ae08e1952cbd69e91681cf12be4649b5d/68747470733a2f2f692e6962622e636f2f427273474438442f53637265656e2d53686f742d323032322d30342d32392d61742d31342d30392d33392e706e67',
+      image: 'https://i.ibb.co/TrrRRzT/Ekran-Resmi-2022-07-15-20-30-06.png',
       link: 'https://2nd-hand-project.netlify.app/',
       github: 'https://github.com/buraltintas/2nd-hand-project',
     },
