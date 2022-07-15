@@ -37,7 +37,7 @@ const Projects = (props) => {
       nameEN: 'My Super Notes',
       nameTR: 'My Super Notes',
       image:
-        'https://camo.githubusercontent.com/d9d78a385806b02bce1404d60b7ee0d71d61d407bcfc173fade94388826f2d36/68747470733a2f2f692e6962622e636f2f356b536e4c744b2f322e706e673f7261773d74727565',
+        'https://camo.githubusercontent.com/abd8c9fad9394e54e61e77bfaaeb69e1544864f411c74b87f19eb865a3ec1573/68747470733a2f2f692e6962622e636f2f684c724c3056732f456b72616e2d5265736d692d323032322d30372d31342d31322d34322d35302e706e67',
       link: 'https://my-super-notes.netlify.app/',
       github: 'https://github.com/buraltintas/my-super-notes-app',
       descEN:
