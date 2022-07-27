@@ -73,8 +73,6 @@ const Contact = (props) => {
             />
           </svg>
         </a>
-      </div>
-      <div className={styles.icons}>
         <a
           className={styles.iconGithub}
           href='https://github.com/buraltintas'

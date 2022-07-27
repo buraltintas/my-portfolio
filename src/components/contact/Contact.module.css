@@ -39,32 +39,32 @@
 .icons {
   display: flex;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 2rem;
   align-items: center;
   justify-content: center;
   gap: 6rem;
 }
 
 .iconGithub {
-  width: 8rem;
+  width: 4rem;
   fill: #161b22;
   transition: all 0.3s;
 }
 
 .iconTwitter {
-  width: 8rem;
+  width: 4rem;
   fill: #1d9bf0;
   transition: all 0.3s;
 }
 
 .iconLinkedin {
-  width: 8rem;
+  width: 4rem;
   fill: #0b66c2;
   transition: all 0.3s;
 }
 
 .iconMail {
-  width: 8rem;
+  width: 4rem;
   fill: #1e92d9;
   color: #1e92d9;
   transition: all 0.3s;

@@ -33,14 +33,13 @@
   width: 85%;
   height: 24rem;
   margin: 0 auto;
-  margin-top: 2rem;
-  padding: 2rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  border: 1px solid #5ba0d84d;
+  border: 1px solid rgba(243, 244, 244, 0.75);
   border-radius: 1rem;
 }
 
@@ -117,6 +116,7 @@
 @media (max-width: 56.25em) {
   .card {
     flex-direction: column;
+
     height: 40rem;
   }
 }

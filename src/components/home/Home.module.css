@@ -33,7 +33,7 @@
 }
 
 .icons {
-  width: 75%;
+  width: 70%;
   /* position: absolute; */
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-  background: rgba(36, 35, 35, 0.55);
+  background: rgba(36, 35, 35, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -61,7 +61,6 @@
   flex-wrap: wrap;
   gap: 1rem;
   width: 95%;
-
   bottom: 1rem;
 }
 
@@ -86,9 +85,20 @@
   color: #f3f4f4;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .title {
   letter-spacing: 4px;
   color: #f3f4f4;
+}
+
+.proteinLogo {
+  width: 6rem;
+  cursor: pointer;
 }
 
 .text {
