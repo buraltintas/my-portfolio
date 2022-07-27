@@ -188,4 +188,8 @@
   .text {
     font-size: 1.4rem;
   }
+
+  .proteinLogo {
+    width: 4rem;
+  }
 }
