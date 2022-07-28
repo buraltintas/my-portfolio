@@ -88,7 +88,7 @@
 .titleContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   margin-top: 1rem;
 }
 
@@ -180,6 +180,10 @@
 
   .hello {
     font-size: 3rem;
+  }
+
+  .titleContainer {
+    justify-content: center;
   }
 
   .title {
