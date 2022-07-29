@@ -48,7 +48,7 @@ const Projects = (props) => {
       nameEN: 'Grocery List',
       nameTR: 'Market Listesi',
       image: marketlist,
-      link: 'https://marketlist.netlify.app/',
+      link: 'https://marketlist-app.netlify.app/',
       github: 'https://github.com/buraltintas/marketlist',
       descEN:
         'A simple Grocery List application that you can enter estimated total value/budget, enter prices of items. You can see if your prediction is good or not.',
@@ -59,7 +59,7 @@ const Projects = (props) => {
       nameEN: 'Recipe Book',
       nameTR: 'Tarif Kitabı',
       image: recipebook,
-      link: 'https://recipebook.netlify.app/',
+      link: 'https://tarif-kitabim.netlify.app/',
       github: 'https://github.com/buraltintas/recipe-book',
       descEN:
         'You can add recipes or view recipes with a book layout or find with search bar.',
@@ -80,7 +80,7 @@ const Projects = (props) => {
       nameEN: 'Travel Guide',
       nameTR: 'Gezi Rehberi',
       image: travelli,
-      link: 'https://travelli.netlify.app/',
+      link: 'https://travelli-world.netlify.app/',
       github: 'https://github.com/buraltintas/travelli',
       descEN:
         'Simple travel guide app that you can select place on map and see details of that place.',
@@ -91,7 +91,7 @@ const Projects = (props) => {
       nameEN: 'Credit Payback Calculator',
       nameTR: 'Kredi Hesaplama',
       image: kredihesaplama,
-      link: 'https://kredihesaplama.netlify.app/',
+      link: 'https://kredi-hesaplama.netlify.app/',
       github: 'https://github.com/buraltintas/kredi-hesaplama',
       descEN:
         'Calculates total payback and monthly installments with given informations about a credit.',
