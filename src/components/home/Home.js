@@ -32,7 +32,7 @@ const Home = (props) => {
               {props.engLang ? "Hi! I'm Burak" : 'Merhaba! Ben Burak'}
             </h1>
             <div className={styles.titleContainer}>
-              <h2 className={styles.title}>Frontend Developer at</h2>
+              <h2 className={styles.title}>Jr. Frontend Developer at</h2>
               <a
                 href='https://www.protein.tech/'
                 target='_blank'
