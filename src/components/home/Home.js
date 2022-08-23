@@ -38,11 +38,7 @@ const Home = (props) => {
                 target='_blank'
                 rel='noreferrer'
               >
-                <img
-                  className={styles.proteinLogo}
-                  src={logo}
-                  alt='Logo of Protein'
-                />
+                <img className={styles.proteinLogo} src={logo} alt='Protein' />
               </a>
             </div>
 
