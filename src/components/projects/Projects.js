@@ -119,7 +119,7 @@ const Projects = (props) => {
       descEN:
         'Practice game for new learners of multiplication. For desktop use only, not responsive.',
       descTR:
-        'Çarpma işlemini yeni öğrenenler için alıştırma oyunu. Geniş ekran ile kullanılmalır.',
+        'Çarpma işlemini yeni öğrenenler için alıştırma oyunu. Geniş ekran ile kullanılmalıdır.',
     },
     {
       nameEN: 'Register Page',
@@ -131,7 +131,7 @@ const Projects = (props) => {
       descEN:
         'Register page for new users. Form control is handled by Formik and validation is handled by Yup. For desktop use only, not responsive.',
       descTR:
-        'Formik ve Yup kullanılarak oluşturulmuş kullanıcı kayıt ekranı. Geniş ekran ile kullanılmalır.',
+        'Formik ve Yup kullanılarak oluşturulmuş kullanıcı kayıt ekranı. Geniş ekran ile kullanılmalıdır.',
     },
     {
       nameEN: 'Mars',
