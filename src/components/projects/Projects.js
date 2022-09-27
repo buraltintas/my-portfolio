@@ -77,6 +77,17 @@ const Projects = (props) => {
         'Marvel karakterlerini sayfalama ve arama çubuğu ile bulup görüntüleyebilirsiniz.',
     },
     {
+      nameEN: 'Racing Cars',
+      nameTR: 'Yarışan Arabalar',
+      image:
+        'https://camo.githubusercontent.com/6f2f0ed3b1c9fb7e389835dc70d087a31009bbb5a802bba21ba408d4fd6cf7b3/68747470733a2f2f692e6962622e636f2f387353796e584c2f456b72616e2d5265736d692d323032322d30392d31302d31392d31342d30352e706e67',
+      link: 'https://racing-cars.netlify.app/',
+      github: 'https://github.com/buraltintas/racing-cars',
+      descEN:
+        'This is a simple racing game that you can select a Formula 1 car and race with 3 random cars.',
+      descTR: 'Bir araba seçip rastgele 3 arabayla yarışabilirsiniz.',
+    },
+    {
       nameEN: 'Travel Guide',
       nameTR: 'Gezi Rehberi',
       image: travelli,
