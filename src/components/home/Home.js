@@ -5,8 +5,9 @@ import logo from './logo-removebg-preview.png';
 
 const Home = (props) => {
   const techs = [
-    'react-native',
     'context-api',
+    'redux',
+    'redux-saga',
     'redux-toolkit',
     'react-router-dom',
     'axios',
@@ -21,6 +22,9 @@ const Home = (props) => {
     'leaflet',
     'react-dropzone',
     'react-cookie',
+    'react-native',
+    'node.js',
+    'express',
   ];
 
   return (
