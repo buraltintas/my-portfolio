@@ -51,8 +51,14 @@ const Home = (props) => {
 
             <p className={styles.text}>
               {props.engLang
-                ? 'Love to make useful products.'
-                : 'Kullanışlı ürünler geliştirmeyi seviyorum.'}
+                ? 'Working on checkandplace.com project. Implementing React.js and Node.js (BFF pattern) to meet design and business needs.'
+                : 'checkandplace.com projesi üzerinde çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React.js ve Node.js (BFF modeli) uygulamaları geliştiriyorum.'}
+              <br />
+              <br />
+              {props.engLang
+                ? 'I enjoy being involved in the development of useful products.'
+                : 'Kullanışlı ürünlerin geliştirilmesinde yer almaktan keyif alıyorum.'}
+              <br />
               <br />
               {props.engLang
                 ? 'You can check my projects and contact me!'

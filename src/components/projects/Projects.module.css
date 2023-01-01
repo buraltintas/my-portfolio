@@ -31,7 +31,7 @@
 
 .card {
   width: 85%;
-  height: 24rem;
+  height: fit-content;
   margin: 0 auto;
   margin-top: 1rem;
   padding: 1rem;
