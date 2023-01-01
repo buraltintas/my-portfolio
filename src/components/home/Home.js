@@ -1,7 +1,6 @@
 import Badge from 'react-bootstrap/Badge';
 import styles from './Home.module.css';
 import burak from './burak-removebg-preview.png';
-import logo from './logo-removebg-preview.png';
 
 const Home = (props) => {
   const techs = [
@@ -38,11 +37,15 @@ const Home = (props) => {
             <div className={styles.titleContainer}>
               <h2 className={styles.title}>Jr. Frontend Developer at</h2>
               <a
-                href='https://www.protein.tech/'
+                href='https://simprasuite.com/'
                 target='_blank'
                 rel='noreferrer'
               >
-                <img className={styles.proteinLogo} src={logo} alt='Protein' />
+                <img
+                  className={styles.simpraLogo}
+                  src='https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/ba/9e/a1/ba9ea126-78d2-100a-ab75-3b2a647f72f4/AppIconAppStore-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp'
+                  alt='Simpra'
+                />
               </a>
             </div>
 
