@@ -40,7 +40,7 @@ const Projects = (props) => {
       link: 'https://my-super-notes.netlify.app/',
       github: 'https://github.com/buraltintas/my-super-notes-app',
       descEN:
-        'Simple and fast taking note application that you can login with your Google account.',
+        'Simple and fast note taking application that you can login with your Google account.',
       descTR:
         'Google hesabınızla giriş yaparak kullanabileceğiniz not alma uygulaması.',
     },
