@@ -24,6 +24,8 @@ const Home = (props) => {
     'react-native',
     'node.js',
     'express',
+    'next.js',
+    'cypress.io',
   ];
 
   return (

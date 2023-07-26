@@ -12,6 +12,28 @@ import marvel from './marvel.png';
 const Projects = (props) => {
   const projectsData = [
     {
+      nameEN: 'Voting App',
+      nameTR: 'Oylama Uygulaması',
+      descEN:
+        'You can start a voting with up to 6 options and share vote link with voters. You can view votes live.',
+      descTR:
+        'Bir oylama başlatıp oy verecek kişilere link gönderebilir ve oylamayı canlı izleyebilirsiniz.',
+      image: 'https://i.ibb.co/bJt0MWP/Screenshot-2023-03-28-at-13-18-42.png',
+      link: 'https://vote-for-me.netlify.app/',
+      github: 'https://github.com/buraltintas/voting-app',
+    },
+    {
+      nameEN: 'Talk Tracker',
+      nameTR: 'Konuşan Takibi',
+      descEN:
+        'You can create a participants list for meeting and click if the participant is talked or not.',
+      descTR:
+        'Toplantıya katılanlar listesi oluşturup konuşan kişileri işaretleyerek kimin konuştuğunu takip edebilirsiniz.',
+      image: 'https://i.ibb.co/8KmCgX5/Ekran-Resmi-2023-07-20-16-20-01.png',
+      link: 'https://talk-tracker.netlify.app/',
+      github: 'https://github.com/buraltintas/talk-tracker',
+    },
+    {
       nameEN: '2nd Hand Project',
       nameTR: '2. El Projesi',
       descEN: 'A web application for selling second hand products.',

@@ -1,5 +1,4 @@
 import styles from './Header.module.css';
-import logo from './logo.png';
 import tr from './tr.png';
 import eng from './eng.png';
 
@@ -10,17 +9,6 @@ const Header = (props) => {
     if (e.target.checked === false) props.engLangTrue();
     if (e.target.checked === true) props.engLangFalse();
   };
-
-  // const CustomSwitch = withStyles({
-  //   colorSecondary: {
-  //     "&.Mui-checked + .MuiSwitch-track": {
-  //       backgroundColor: "purple",
-  //     },
-  //   },
-  //   track: {
-  //     backgroundColor: "blue",
-  //   },
-  // })(Switch);
 
   const label = { inputProps: { 'aria-label': 'controlled' } };
 
