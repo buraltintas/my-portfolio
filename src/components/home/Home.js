@@ -26,6 +26,7 @@ const Home = (props) => {
     'express',
     'next.js',
     'cypress.io',
+    'stencil.js'
   ];
 
   return (
