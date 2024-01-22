@@ -53,7 +53,7 @@ const Home = (props) => {
 
             <p className={styles.text}>
               {props.engLang
-                ? 'Frontend Developer that focused on React.js. Implementing React.js and Node.js (BFF pattern) to meet design and business needs. Other tech stack are redux, redux-saga, SASS.'
+                ? 'Frontend Developer that focused on React.js. Implementing React.js and Node.js (BFF pattern) to meet design and business needs. Other tech stack is redux, redux-saga, SASS.'
                 : "React.js'e odaklanmiş Frontend Developer olarak çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React.js ve Node.js (BFF pattern) yazıyorum. En aktif kullandığım diğer teknolojiler redux, redux-saga ve SASS."}
               <br />
               <br />
