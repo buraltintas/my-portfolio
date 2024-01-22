@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
-import tr from './tr.png';
-import eng from './eng.png';
+import tr from '../../constants/images/tr.png';
+import eng from '../../constants/images/eng.png';
 
 import Switch from '@mui/material/Switch';
 

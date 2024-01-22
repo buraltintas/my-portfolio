@@ -1,6 +1,4 @@
-import Badge from 'react-bootstrap/Badge';
 import styles from './Home.module.css';
-import burak from './burak-removebg-preview.png';
 
 const Home = (props) => {
   const techs = [
@@ -22,11 +20,12 @@ const Home = (props) => {
     'react-dropzone',
     'react-cookie',
     'react-native',
+    'expo',
     'node.js',
     'express',
     'next.js',
     'cypress.io',
-    'stencil.js'
+    'stencil.js',
   ];
 
   return (
@@ -38,7 +37,7 @@ const Home = (props) => {
               {props.engLang ? "Hi! I'm Burak" : 'Merhaba! Ben Burak'}
             </h1>
             <div className={styles.titleContainer}>
-              <h2 className={styles.title}>Jr. Frontend Developer at</h2>
+              <h2 className={styles.title}>Frontend Developer at</h2>
               <a
                 href='https://simprasuite.com/'
                 target='_blank'
@@ -54,8 +53,8 @@ const Home = (props) => {
 
             <p className={styles.text}>
               {props.engLang
-                ? 'Working on checkandplace.com project. Implementing React.js and Node.js (BFF pattern) to meet design and business needs.'
-                : 'checkandplace.com projesi üzerinde çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React.js ve Node.js (BFF modeli) uygulamaları geliştiriyorum.'}
+                ? 'Frontend Developer that focused on React.js. Implementing React.js and Node.js (BFF pattern) to meet design and business needs. Other tech stack are redux, redux-saga, SASS.'
+                : "React.js'e odaklanmiş Frontend Developer olarak çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React.js ve Node.js (BFF pattern) yazıyorum. En aktif kullandığım diğer teknolojiler redux, redux-saga ve SASS."}
               <br />
               <br />
               {props.engLang
@@ -64,8 +63,8 @@ const Home = (props) => {
               <br />
               <br />
               {props.engLang
-                ? 'You can check my projects and contact me!'
-                : 'Projelerime bakabilir ve benimle iletişime geçebilirsiniz!'}
+                ? 'You can contact me!'
+                : 'Benimle iletişime geçebilirsiniz!'}
             </p>
           </div>
           <div className={styles.ctaButtons}>
@@ -77,11 +76,7 @@ const Home = (props) => {
             </button>
           </div>
         </div>
-        <div className={styles.photo}>
-          <img className={styles.img} src={burak} alt='Burak' />
-        </div>
       </div>
-
       <div className={styles.icons}>
         <svg
           className={styles.icon}
@@ -138,9 +133,7 @@ const Home = (props) => {
 
       <div className={styles.badges}>
         {techs.map((tech) => (
-          <Badge pill bg='secondary'>
-            {tech}
-          </Badge>
+          <span className={styles.badge}>{tech}</span>
         ))}
       </div>
     </div>

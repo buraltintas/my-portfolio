@@ -3,19 +3,8 @@
   padding-bottom: 2rem;
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-
   margin: 5rem auto;
   padding-top: 3rem;
-
-  /* background: rgb(210, 203, 205);
-  background: linear-gradient(
-    96deg,
-    rgba(210, 203, 205, 1) 0%,
-    rgba(210, 203, 205, 1) 93%
-  ); */
-
-  background: rgba(231, 234, 236, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(17.5px);
   -webkit-backdrop-filter: blur(17.5px);
   border-radius: 10px;
@@ -31,6 +20,7 @@
 
 .card {
   width: 85%;
+  min-height: 25rem;
   height: fit-content;
   margin: 0 auto;
   margin-top: 1rem;
@@ -116,8 +106,7 @@
 @media (max-width: 56.25em) {
   .card {
     flex-direction: column;
-
-    height: 40rem;
+    min-height: 32rem;
   }
 }
 
