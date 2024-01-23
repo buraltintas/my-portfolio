@@ -18,7 +18,7 @@ const projectsData = [
     nameEN: 'MarketMatik',
     nameTR: 'MarketMatik',
     descEN:
-      'A simple mobile app to create grocery list, set a target amount, avoid suprise in cashier.',
+      'A simple mobile app to create grocery list, set a target amount, avoid surprise in cashier.',
     descTR:
       'Alışveriş listesi oluşturmak, hedef tutarı belirlemek, kasadaki sürprizleri önlemek için basit bir mobil uygulama.',
     image: marketmatik,
