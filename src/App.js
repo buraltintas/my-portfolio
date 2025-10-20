@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
-import "./index.css";
+import React, { useRef, useState } from 'react';
+import Header from './components/header/Header';
+import Home from './components/home/Home';
+import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
+import './index.css';
 
 function App() {
   const projects = useRef();
@@ -23,28 +23,28 @@ function App() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
   const scrollProjects = () => {
     projects.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
     });
   };
 
   const scrollContact = () => {
     contact.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
     });
   };
 
   return (
-    <main className="main">
+    <main className='main'>
       <div>
         <Header
           engLangTrue={engLangTrue}

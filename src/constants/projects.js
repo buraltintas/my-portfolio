@@ -12,8 +12,20 @@ import notes from '../constants/images/notes.png';
 import racing from '../constants/images/racing.png';
 import register from '../constants/images/register.png';
 import marketmatik from '../constants/images/marketmatik.png';
+import credit from '../constants/images/credit.jpeg';
 
 const projectsData = [
+  {
+    nameEN: 'Banker: Credit Calculation',
+    nameTR: 'Bankacı: Kredi Hesaplama',
+    descEN:
+      'Ad-free credit calculation and sharing app for bankers and finance professionals.',
+    descTR:
+      'Bankacılar ve finans profesyonelleri için reklamsız kredi hesaplama ve paylaşma uygulaması.',
+    image: credit,
+    link: 'https://apps.apple.com/tr/app/bankac%C4%B1-kredi-hesaplama/id6742378996?l=tr',
+    github: 'https://github.com/buraltintas/bankaci-kredi-hesaplama-app',
+  },
   {
     nameEN: 'MarketMatik',
     nameTR: 'MarketMatik',

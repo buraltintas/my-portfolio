@@ -5,7 +5,7 @@ const Projects = (props) => {
   return (
     <section className={styles.projects}>
       <h1 className={styles.heading}>
-        {props.engLang ? 'Projects' : 'Projeler'}
+        {props.engLang ? 'Simple Self Projects' : 'Kendi Basit Projelerim'}
       </h1>
 
       <div className={styles.projectsContainer}>

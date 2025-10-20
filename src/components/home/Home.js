@@ -1,12 +1,16 @@
 import styles from './Home.module.css';
+import me from '../../constants/images/me.png';
 
 const Home = (props) => {
   const techs = [
-    'context-api',
+    'react',
+    'react-native',
     'redux',
     'redux-saga',
     'redux-toolkit',
     'react-router-dom',
+    'react-query',
+    'context-api',
     'axios',
     'formik',
     'yup',
@@ -16,16 +20,20 @@ const Home = (props) => {
     'sass',
     'css-modules',
     'apexcharts',
+    'recharts',
     'leaflet',
     'react-dropzone',
     'react-cookie',
-    'react-native',
     'expo',
     'node.js',
     'express',
     'next.js',
-    'cypress.io',
     'stencil.js',
+    'lit-element',
+    'cypress.io',
+    'jest',
+    'react-testing-library',
+    'git',
   ];
 
   return (
@@ -53,8 +61,8 @@ const Home = (props) => {
 
             <p className={styles.text}>
               {props.engLang
-                ? 'Frontend Developer that focused on React.js. Implementing React.js and Node.js (BFF pattern) to meet design and business needs. Other tech stack is redux, redux-saga, SASS.'
-                : "React.js'e odaklanmiş Frontend Developer olarak çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React.js ve Node.js (BFF pattern) yazıyorum. En aktif kullandığım diğer teknolojiler redux, redux-saga ve SASS."}
+                ? 'Frontend Developer that focused on React.js. Implementing React/React Native and Node.js (BFF pattern) to meet design and business needs. Other tech stack is react-query, redux, redux-saga, SCSS etc.'
+                : "React.js'e odaklanmiş Frontend Developer olarak çalışıyorum. Tasarım ve iş ihtiyaçlarını karşılamak için React/React Native ve Node.js (BFF pattern) yazıyorum. En aktif kullandığım diğer teknolojiler redux, redux-saga ve SASS vs."}
               <br />
               <br />
               {props.engLang
@@ -76,6 +84,11 @@ const Home = (props) => {
             </button>
           </div>
         </div>
+        <img
+          src={me}
+          alt='me'
+          style={{ width: '220px', height: '220px', margin: 'auto' }}
+        />
       </div>
       <div className={styles.icons}>
         <svg
