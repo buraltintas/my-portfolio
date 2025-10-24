@@ -25,7 +25,7 @@ const Contact = (props) => {
         </a>
         <a
           className={styles.iconLinkedin}
-          href='https://www.linkedin.com/in/buraltintas/'
+          href='https://www.linkedin.com/in/burak--altintas/'
           target='_blank'
           rel='noreferrer'
         >
