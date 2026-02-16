@@ -1,4 +1,4 @@
-# burakaltintas.com
+# burak-altintas.com
 
 Personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
