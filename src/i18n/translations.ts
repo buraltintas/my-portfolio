@@ -6,10 +6,11 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.greeting': 'Hi, I\'m Burak',
+    'hero.greeting': "Hi, I'm Burak",
     'hero.title': 'Frontend Developer',
     'hero.subtitle.before': 'Frontend Developer at',
-    'hero.subtitle.after': '. I build web and mobile apps with React, React Native, and Next.js — from backend to App Store.',
+    'hero.subtitle.after':
+      '. I build web and mobile apps with React, React Native, and Next.js — from backend to App Store.',
     'hero.cta.projects': 'View Projects',
     'hero.cta.contact': 'Contact Me',
     'hero.cta.cv': 'Download CV',
@@ -22,7 +23,7 @@ const translations = {
 
     // Selected Work
     'selectedWork.title': 'Selected Works',
-    'selectedWork.subtitle': 'Featured projects I\'ve built',
+    'selectedWork.subtitle': "Featured projects I've built",
     'selectedWork.viewAll': 'View All Projects',
 
     // Experience
@@ -33,11 +34,12 @@ const translations = {
 
     // Contact
     'contact.title': 'Get In Touch',
-    'contact.subtitle': 'I enjoy being involved in the development of useful products. You can contact me!',
+    'contact.subtitle':
+      'I enjoy being involved in the development of useful products. You can contact me!',
 
     // Projects page
     'projects.title': 'All Projects',
-    'projects.subtitle': 'A collection of projects I\'ve built',
+    'projects.subtitle': "A collection of projects I've built",
     'projects.liveDemo': 'Live Demo',
     'projects.github': 'GitHub',
     'projects.viewCase': 'View Case Study',
@@ -46,7 +48,8 @@ const translations = {
 
     // 404
     'notFound.title': 'Page Not Found',
-    'notFound.description': 'The page you\'re looking for doesn\'t exist or has been moved.',
+    'notFound.description':
+      "The page you're looking for doesn't exist or has been moved.",
     'notFound.backHome': 'Back to Home',
 
     // Footer
@@ -60,9 +63,10 @@ const translations = {
 
     // Hero
     'hero.greeting': 'Merhaba, Ben Burak',
-    'hero.title': 'Frontend Geliştirici',
+    'hero.title': 'Frontend Developer',
     'hero.subtitle.before': '',
-    'hero.subtitle.after': '\'da Frontend Developer. React, React Native ve Next.js ile kullanıcı odaklı web ve mobil uygulamalar geliştiriyorum — backend\'den App Store\'a kadar.',
+    'hero.subtitle.after':
+      "'da Frontend Developer. React, React Native ve Next.js ile kullanıcı odaklı web ve mobil uygulamalar geliştiriyorum — backend'den App Store'a kadar.",
     'hero.cta.projects': 'Projeleri Gör',
     'hero.cta.contact': 'İletişime Geç',
     'hero.cta.cv': 'CV İndir',
@@ -86,7 +90,8 @@ const translations = {
 
     // Contact
     'contact.title': 'İletişime Geç',
-    'contact.subtitle': 'Kullanışlı ürünlerin geliştirilmesinde yer almaktan keyif alıyorum. Benimle iletişime geçebilirsiniz!',
+    'contact.subtitle':
+      'Kullanışlı ürünlerin geliştirilmesinde yer almaktan keyif alıyorum. Benimle iletişime geçebilirsiniz!',
 
     // Projects page
     'projects.title': 'Tüm Projeler',
@@ -105,8 +110,8 @@ const translations = {
     // Footer
     'footer.built': 'Next.js & Tailwind CSS ile geliştirildi',
   },
-} as const
+} as const;
 
-export type TranslationKey = keyof typeof translations.en
+export type TranslationKey = keyof typeof translations.en;
 
-export default translations
+export default translations;
