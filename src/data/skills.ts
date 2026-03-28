@@ -29,6 +29,10 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Jest', 'React Testing Library'],
   },
   {
+    title: { en: 'AI & Developer Tools', tr: 'Yapay Zeka & Geliştirici Araçları' },
+    skills: ['Claude', 'ChatGPT', 'OpenAI API', 'Cursor', 'GitHub Copilot'],
+  },
+  {
     title: { en: 'Other', tr: 'Diğer' },
     skills: ['Agile / Scrum', 'Jira', 'CI/CD', 'Responsive Design', 'SEO', 'Git Flow', 'Trunk-based Development', 'Domain Driven Design'],
   },

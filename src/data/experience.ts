@@ -37,4 +37,48 @@ export const experiences: Experience[] = [
       'Web Components',
     ],
   },
+  {
+    company: 'Sarıtay Bilişim',
+    role: {
+      en: 'Scrum Master / Project Manager (Intern)',
+      tr: 'Scrum Master / Proje Yöneticisi (Stajyer)',
+    },
+    period: {
+      en: 'Mar 2022 – Apr 2022',
+      tr: 'Mar 2022 – Nis 2022',
+    },
+    description: {
+      en: 'Completed a short internship focused on coordinating product, design, and development workflows. Supported sprint planning, backlog follow-up, and cross-team communication to help align delivery priorities.',
+      tr: 'Ürün, tasarım ve geliştirme süreçleri arasındaki koordinasyona odaklanan kısa dönemli bir staj tamamladım. Sprint planlama, backlog takibi ve ekipler arası iletişime destek vererek teslimat önceliklerinin hizalanmasına katkı sağladım.',
+    },
+    tech: [
+      'Agile / Scrum',
+      'Jira',
+      'Backlog Management',
+      'Stakeholder Communication',
+      'Project Coordination',
+    ],
+  },
+  {
+    company: 'Türkiye İş Bankası',
+    role: {
+      en: 'Customer Service Officer',
+      tr: 'Müşteri Hizmetleri Yetkilisi',
+    },
+    period: {
+      en: 'Jan 2011 – Aug 2021',
+      tr: 'Oca 2011 – Ağu 2021',
+    },
+    description: {
+      en: 'Built a strong business and process perspective across a long pre-software professional period. Managed customer operations at scale, identified recurring service bottlenecks, and generated practical improvement ideas that later shaped my product and engineering mindset.',
+      tr: 'Yazılım öncesi uzun profesyonel dönemde güçlü bir iş ve süreç bakış açısı kazandım. Büyük ölçekte müşteri operasyonlarını yönettim, tekrar eden hizmet darboğazlarını tespit ettim ve daha sonra ürün ve mühendislik yaklaşımımı şekillendiren uygulanabilir iyileştirme fikirleri geliştirdim.',
+    },
+    tech: [
+      'Customer Operations',
+      'Process Improvement',
+      'Service Quality',
+      'Operational Excellence',
+      'Business Process Awareness',
+    ],
+  },
 ];
