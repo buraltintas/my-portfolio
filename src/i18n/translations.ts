@@ -23,7 +23,7 @@ const translations = {
 
     // Selected Work
     'selectedWork.title': 'Selected Works',
-    'selectedWork.subtitle': "Featured projects I've built",
+    'selectedWork.subtitle': 'Product-focused web and mobile projects I have built from idea to production.',
     'selectedWork.viewAll': 'View All Projects',
 
     // Experience
