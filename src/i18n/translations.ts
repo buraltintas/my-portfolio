@@ -40,7 +40,9 @@ const translations = {
     // Projects page
     'projects.title': 'All Projects',
     'projects.subtitle': "A collection of projects I've built",
-    'projects.liveDemo': 'Live Demo',
+    'projects.platform.web': 'Open web version',
+    'projects.platform.ios': 'Open iOS version',
+    'projects.platform.android': 'Open Android version',
     'projects.github': 'GitHub',
     'projects.viewCase': 'View Case Study',
     'projects.backHome': 'Back to Home',
@@ -96,7 +98,9 @@ const translations = {
     // Projects page
     'projects.title': 'Tüm Projeler',
     'projects.subtitle': 'Geliştirdiğim projelerin koleksiyonu',
-    'projects.liveDemo': 'Uygulamaya Git',
+    'projects.platform.web': 'Web sürümünü aç',
+    'projects.platform.ios': 'iOS sürümünü aç',
+    'projects.platform.android': 'Android sürümünü aç',
     'projects.github': 'GitHub',
     'projects.viewCase': 'Detayları Gör',
     'projects.backHome': 'Ana Sayfaya Dön',

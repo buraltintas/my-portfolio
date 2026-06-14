@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/i18n/useLocale'
 import { Badge } from '@/components/ui/Badge'
-import { Button } from '@/components/ui/Button'
+import { ProjectPlatformLinks } from '@/components/projects/ProjectPlatformLinks'
 import type { Project } from '@/types'
 
 interface ProjectDetailProps {
@@ -33,15 +33,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       </div>
 
       <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
-        {project.liveUrl && (
-          <Button href={project.liveUrl} variant="primary">
-            {t('projects.liveDemo')} &rarr;
-          </Button>
-        )}
+        <ProjectPlatformLinks
+          platformUrls={project.platformUrls}
+          className="gap-3"
+          iconClassName="h-12 w-12"
+        />
         {project.githubUrl && (
-          <Button href={project.githubUrl} variant="secondary">
-            GitHub
-          </Button>
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('projects.github')}
+            title={t('projects.github')}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-400 transition-colors hover:border-slate-500 hover:text-white"
+          >
+            <GitHubIcon className="h-6 w-6" />
+          </a>
         )}
       </div>
 
@@ -62,5 +69,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </article>
       )}
     </div>
+  )
+}
+
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.4 2.8 8.1 6.7 9.4.5.1.7-.2.7-.5v-2c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.8 0 0 .8-.3 2.8 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.5.2 2.6.1 2.8.7.8 1 1.7 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.2 10.2 0 0 0 22 12.2C22 6.6 17.5 2 12 2Z" />
+    </svg>
   )
 }

@@ -5,10 +5,32 @@ import type { Project } from '@/types'
 
 const projectsDirectory = path.join(process.cwd(), 'content/projects')
 
+function getPlatformUrls(data: Record<string, unknown>) {
+  const platformUrls = data.platformUrls
+  if (platformUrls && typeof platformUrls === 'object' && !Array.isArray(platformUrls)) {
+    return platformUrls as Project['platformUrls']
+  }
+
+  const liveUrl = typeof data.liveUrl === 'string' ? data.liveUrl : ''
+  if (!liveUrl) {
+    return {}
+  }
+
+  if (liveUrl.includes('apps.apple.com')) {
+    return { ios: liveUrl }
+  }
+
+  if (liveUrl.includes('play.google.com')) {
+    return { android: liveUrl }
+  }
+
+  return { web: liveUrl }
+}
+
 export function getAllProjects(): Project[] {
   const fileNames = fs.readdirSync(projectsDirectory)
   const projects = fileNames
-    .filter((name) => name.endsWith('.mdx'))
+    .filter((name) => name.endsWith('.mdx') && !name.startsWith('._'))
     .map((fileName) => {
       const filePath = path.join(projectsDirectory, fileName)
       const fileContents = fs.readFileSync(filePath, 'utf8')
@@ -19,7 +41,7 @@ export function getAllProjects(): Project[] {
         description: data.description,
         slug: data.slug,
         image: data.image,
-        liveUrl: data.liveUrl || '',
+        platformUrls: getPlatformUrls(data),
         githubUrl: data.githubUrl || '',
         tech: data.tech || [],
         featured: data.featured || false,
