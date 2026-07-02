@@ -49,6 +49,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={sourceCodePro.variable}>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-7640689562014954" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7640689562014954"
+          crossOrigin="anonymous"
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
