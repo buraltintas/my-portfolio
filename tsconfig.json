@@ -30,6 +30,7 @@
   },
   "include": [
     "**/*.mdx",
+    "**/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
