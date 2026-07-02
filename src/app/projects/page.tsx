@@ -1,22 +1,32 @@
 import { getAllProjects } from '@/lib/projects'
-import { ProjectGrid } from '@/components/projects/ProjectGrid'
+import { ProjectsPageContent } from '@/components/projects/ProjectsPageContent'
 import type { Metadata } from 'next'
+import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'A collection of web and mobile projects built by Burak Altıntaş.',
+  description: 'A collection of product-focused web and mobile projects built by Burak Altıntaş.',
+  alternates: {
+    canonical: `${siteConfig.url}/projects`,
+  },
+  openGraph: {
+    title: 'Projects | Burak Altıntaş',
+    description: 'A collection of product-focused web and mobile projects built by Burak Altıntaş.',
+    url: `${siteConfig.url}/projects`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Projects by Burak Altıntaş' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects | Burak Altıntaş',
+    description: 'A collection of product-focused web and mobile projects built by Burak Altıntaş.',
+    images: ['/og.png'],
+  },
 }
 
 export default function ProjectsPage() {
   const projects = getAllProjects()
 
-  return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-white sm:text-5xl">All Projects</h1>
-        <p className="mt-3 text-lg text-slate-400">A collection of projects I&apos;ve built</p>
-      </div>
-      <ProjectGrid projects={projects} />
-    </div>
-  )
+  return <ProjectsPageContent projects={projects} />
 }

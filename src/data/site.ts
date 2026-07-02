@@ -3,6 +3,16 @@ export const siteConfig = {
   title: 'Burak Altıntaş — Frontend Developer',
   description: 'Frontend Developer specializing in React, React Native, and Next.js. Building clean, user-focused web and mobile applications.',
   url: 'https://burak-altintas.com',
+  keywords: [
+    'Burak Altıntaş',
+    'Frontend Developer',
+    'React',
+    'Next.js',
+    'React Native',
+    'Portfolio',
+    'Web Development',
+    'Mobile Development',
+  ],
   email: 'burak.altintas@yahoo.com.tr',
   socials: {
     github: 'https://github.com/buraltintas',

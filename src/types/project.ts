@@ -20,4 +20,5 @@ export interface Project {
   featured: boolean
   order: number
   content?: string
+  contentTr?: string
 }

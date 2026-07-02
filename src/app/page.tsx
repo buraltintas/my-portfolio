@@ -6,6 +6,30 @@ import { Skills } from '@/components/home/Skills'
 import { ContactSection } from '@/components/home/ContactSection'
 import { getFeaturedProjects } from '@/lib/projects'
 import { siteConfig } from '@/data/site'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: siteConfig.title,
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ['/og.png'],
+  },
+}
 
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects()

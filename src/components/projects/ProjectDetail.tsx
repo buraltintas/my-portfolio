@@ -13,6 +13,7 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const { locale, t } = useLocale()
+  const content = locale === 'tr' && project.contentTr ? project.contentTr : project.content
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
@@ -63,10 +64,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         />
       </div>
 
-      {project.content && (
-        <article className="prose prose-invert prose-slate max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: project.content }} />
-        </article>
+      {content && (
+        <section className="rounded-2xl border border-slate-800/80 bg-slate-900/30 p-5 shadow-[0_0_0_1px_rgba(15,23,42,0.3)] sm:p-8">
+          <article className="project-content" lang={locale}>
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+          </article>
+        </section>
       )}
     </div>
   )
