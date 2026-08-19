@@ -8,7 +8,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: 'Simpra',
+    company: 'Protel & Simpra',
     role: {
       en: 'Frontend Developer',
       tr: 'Frontend Developer',

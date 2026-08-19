@@ -26,6 +26,15 @@ export function Hero() {
             {t('hero.subtitle.before')}
             {t('hero.subtitle.before') && ' '}
             <a
+              href="https://www.protel.com.tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white hover:text-blue-400 transition-colors"
+            >
+              Protel
+            </a>
+            {' & '}
+            <a
               href="https://simprasuite.com/"
               target="_blank"
               rel="noopener noreferrer"
