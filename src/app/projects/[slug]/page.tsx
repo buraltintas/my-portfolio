@@ -22,6 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageTitle =
     project.slug === 'dinecue'
       ? 'DineCue | AI Dining Decision Assistant'
+      : project.slug === 'bosa-gezme'
+        ? 'Boşa Gezme! — Physical Store Discovery Platform'
       : project.title.en
   const keywords = [
     ...project.tech,
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: project.title.en,
+      title: pageTitle,
       description: project.description.en,
       url: canonicalUrl,
       siteName: siteConfig.name,
@@ -60,5 +62,27 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  return <ProjectDetail project={project} />
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: project.title.en,
+    description: project.description.en,
+    url: project.platformUrls.web,
+    image: `${siteConfig.url}${project.image}`,
+    creator: {
+      '@type': 'Person',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProjectDetail project={project} />
+    </>
+  )
 }
