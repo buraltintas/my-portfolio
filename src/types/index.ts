@@ -1,1 +1,1 @@
-export type { Project, LocaleString, ProjectPlatformUrls } from './project'
+export type { Project, LocaleString, ProjectPlatformUrls, ProjectImage, ProjectStatus } from './project'

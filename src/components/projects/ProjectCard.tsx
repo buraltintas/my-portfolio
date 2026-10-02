@@ -6,6 +6,7 @@ import { useLocale } from '@/i18n/useLocale'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { ProjectPlatformLinks } from '@/components/projects/ProjectPlatformLinks'
+import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
 import type { Project } from '@/types'
 
 interface ProjectCardProps {
@@ -26,6 +27,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+          {project.status === 'discontinued' && (
+            <DiscontinuedBadge className="absolute left-3 top-3" label={t('projects.discontinued')} />
+          )}
         </div>
       </Link>
       <div className="flex flex-1 flex-col p-5">
@@ -43,10 +47,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
         <div className="mt-auto flex items-center justify-between gap-3">
-          <ProjectPlatformLinks
-            platformUrls={project.platformUrls}
-            iconClassName="h-10 w-10"
-          />
+          {project.status === 'discontinued' ? (
+            <span />
+          ) : (
+            <ProjectPlatformLinks
+              platformUrls={project.platformUrls}
+              iconClassName="h-10 w-10"
+            />
+          )}
           {project.githubUrl && (
             <a
               href={project.githubUrl}

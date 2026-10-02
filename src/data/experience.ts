@@ -8,6 +8,35 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: 'Bankacı',
+    role: {
+      en: 'Founder',
+      tr: 'Founder',
+    },
+    period: {
+      en: 'Jan 2023 – Present',
+      tr: 'Oca 2023 – Günümüz',
+    },
+    description: {
+      en: 'I built Bankacı from scratch and run it end to end: loan calculators and a loan marketplace for bankers and people looking for a loan, on iOS, Android and the web (bankaci.app). I handle the product, design, the mobile app, the Go backend, the web surfaces and the Google Cloud infrastructure. It earns from Premium subscriptions and ads.',
+      tr: "Bankacı'yı sıfırdan kurdum ve uçtan uca yürütüyorum: bankacılar ve kredi arayanlar için iOS, Android ve web'de (bankaci.app) kredi hesaplama uygulaması ve kredi pazaryeri. Ürün, tasarım, mobil uygulama, Go backend, web tarafı ve Google Cloud altyapısı bende. Gelirini Premium abonelikler ve reklamlar sağlıyor.",
+    },
+    tech: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Go',
+      'PostgreSQL',
+      'Next.js',
+      'Google Cloud Run',
+      'OpenAI',
+      'Swift',
+      'Kotlin',
+      'RevenueCat',
+      'SEO',
+    ],
+  },
+  {
     company: 'Protel & Simpra',
     role: {
       en: 'Frontend Developer',
@@ -18,8 +47,8 @@ export const experiences: Experience[] = [
       tr: 'Haz 2022 – Günümüz',
     },
     description: {
-      en: 'Developing and maintaining production-grade web and mobile applications for the hospitality industry. Developing CheckandPlace, a reservation system serving guests from 156+ countries. Maintaining shared UiKit and Widget components library used across multiple products. Delivered key projects including PMS, Resort Manager, Loyalty, Simphony Ordering Hub, and Simphony Manager App. Working in Agile/Scrum teams with trunk-based development and domain-driven design practices.',
-      tr: "Misafir ağırlama sektörüne yönelik production seviyesinde web ve mobil uygulamalar geliştirmekteyim. 156'dan fazla ülkeden misafirlere hizmet veren CheckandPlace rezervasyon sistemini geliştiriyorum. Birden fazla üründe kullanılan paylaşımlı UiKit ve Widget bileşen kütüphanelerini geliştirmekteyim. PMS, Resort Manager, Loyalty, Simphony Ordering Hub ve Simphony Manager App gibi kritik projeleri teslim ettim. Agile/Scrum ekiplerinde trunk-based development ve domain-driven design pratikleriyle çalışmaktayım.",
+      en: 'Developing and maintaining production-grade web and mobile applications for the hospitality industry. Currently working on Resort Manager and Portal UI first, and on every other project the company needs. On CheckandPlace, a reservation system serving guests from 156+ countries, I built the AI assistant that makes online booking faster and easier. Maintaining shared UiKit and Widget components library used across multiple products. Delivered key projects including PMS, Loyalty, Simphony Ordering Hub, and Simphony Manager App. Working in Agile/Scrum teams with trunk-based development and domain-driven design practices.',
+      tr: "Misafir ağırlama sektörüne yönelik production seviyesinde web ve mobil uygulamalar geliştirmekteyim. Şu an başta Resort Manager ve Portal UI olmak üzere şirketin ihtiyaç duyduğu diğer tüm projelerde görev alıyorum. 156'dan fazla ülkeden misafirlere hizmet veren CheckandPlace rezervasyon sisteminde online rezervasyonu hızlandıran ve kolaylaştıran AI asistanı geliştirdim. Birden fazla üründe kullanılan paylaşımlı UiKit ve Widget bileşen kütüphanelerini geliştirmekteyim. PMS, Loyalty, Simphony Ordering Hub ve Simphony Manager App gibi kritik projeleri teslim ettim. Agile/Scrum ekiplerinde trunk-based development ve domain-driven design pratikleriyle çalışmaktayım.",
     },
     tech: [
       'React',

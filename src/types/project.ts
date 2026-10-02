@@ -9,6 +9,15 @@ export interface ProjectPlatformUrls {
   android?: string
 }
 
+export interface ProjectImage {
+  src: string
+  width: number
+  height: number
+  caption: LocaleString
+}
+
+export type ProjectStatus = 'live' | 'discontinued'
+
 export interface Project {
   title: LocaleString
   description: LocaleString
@@ -19,6 +28,8 @@ export interface Project {
   tech: string[]
   featured: boolean
   order: number
+  status: ProjectStatus
+  gallery: ProjectImage[]
   content?: string
   contentTr?: string
 }

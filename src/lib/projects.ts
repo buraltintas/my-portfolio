@@ -76,6 +76,8 @@ export function getAllProjects(): Project[] {
         tech: data.tech || [],
         featured: data.featured || false,
         order: data.order || 99,
+        status: data.status === 'discontinued' ? 'discontinued' : 'live',
+        gallery: Array.isArray(data.gallery) ? data.gallery : [],
         content: splitContent.englishContent,
         contentTr:
           typeof data.contentTr === 'string'

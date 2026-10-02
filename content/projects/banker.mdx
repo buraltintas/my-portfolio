@@ -1,95 +1,170 @@
 ---
 title:
-  en: 'Banker: Credit Calculation'
-  tr: 'Bankacı: Kredi Hesaplama'
+  en: 'Bankacı'
+  tr: 'Bankacı'
 description:
-  en: 'Credit calculation and sharing app for bankers and finance professionals.'
-  tr: 'Bankacılar ve finans profesyonelleri için kredi hesaplama ve paylaşma uygulaması.'
+  en: 'Loan calculators and a loan marketplace for bankers and people looking for a loan, on iOS, Android and the web.'
+  tr: 'Bankacılar ve kredi arayanlar için kredi hesaplama uygulaması ve kredi pazaryeri. iOS, Android ve web.'
 slug: 'banker'
-image: '/images/projects/banker.png'
+image: '/images/projects/bankaci.jpg'
 platformUrls:
   web: 'https://bankaci.app/'
-  ios: 'https://apps.apple.com/tr/app/bankac%C4%B1-kredi-hesaplama/id6742378996?l=tr'
+  ios: 'https://apps.apple.com/tr/app/bankac%C4%B1/id6742378996'
   android: 'https://play.google.com/store/apps/details?id=com.xewor.bankacikredihesaplama'
-githubUrl: 'https://github.com/buraltintas/bankaci-kredi-hesaplama-app'
-tech: ['React Native', 'Expo', 'TypeScript']
+githubUrl: ''
+tech:
+  [
+    'React Native',
+    'Go',
+    'Next.js',
+    'TypeScript',
+    'Expo',
+    'PostgreSQL',
+    'Google Cloud Run',
+    'OpenAI',
+    'Swift (App Intents, WidgetKit)',
+    'Kotlin',
+    'RevenueCat',
+  ]
 featured: true
 order: 1
+gallery:
+  - src: '/images/projects/bankaci/bankaci-app.jpg'
+    width: 1600
+    height: 1000
+    caption:
+      en: 'bankaci.app home page.'
+      tr: 'bankaci.app ana sayfası.'
+  - src: '/images/projects/bankaci/banka-oranlari.jpg'
+    width: 1600
+    height: 1000
+    caption:
+      en: 'Rates the banks publish on their own sites, with source links.'
+      tr: 'Bankaların kendi sitelerinde yayımladığı oranlar, kaynak bağlantılarıyla.'
+  - src: '/images/projects/bankaci/ana-sayfa-oranlar.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'Home: shortcuts and the average rates users entered.'
+      tr: 'Ana sayfa: kısayollar ve kullanıcıların girdiği ortalama oranlar.'
+  - src: '/images/projects/bankaci/bireysel-kredi.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'Personal loan, with the legal maximum term shown.'
+      tr: 'Bireysel kredi, yasal azami vade notuyla.'
+  - src: '/images/projects/bankaci/yedi-odeme-plani.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'Seven payment plan types.'
+      tr: 'Yedi ödeme planı tipi.'
+  - src: '/images/projects/bankaci/kredi-sonucu.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'The result with taxes included, with Share and PDF buttons.'
+      tr: 'Vergiler dahil sonuç, Paylaş ve PDF düğmeleriyle.'
+  - src: '/images/projects/bankaci/talepler.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'Requests: one inbox for link, pool and campaign leads.'
+      tr: 'Talepler: link, havuz ve kampanya talepleri tek kutuda.'
+  - src: '/images/projects/bankaci/widget.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: 'Home screen widget.'
+      tr: 'Ana ekran widget’ı.'
+contentTr: |
+  <h2>Genel Bakış</h2>
+  <p>Bankacı, kredi hesaplayan bankacılar ve kredi arayanlar için bir uygulama. İkisi de aynı hesaplama motorunu kullanıyor. Müşteri görüşmesine hazır giren bankacı, sonucu tek dokunuşla müşterisine gönderiyor; kredi arayan ise imzadan önce ne ödeyeceğini biliyor.</p>
+  <p>Ürün dört parçadan oluşuyor: iOS ve Android uygulaması, bankaci.app, bankaci.app'teki web portalı ve kredi arayanla bankacıyı buluşturan KrediBul (kredibul.bankaci.app). Uygulama Şubat 2025'ten beri App Store'da.</p>
+
+  <h2>Problem</h2>
+  <p>Şubede kredi hesabı çoğu zaman bankanın kendi ekranında yapılıyor. Farklı ödeme planlarını karşılaştırmak, yasal sınırları kontrol etmek ve sonucu müşteriye düzgün bir belgeyle göndermek ayrı ayrı iş. Kredi arayan tarafta ise taksit, vergiler ve toplam maliyet çoğu zaman imzaya kadar netleşmiyor.</p>
+
+  <h2>Neler Yapıyor</h2>
+  <ul>
+    <li><strong>Sekiz hesaplayıcı:</strong> bireysel (ihtiyaç, taşıt, konut), ticari (taksitli, spot, rotatif, çek/senet iskonto), konut refinansmanı, taksitten hesaplama, KMH ve kredi kartı, mevduat, ara ödeme ve kapama, tasarruf finansmanı.</li>
+    <li><strong>Yedi ödeme planı:</strong> standart, peşin faizli, eşit anaparalı, özel/balon, anapara ödemesiz dönemli, artan ve azalan taksitli. KKDF ve BSMV hesabın içinde.</li>
+    <li><strong>Yasal sınırlar:</strong> BDDK'nın vade ve kredi/değer sınırları ile TCMB'nin azami KMH ve kredi kartı oranları hesapta görünüyor, her biri dayanağıyla birlikte.</li>
+    <li><strong>Taşıt kredisinde kasko değeri:</strong> araç TSB kasko listesinden seçiliyor, yasal kredi ve vade sınırı aracın değerinden geliyor.</li>
+    <li><strong>Bankaların yayımladığı oranlar:</strong> bankaların kendi sayfaları haftada bir okunuyor, oranlar kaynağıyla gösteriliyor. Bir orana dokununca hesaplayıcı o oranla açılıyor, sonuç bankaların oranlarıyla karşılaştırılıyor.</li>
+    <li><strong>PDF ve paylaşım:</strong> sonuç PDF ya da görsel olarak gönderiliyor. Bir bankacının gönderdiği PDF, talep linki ve QR koduyla bitiyor; link yoksa ve iletişim bilgisi eklendiyse WhatsApp QR'ıyla.</li>
+    <li><strong>Bankacılar için:</strong> kalıcı bir talep linki; linkten, havuzdan ve kampanyalardan gelen taleplerin toplandığı tek bir gelen kutusu; KrediBul havuzu ve kendi kampanyalarını yayımlama.</li>
+    <li><strong>Kredi arayanlar için:</strong> KrediBul'a tek talep bırakma ve bankacıların kampanyalarına başvurma.</li>
+    <li><strong>AI Asistan:</strong> durum bir cümleyle anlatılıyor, asistan doğru hesaplayıcıyı ve plan yapısını öneriyor. Rakamların hepsi uygulamanın kendi hesaplama motorundan geliyor, modelden değil.</li>
+    <li><strong>Siri:</strong> "Bankacı ile kredi hesapla" deyince Siri tutarı, vadeyi ve faizi soruyor, aylık taksiti ve toplam geri ödemeyi söylüyor (iOS 17 ve üstü).</li>
+    <li><strong>Ana ekran widget'ı</strong> iOS ve Android'de, <strong>haftalık faiz oranları e-postası</strong>, bildirimler, Türkçe ve İngilizce.</li>
+    <li><strong>Premium:</strong> aylık, yıllık ve ömür boyu paketler; aylık ve yıllıkta 7 gün ücretsiz deneme.</li>
+  </ul>
+
+  <h2>Teknik Yapı</h2>
+  <ul>
+    <li><strong>Mobil:</strong> Expo, React Native ve TypeScript. Siri için Swift App Intents, iOS widget'ı için WidgetKit ve SwiftUI, Android widget'ı ve uygulama içi güncelleme için Kotlin. Hesaplamalar Jest testleriyle korunuyor.</li>
+    <li><strong>Tek hesaplama motoru:</strong> TypeScript'le yazılmış hesaplama kodu uygulamada ve web portalında aynı; bu yüzden ikisi de aynı rakamı veriyor. Siri de Swift'te ayrı bir kopya yerine bu motoru JavaScriptCore içinde çalıştırıyor.</li>
+    <li><strong>Backend:</strong> Go, HTTP için yalnızca standart kütüphane (net/http) ve PostgreSQL (Neon). Giriş e-posta koduyla.</li>
+    <li><strong>Web:</strong> bankaci.app ve KrediBul Next.js ile yazıldı, sayfalar sunucuda render ediliyor. Her sayfa Türkçe ve İngilizce; yapılandırılmış veri, sitemap ve llms.txt var. Web portalı ise React ve Vite ile yazıldı.</li>
+    <li><strong>Altyapı:</strong> Google Cloud Run, Cloud Build (test ve canlı ayrı ortam), Cloud Scheduler, her gün doğrulanan veritabanı yedeği.</li>
+    <li><strong>Banka oranlarını okuma:</strong> sayfa metni OpenAI'a katı bir JSON şemasıyla gönderiliyor; oranı JavaScript ile çizen sayfalar için ayrı bir headless Chromium servisi var.</li>
+    <li><strong>Diğer:</strong> abonelik için RevenueCat, bildirimler için Expo Push, e-posta için Resend, reklam için AdMob.</li>
+    <li><strong>Gizlilik:</strong> hesaplama cihazda yapılıyor. Analitik hesaba bağlanmıyor; ad, telefon ya da e-posta içermiyor.</li>
+  </ul>
+
+  <h2>Benim Rolüm</h2>
+  <ul>
+    <li>Ürün fikri, kapsam ve tasarım</li>
+    <li>Mobil uygulama (React Native, Swift, Kotlin)</li>
+    <li>Go backend ve veritabanı</li>
+    <li>bankaci.app, KrediBul ve web portalı</li>
+    <li>Google Cloud altyapısı ve yayın süreçleri</li>
+    <li>App Store ve Google Play yayınları</li>
+  </ul>
 ---
 
 <h2>Overview</h2>
-<p>Banker is a credit calculation and sharing app for bankers and finance professionals who need fast, reliable estimates during client conversations.</p>
+<p>Bankacı is an app for bankers who price loans and for people looking for one. Both run on the same calculation engine. The banker walks into the meeting prepared and sends the result to the customer in one tap; the borrower knows what they will pay before they sign.</p>
+<p>The product has four parts: the iOS and Android app, bankaci.app, a web portal on bankaci.app, and KrediBul (kredibul.bankaci.app), which connects borrowers with bankers. The app has been on the App Store since February 2025.</p>
 
 <h2>Problem</h2>
-<p>Credit calculations are often done in fragmented tools or spreadsheets, which slows down client conversations and makes sharing results harder than it should be.</p>
+<p>In a branch, loan figures are usually worked out on the bank's own screen. Comparing payment plans, checking the legal limits and sending the customer a proper document are separate jobs. On the borrower's side, the instalment, the taxes and the total cost often stay unclear until the signature.</p>
 
-<h2>Solution</h2>
-<p>Banker provides a focused mobile workflow for calculating credit terms quickly and sharing the result in a professional format without leaving the app.</p>
-
-<h2>My Role</h2>
+<h2>What It Does</h2>
 <ul>
-  <li>Product idea and UX direction</li>
-  <li>React Native frontend development</li>
-  <li>Share flow implementation</li>
-  <li>Web deployment and mobile release preparation</li>
-  <li>App Store and Google Play publishing</li>
-</ul>
-
-<h2>Key Features</h2>
-<ul>
-  <li>Fast credit calculation</li>
-  <li>Shareable result output</li>
-  <li>Clean mobile-first interface</li>
-  <li>Professional use case for client meetings</li>
+  <li><strong>Eight calculators:</strong> personal (consumer, vehicle, housing), business (instalment, spot, revolving, cheque and bill discounting), mortgage refinancing, how much you can borrow for a given instalment, overdraft and credit card, deposit, early repayment, and savings finance.</li>
+  <li><strong>Seven payment plans:</strong> standard, prepaid interest, equal principal, custom/balloon, grace period, increasing and decreasing instalments. KKDF and BSMV taxes are included.</li>
+  <li><strong>Legal limits:</strong> the banking regulator's (BDDK) term and loan-to-value limits and the central bank's (TCMB) maximum overdraft and credit card rates appear in the calculation, each with its legal basis.</li>
+  <li><strong>Car value for vehicle loans:</strong> the car is picked from the TSB kasko (insurance value) list, and the legal loan and term limits follow from its value.</li>
+  <li><strong>Rates the banks publish:</strong> the banks' own pages are read once a week and the rates are shown with their source. Tapping a rate opens the calculator with it, and a result is compared with the banks' rates.</li>
+  <li><strong>PDF and sharing:</strong> results go out as a PDF or an image. A banker's PDF ends with their request link and QR code; without a link, and with contact details added, it ends with a WhatsApp QR.</li>
+  <li><strong>For bankers:</strong> a permanent request link; one inbox for leads from the link, the pool and campaigns; the KrediBul pool; and publishing their own campaigns.</li>
+  <li><strong>For borrowers:</strong> one request on KrediBul and applications to bankers' campaigns.</li>
+  <li><strong>AI Assistant:</strong> describe the case in a sentence and the assistant suggests the right calculator and plan. Every number comes from the app's own calculation engine, not from the model.</li>
+  <li><strong>Siri:</strong> say "Calculate a loan with Bankacı" (in Turkish, "Bankacı ile kredi hesapla") and Siri asks for the amount, term and rate, then reads out the monthly instalment and the total repayment (iOS 17 and later).</li>
+  <li><strong>Home screen widget</strong> on iOS and Android, a <strong>weekly rates email</strong>, notifications, Turkish and English.</li>
+  <li><strong>Premium:</strong> monthly, yearly and lifetime plans, with a 7-day free trial on monthly and yearly.</li>
 </ul>
 
 <h2>Technical Highlights</h2>
 <ul>
-  <li>React Native</li>
-  <li>Expo</li>
-  <li>TypeScript</li>
-  <li>iOS and Android support</li>
-  <li>App Store deployment</li>
+  <li><strong>Mobile:</strong> Expo, React Native and TypeScript. Swift App Intents for Siri, WidgetKit and SwiftUI for the iOS widget, Kotlin for the Android widget and in-app updates. The calculations are covered by Jest tests.</li>
+  <li><strong>One calculation engine:</strong> the TypeScript calculation code is the same in the app and the web portal, so both give the same numbers. Siri runs the same engine inside JavaScriptCore instead of a Swift copy.</li>
+  <li><strong>Backend:</strong> Go with only the standard library's net/http for HTTP, and PostgreSQL (Neon). Sign-in with an email code.</li>
+  <li><strong>Web:</strong> bankaci.app and KrediBul are server-rendered Next.js. Every page exists in Turkish and English, with structured data, a sitemap and llms.txt. The web portal is React with Vite.</li>
+  <li><strong>Infrastructure:</strong> Google Cloud Run, Cloud Build with separate test and production environments, Cloud Scheduler, and a database backup that is restored and checked every day.</li>
+  <li><strong>Reading bank rates:</strong> page text goes to OpenAI with a strict JSON schema; pages that draw their rates with JavaScript go through a separate headless Chromium service.</li>
+  <li><strong>Other services:</strong> RevenueCat for subscriptions, Expo Push for notifications, Resend for email, AdMob for ads.</li>
+  <li><strong>Privacy:</strong> calculations run on the device. Analytics are not tied to the account and carry no name, phone number or email.</li>
 </ul>
 
-<h2>Why It Matters</h2>
-<p>Banker reduces friction in a common finance workflow and turns a manual calculation task into a quick, shareable product experience.</p>
-
-contentTr: |
-  <h2>Genel Bakış</h2>
-  <p>Banker, bankacılar ve finans profesyonelleri için kredi hesaplama ve sonuç paylaşma uygulamasıdır.</p>
-
-  <h2>Problem</h2>
-  <p>Kredi hesaplamaları çoğu zaman parçalı araçlarda yapıldığı için müşteri görüşmelerinde süreç yavaşlayabilir.</p>
-
-  <h2>Çözüm</h2>
-  <p>Banker, kredi termlerini hızlıca hesaplayan ve sonucu uygulama içinden profesyonel şekilde paylaşmayı sağlayan odaklı bir mobil deneyim sunar.</p>
-
-  <h2>Benim Rolüm</h2>
-  <ul>
-    <li>Ürün fikri ve UX yönlendirmesi</li>
-    <li>React Native frontend geliştirme</li>
-    <li>Share akışı implementasyonu</li>
-    <li>Web deployment ve mobil yayın hazırlığı</li>
-    <li>App Store ve Google Play yayın süreçleri</li>
-  </ul>
-
-  <h2>Öne Çıkan Özellikler</h2>
-  <ul>
-    <li>Hızlı kredi hesaplama</li>
-    <li>Paylaşılabilir sonuç çıktısı</li>
-    <li>Temiz mobil arayüz</li>
-    <li>Müşteri görüşmelerine uygun kullanım</li>
-  </ul>
-
-  <h2>Teknik Öne Çıkanlar</h2>
-  <ul>
-    <li>React Native</li>
-    <li>Expo</li>
-    <li>TypeScript</li>
-    <li>iOS ve Android desteği</li>
-    <li>App Store dağıtımı</li>
-  </ul>
-
-  <h2>Neden Önemli</h2>
-  <p>Banker, finans akışındaki tekrar eden bir işi hızlı ve paylaşılabilir bir ürün deneyimine dönüştürür.</p>
+<h2>My Role</h2>
+<ul>
+  <li>Product idea, scope and design</li>
+  <li>Mobile app (React Native, Swift, Kotlin)</li>
+  <li>Go backend and database</li>
+  <li>bankaci.app, KrediBul and the web portal</li>
+  <li>Google Cloud infrastructure and release pipelines</li>
+  <li>App Store and Google Play releases</li>
+</ul>

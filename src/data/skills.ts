@@ -6,19 +6,23 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     title: { en: 'Frontend', tr: 'Frontend' },
-    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Redux', 'Context API', 'Zustand'],
   },
   {
     title: { en: 'Mobile', tr: 'Mobil' },
-    skills: ['React Native', 'Expo'],
-  },
-  {
-    title: { en: 'State Management', tr: 'State Yönetimi' },
-    skills: ['Redux', 'Context API', 'Zustand'],
+    skills: ['React Native', 'Expo', 'EAS Build & Submit', 'Swift (App Intents, WidgetKit)', 'Kotlin', 'Push Notifications', 'App Store Connect', 'Google Play Console'],
   },
   {
     title: { en: 'Backend & APIs', tr: 'Backend & API' },
-    skills: ['Node.js', 'Express', 'Go', 'REST API', 'Firebase', 'MongoDB'],
+    skills: ['Go', 'Node.js', 'Express', 'ASP.NET Core', 'REST API', 'PostgreSQL', 'PostGIS', 'Neon', 'Firebase', 'MongoDB'],
+  },
+  {
+    title: { en: 'Cloud & DevOps', tr: 'Bulut & DevOps' },
+    skills: ['Google Cloud Run', 'Cloud Build', 'Cloud Scheduler', 'Cloud Storage', 'Docker', 'Netlify'],
+  },
+  {
+    title: { en: 'Payments & Services', tr: 'Ödeme & Servisler' },
+    skills: ['RevenueCat', 'In-App Purchases', 'AdMob', 'Resend', 'Google Places API', 'Playwright'],
   },
   {
     title: { en: 'Styling', tr: 'Stil' },
@@ -34,6 +38,6 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: { en: 'Other', tr: 'Diğer' },
-    skills: ['Agile / Scrum', 'Jira', 'CI/CD', 'Responsive Design', 'SEO', 'Git Flow', 'Trunk-based Development', 'Domain Driven Design'],
+    skills: ['Agile / Scrum', 'Jira', 'CI/CD', 'Responsive Design', 'SEO', 'i18n', 'Git Flow', 'Trunk-based Development', 'Domain Driven Design'],
   },
 ]

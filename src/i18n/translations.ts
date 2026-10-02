@@ -47,6 +47,9 @@ const translations = {
     'projects.viewCase': 'View Case Study',
     'projects.backHome': 'Back to Home',
     'projects.backAll': 'All Projects',
+    'projects.discontinued': 'Discontinued',
+    'projects.discontinuedNote': 'This product was shut down because I was too busy to keep supporting it. The screenshots below show it as it was.',
+    'projects.gallery': 'Screenshots',
 
     // 404
     'notFound.title': 'Page Not Found',
@@ -105,6 +108,9 @@ const translations = {
     'projects.viewCase': 'Detayları Gör',
     'projects.backHome': 'Ana Sayfaya Dön',
     'projects.backAll': 'Tüm Projeler',
+    'projects.discontinued': 'Kapatıldı',
+    'projects.discontinuedNote': 'Bu ürün, yoğunluk sebebiyle destek veremediğim için kapatıldı. Aşağıdaki ekran görüntüleri yayındayken nasıl göründüğünü gösteriyor.',
+    'projects.gallery': 'Ekran görüntüleri',
 
     // 404
     'notFound.title': 'Sayfa Bulunamadı',

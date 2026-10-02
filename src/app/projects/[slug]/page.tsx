@@ -67,7 +67,7 @@ export default async function ProjectPage({ params }: Props) {
     '@type': 'WebApplication',
     name: project.title.en,
     description: project.description.en,
-    url: project.platformUrls.web,
+    url: project.status === 'discontinued' ? undefined : project.platformUrls.web,
     image: `${siteConfig.url}${project.image}`,
     creator: {
       '@type': 'Person',

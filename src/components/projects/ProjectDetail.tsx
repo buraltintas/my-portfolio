@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useLocale } from '@/i18n/useLocale'
 import { Badge } from '@/components/ui/Badge'
 import { ProjectPlatformLinks } from '@/components/projects/ProjectPlatformLinks'
+import { ProjectGallery } from '@/components/projects/ProjectGallery'
+import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
 import type { Project } from '@/types'
 
 interface ProjectDetailProps {
@@ -14,6 +16,8 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const { locale, t } = useLocale()
   const content = locale === 'tr' && project.contentTr ? project.contentTr : project.content
+  const discontinued = project.status === 'discontinued'
+  const gallery = project.gallery.length > 0 ? <ProjectGallery images={project.gallery} /> : null
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
@@ -24,8 +28,16 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         &larr; {t('projects.backAll')}
       </Link>
 
-      <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl">{project.title[locale]}</h1>
-      <p className="mb-8 text-base text-slate-400 sm:text-lg">{project.description[locale]}</p>
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <h1 className="text-3xl font-bold text-white sm:text-4xl">{project.title[locale]}</h1>
+        {discontinued && <DiscontinuedBadge label={t('projects.discontinued')} />}
+      </div>
+      <p className={discontinued ? 'mb-3 text-base text-slate-400 sm:text-lg' : 'mb-8 text-base text-slate-400 sm:text-lg'}>
+        {project.description[locale]}
+      </p>
+      {discontinued && (
+        <p className="mb-8 text-sm text-slate-500">{t('projects.discontinuedNote')}</p>
+      )}
 
       <div className="mb-8 flex flex-wrap gap-2">
         {project.tech.map((tech) => (
@@ -34,11 +46,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       </div>
 
       <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
-        <ProjectPlatformLinks
-          platformUrls={project.platformUrls}
-          className="gap-3"
-          iconClassName="h-12 w-12"
-        />
+        {!discontinued && (
+          <ProjectPlatformLinks
+            platformUrls={project.platformUrls}
+            className="gap-3"
+            iconClassName="h-12 w-12"
+          />
+        )}
         {project.githubUrl && (
           <a
             href={project.githubUrl}
@@ -64,6 +78,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         />
       </div>
 
+      {discontinued && gallery}
+
       {content && (
         <section className="rounded-2xl border border-slate-800/80 bg-slate-900/30 p-5 shadow-[0_0_0_1px_rgba(15,23,42,0.3)] sm:p-8">
           <article className="project-content" lang={locale}>
@@ -71,6 +87,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </article>
         </section>
       )}
+
+      {!discontinued && gallery && <div className="mt-12">{gallery}</div>}
     </div>
   )
 }
