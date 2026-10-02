@@ -1,4 +1,4 @@
-import { IBM_Plex_Sans, Source_Code_Pro } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import { siteConfig } from '@/data/site'
 import type { Locale } from '@/i18n/types'
@@ -8,20 +8,24 @@ import { Footer } from '@/components/layout/Footer'
 import { SkipToContent } from '@/components/layout/SkipToContent'
 import '@/app/globals.css'
 
-const sourceCodePro = Source_Code_Pro({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+// Self-hosted (see src/fonts/README.md): one variable file each, covering
+// Turkish, so the build never waits on Google Fonts.
+const sourceCodePro = localFont({
+  src: '../../fonts/source-code-pro.woff2',
+  weight: '400 600',
   variable: '--font-source-code-pro',
   display: 'swap',
   // Only labels use it; leave the preload slots to the text font and images.
   preload: false,
+  adjustFontFallback: false,
 })
 
-const plexSans = IBM_Plex_Sans({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
+const plexSans = localFont({
+  src: '../../fonts/ibm-plex-sans.woff2',
+  weight: '400 700',
   variable: '--font-plex-sans',
   display: 'swap',
+  adjustFontFallback: 'Arial',
 })
 
 // The document both root layouts share: English at the root, Turkish under /tr.
