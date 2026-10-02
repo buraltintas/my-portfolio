@@ -4,3 +4,139 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Projects that were removed, sent to what replaced them. Add one here
+# whenever a project's slug is removed or renamed.
+[[redirects]]
+  from = "/projects/credit-calculator"
+  to = "/projects/banker"
+  status = 301
+
+[[redirects]]
+  from = "/projects/grocery-list"
+  to = "/projects/marketmatik"
+  status = 301
+
+# Images that were replaced by smaller WebP files.
+[[redirects]]
+  from = "/images/me.png"
+  to = "/images/me.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci.jpg"
+  to = "/images/projects/bankaci.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bootchat.png"
+  to = "/images/projects/bootchat.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bosa-gezme.png"
+  to = "/images/projects/bosa-gezme.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/coffee-dictionary.png"
+  to = "/images/projects/coffee-dictionary.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/dinecue.png"
+  to = "/images/projects/dinecue.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/domain-dock.png"
+  to = "/images/projects/domain-dock.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/infolojik.png"
+  to = "/images/projects/infolojik.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/marketmatik.png"
+  to = "/images/projects/marketmatik.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/mars.png"
+  to = "/images/projects/mars.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/marvel.png"
+  to = "/images/projects/marvel.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/math.png"
+  to = "/images/projects/math.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/notes.png"
+  to = "/images/projects/notes.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/pose-buddy.png"
+  to = "/images/projects/pose-buddy.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/racing.png"
+  to = "/images/projects/racing.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/recipebook.png"
+  to = "/images/projects/recipebook.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/register.png"
+  to = "/images/projects/register.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/travelli.png"
+  to = "/images/projects/travelli.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/ux-anomalies.png"
+  to = "/images/projects/ux-anomalies.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/weather.png"
+  to = "/images/projects/weather.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/yalinli.png"
+  to = "/images/projects/yalinli.webp"
+  status = 301
+
+# The Netlify subdomain serves the same site; send it to the real domain.
+[[redirects]]
+  from = "https://burak-altintas.netlify.app/*"
+  to = "https://burak-altintas.com/:splat"
+  status = 301
+  force = true
+
+# Hashed build files never change; images keep their names, so a week.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

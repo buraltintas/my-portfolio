@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import { siteConfig } from '@/data/site'
 
 const CODE_SNIPPETS = [
   '</>',  '{ }',  '=>',  'const',  'async',  'import',
@@ -41,6 +42,8 @@ export function HeroScene() {
   const [ready, setReady] = useState(false)
   const mouseRef = useRef({ x: 0, y: 0 })
   const photoRef = useRef<HTMLImageElement | null>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
+  const [live, setLive] = useState(false)
 
   useEffect(() => {
     setReady(true)
@@ -62,11 +65,11 @@ export function HeroScene() {
     const particleCount = mobile ? 25 : 60
     const snippetCount = mobile ? 10 : CODE_SNIPPETS.length
 
-    // Load profile photo
-    const photo = new Image()
-    photo.src = '/images/me.png'
-    photo.onload = () => {
-      photoRef.current = photo
+    // The canvas draws the photo that is already in the page.
+    const photo = imgRef.current
+    if (photo) {
+      if (photo.complete && photo.naturalWidth) photoRef.current = photo
+      else photo.addEventListener('load', () => (photoRef.current = photo), { once: true })
     }
 
     let w = container.offsetWidth
@@ -299,6 +302,7 @@ export function HeroScene() {
       drawPhoto(time)
     }
     animate()
+    setLive(true)
 
     const onVisibility = () => { paused = document.hidden }
     document.addEventListener('visibilitychange', onVisibility)
@@ -326,9 +330,25 @@ export function HeroScene() {
     }
   }, [ready])
 
+  // The photo is a real image in the HTML, so it can be indexed and is what
+  // people who prefer reduced motion see. Once the animation runs, the canvas
+  // draws it (moving with the mouse) and this copy is hidden. Its size matches
+  // the canvas circle: 40% of the box on phones, 44% from 768px.
   return (
-    <div ref={containerRef} className="h-full w-full">
-      <canvas ref={canvasRef} className="h-full w-full" />
+    <div ref={containerRef} className="relative h-full w-full">
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export, images are unoptimized */}
+      <img
+        ref={imgRef}
+        src={siteConfig.image}
+        alt={siteConfig.name}
+        width={480}
+        height={480}
+        decoding="async"
+        className={`pointer-events-none absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-500/40 md:w-[44%] ${
+          live ? 'opacity-0' : ''
+        }`}
+      />
+      <canvas ref={canvasRef} className="relative h-full w-full" />
     </div>
   )
 }

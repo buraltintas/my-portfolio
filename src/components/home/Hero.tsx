@@ -7,14 +7,18 @@ import { HeroCanvas } from './HeroCanvas'
 const techChips = ['React', 'React Native', 'Next.js', 'TypeScript', 'JavaScript', 'Redux']
 
 export function Hero() {
-  const { t } = useLocale()
+  const { t, path } = useLocale()
 
   return (
     <section className="shell grid items-center gap-12 pt-[clamp(48px,8vw,96px)] md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       <div className="flex flex-col gap-[22px]">
         <p className="font-mono text-sm text-blue-400">{t('hero.greeting')}</p>
-        <h1 className="text-[clamp(34px,5vw,54px)] font-bold leading-[1.08] tracking-[-0.02em] text-slate-50 [text-wrap:balance]">
-          {t('hero.title')}
+        {/* The name leads the h1: it is what people search for. */}
+        <h1 className="flex flex-col gap-1 text-[clamp(34px,5vw,54px)] font-bold leading-[1.08] tracking-[-0.02em] text-slate-50 [text-wrap:balance]">
+          {siteConfig.name}{' '}
+          <span className="text-[clamp(22px,3vw,32px)] font-semibold tracking-[-0.01em] text-slate-300">
+            {t('hero.title')}
+          </span>
         </h1>
         <p className="max-w-[560px] text-lg leading-[1.65] text-slate-300 [text-wrap:pretty]">
           {t('hero.subtitle.before')}
@@ -36,18 +40,25 @@ export function Hero() {
           >
             Simpra
           </a>
+          {t('hero.subtitle.middle')}
+          <a
+            href={path('/projects/banker')}
+            className="font-semibold text-slate-50 underline decoration-slate-600 underline-offset-4 hover:text-blue-300"
+          >
+            Bankacı
+          </a>
           {t('hero.subtitle.after')}
         </p>
 
         <div className="flex flex-wrap items-center gap-3">
           <a
-            href="/projects"
+            href={path('/projects')}
             className="inline-flex min-h-[46px] items-center rounded-lg bg-blue-600 px-5 text-base font-semibold text-white transition-colors hover:bg-blue-700"
           >
             {t('hero.cta.projects')}
           </a>
           <a
-            href="/#contact"
+            href={path('/#contact')}
             className="inline-flex min-h-[46px] items-center rounded-lg border border-slate-700 px-5 text-base font-medium text-slate-200 transition-colors hover:border-slate-500 hover:text-white"
           >
             {t('hero.cta.contact')}

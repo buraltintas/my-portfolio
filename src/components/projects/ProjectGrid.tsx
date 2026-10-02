@@ -1,10 +1,10 @@
 'use client'
 
 import { ProjectCard } from './ProjectCard'
-import type { Project } from '@/types'
+import type { ProjectCardData } from '@/types'
 
 interface ProjectGridProps {
-  projects: Project[]
+  projects: ProjectCardData[]
 }
 
 export function ProjectGrid({ projects }: ProjectGridProps) {

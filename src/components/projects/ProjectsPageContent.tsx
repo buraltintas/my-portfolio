@@ -2,10 +2,10 @@
 
 import { useLocale } from '@/i18n/useLocale'
 import { ProjectGrid } from '@/components/projects/ProjectGrid'
-import type { Project } from '@/types'
+import type { ProjectCardData } from '@/types'
 
 interface ProjectsPageContentProps {
-  projects: Project[]
+  projects: ProjectCardData[]
 }
 
 export function ProjectsPageContent({ projects }: ProjectsPageContentProps) {
@@ -17,7 +17,7 @@ export function ProjectsPageContent({ projects }: ProjectsPageContentProps) {
         <h1 className="text-[clamp(34px,5vw,48px)] font-bold leading-[1.08] tracking-[-0.02em] text-slate-50">
           {t('projects.title')}
         </h1>
-        <p className="text-lg text-slate-400">{t('projects.subtitle')}</p>
+        <p className="max-w-[680px] text-lg text-slate-400">{t('projects.intro')}</p>
       </div>
       <ProjectGrid projects={projects} />
     </div>

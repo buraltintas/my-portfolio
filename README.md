@@ -16,11 +16,11 @@ Personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Bilingual support (EN / TR)
+- Bilingual: English at `/`, Turkish under `/tr`, linked with hreflang
 - Interactive hero animation with code snippets & particle network
 - Project showcase with MDX-based case studies
 - Responsive design (mobile-first)
-- SEO optimized with Open Graph & Twitter cards
+- SEO and GEO: per-language metadata, JSON-LD (Person, ProfilePage, projects), sitemap with alternates, `llms.txt`
 - Accessible (skip-to-content, semantic HTML, keyboard navigation)
 
 ## Getting Started
@@ -36,7 +36,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 src/
-  app/          # Next.js App Router pages
+  app/          # Routes: (en) at the root, (tr) under /tr
+  views/        # Page bodies and metadata shared by both languages
   components/   # React components (home, layout, projects, ui)
   data/         # Site config, experience, skills
   i18n/         # Translations & locale provider

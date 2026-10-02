@@ -86,7 +86,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
           {/* eslint-disable-next-line @next/next/no-img-element -- static export, images are unoptimized */}
           <img
             src={image.src}
-            alt=""
+            alt={image.caption[locale]}
             width={image.width}
             height={image.height}
             loading="lazy"

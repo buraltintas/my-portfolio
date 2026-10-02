@@ -9,9 +9,10 @@ const translations = {
     'a11y.skip': 'Skip to content',
 
     // Hero
-    'hero.greeting': "Hi, I'm Burak",
+    'hero.greeting': "Hi, I'm",
     'hero.title': 'Frontend Developer',
     'hero.subtitle.before': 'Frontend Developer at',
+    'hero.subtitle.middle': ' and founder of ',
     'hero.subtitle.after':
       '. I build web and mobile apps with React, React Native, and Next.js — from backend to App Store.',
     'hero.cta.projects': 'View Projects',
@@ -47,7 +48,9 @@ const translations = {
     // Projects page
     'projects.title': 'All Projects',
     'projects.subtitle': "A collection of projects I've built",
+    'projects.intro': 'Web and mobile apps built by Burak Altıntaş, from early React experiments to products in production.',
     'projects.platform.web': 'Open web version',
+    'projects.platform.chrome': 'Open in the Chrome Web Store',
     'projects.platform.ios': 'Open iOS version',
     'projects.platform.android': 'Open Android version',
     'projects.github': 'GitHub',
@@ -66,6 +69,8 @@ const translations = {
     'projects.gallery.next': 'Next image',
     'projects.meta.platform': 'platform',
     'projects.meta.tech': 'tech',
+    'projects.meta.by': 'built by',
+    'projects.screenshot': 'screenshot',
     'projects.onThisPage': 'On this page',
     'projects.pagination': 'Project navigation',
     'projects.next': 'Next project',
@@ -89,11 +94,12 @@ const translations = {
     'a11y.skip': 'İçeriğe geç',
 
     // Hero
-    'hero.greeting': 'Merhaba, Ben Burak',
+    'hero.greeting': 'Merhaba, ben',
     'hero.title': 'Frontend Developer',
     'hero.subtitle.before': '',
+    'hero.subtitle.middle': "'da Frontend Developer ve ",
     'hero.subtitle.after':
-      "'da Frontend Developer. React, React Native ve Next.js ile kullanıcı odaklı web ve mobil uygulamalar geliştiriyorum — backend'den App Store'a kadar.",
+      "'nın kurucusu. React, React Native ve Next.js ile kullanıcı odaklı web ve mobil uygulamalar geliştiriyorum — backend'den App Store'a kadar.",
     'hero.cta.projects': 'Projeleri Gör',
     'hero.cta.contact': 'İletişime Geç',
     'hero.cta.cv': 'CV İndir',
@@ -127,7 +133,9 @@ const translations = {
     // Projects page
     'projects.title': 'Tüm Projeler',
     'projects.subtitle': 'Geliştirdiğim projelerin koleksiyonu',
+    'projects.intro': "Burak Altıntaş'ın ilk React denemelerinden yayındaki ürünlerine kadar geliştirdiği web ve mobil uygulamalar.",
     'projects.platform.web': 'Web sürümünü aç',
+    'projects.platform.chrome': "Chrome Web Mağazası'nda aç",
     'projects.platform.ios': 'iOS sürümünü aç',
     'projects.platform.android': 'Android sürümünü aç',
     'projects.github': 'GitHub',
@@ -146,6 +154,8 @@ const translations = {
     'projects.gallery.next': 'Sonraki görsel',
     'projects.meta.platform': 'platform',
     'projects.meta.tech': 'teknoloji',
+    'projects.meta.by': 'geliştiren',
+    'projects.screenshot': 'ekran görüntüsü',
     'projects.onThisPage': 'Bu sayfada',
     'projects.pagination': 'Proje gezinme',
     'projects.next': 'Sonraki proje',

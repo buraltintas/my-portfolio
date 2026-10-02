@@ -1,54 +1,28 @@
 'use client'
 
-import { createContext, useState, useEffect, useCallback, ReactNode } from 'react'
+import { createContext, useCallback, ReactNode } from 'react'
 import type { Locale } from './types'
 import translations, { TranslationKey } from './translations'
+import { localePath } from './paths'
 
 interface LocaleContextValue {
   locale: Locale
-  setLocale: (locale: Locale) => void
   t: (key: TranslationKey) => string
+  /** A site path in the current language, e.g. path('/projects'). */
+  path: (href: string) => string
 }
 
 export const LocaleContext = createContext<LocaleContextValue>({
   locale: 'en',
-  setLocale: () => {},
   t: (key) => key,
+  path: (href) => href,
 })
 
-export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('en')
+// The language comes from the URL (English at the root, Turkish under /tr),
+// so every page is rendered in its final language at build time.
+export function LocaleProvider({ locale, children }: { locale: Locale; children: ReactNode }) {
+  const t = useCallback((key: TranslationKey): string => translations[locale][key] ?? key, [locale])
+  const path = useCallback((href: string) => localePath(locale, href), [locale])
 
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('locale') as Locale | null
-      if (saved === 'en' || saved === 'tr') {
-        setLocaleState(saved)
-      }
-    } catch {}
-  }, [])
-
-  useEffect(() => {
-    document.documentElement.lang = locale
-  }, [locale])
-
-  const setLocale = useCallback((newLocale: Locale) => {
-    setLocaleState(newLocale)
-    try {
-      localStorage.setItem('locale', newLocale)
-    } catch {}
-  }, [])
-
-  const t = useCallback(
-    (key: TranslationKey): string => {
-      return translations[locale][key] ?? key
-    },
-    [locale]
-  )
-
-  return (
-    <LocaleContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </LocaleContext.Provider>
-  )
+  return <LocaleContext.Provider value={{ locale, t, path }}>{children}</LocaleContext.Provider>
 }

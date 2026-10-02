@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useLocale } from '@/i18n/useLocale'
+import { siteConfig } from '@/data/site'
 import { ProjectGallery } from '@/components/projects/ProjectGallery'
 import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
 import { ProjectLinks, projectKinds } from '@/components/projects/ProjectLinks'
@@ -37,17 +38,24 @@ function withHeadingIds(html: string) {
 }
 
 export function ProjectDetail({ project, next }: ProjectDetailProps) {
-  const { locale, t } = useLocale()
+  const { locale, t, path } = useLocale()
   const raw = locale === 'tr' && project.contentTr ? project.contentTr : project.content
   const discontinued = project.status === 'discontinued'
   const { html, headings } = useMemo(() => withHeadingIds(raw ?? ''), [raw])
   const kinds = projectKinds(project)
   const hasGallery = project.gallery.length > 0
 
+  // Who built it comes first: it ties every case study to the author's name.
+  const byline = (
+    <Link href={path('/')} className="text-slate-50 underline decoration-slate-600 underline-offset-4 hover:text-blue-300">
+      {siteConfig.name}
+    </Link>
+  )
   const meta = [
+    { term: t('projects.meta.by'), value: byline, mono: false },
     kinds ? { term: t('projects.meta.platform'), value: kinds, mono: false } : null,
     project.tech.length ? { term: t('projects.meta.tech'), value: project.tech.join(', '), mono: true } : null,
-  ].filter(Boolean) as { term: string; value: string; mono: boolean }[]
+  ].filter(Boolean) as { term: string; value: ReactNode; mono: boolean }[]
 
   // In page order: closed projects show their screenshots before the text.
   const galleryItem = hasGallery ? [{ id: 'gallery', text: t('projects.gallery') }] : []
@@ -76,7 +84,7 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
     <div className="pb-[clamp(56px,8vw,88px)]">
       <div className="shell pt-5">
         <Link
-          href="/projects"
+          href={path('/projects')}
           className="inline-flex min-h-11 items-center font-mono text-sm text-slate-300 hover:text-white"
         >
           <span aria-hidden="true">←&nbsp;</span>
@@ -135,7 +143,7 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
           />
           <Image
             src={project.image}
-            alt=""
+            alt={`${project.title[locale]} ${t('projects.screenshot')}`}
             fill
             className="object-contain"
             sizes="(max-width: 1120px) 100vw, 1080px"
@@ -189,7 +197,7 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
       <nav aria-label={t('projects.pagination')} className="shell pt-[clamp(64px,9vw,104px)]">
         <div className="grid gap-px overflow-hidden rounded-[10px] border border-slate-800 bg-slate-800 sm:grid-cols-2">
           <Link
-            href="/projects"
+            href={path('/projects')}
             className="flex flex-col gap-1 bg-ink px-[22px] py-5 hover:bg-slate-900 focus-visible:-outline-offset-2"
           >
             <span className="font-mono text-[13px] text-slate-400">
@@ -200,7 +208,7 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
           </Link>
           {next && (
             <Link
-              href={`/projects/${next.slug}`}
+              href={path(`/projects/${next.slug}`)}
               className="flex flex-col gap-1 bg-ink px-[22px] py-5 text-right hover:bg-slate-900 focus-visible:-outline-offset-2"
             >
               <span className="font-mono text-[13px] text-slate-400">

@@ -3,6 +3,9 @@
 import { useLocale } from '@/i18n/useLocale'
 import { cn } from '@/lib/utils'
 import type { Project } from '@/types'
+import { isChromeExtension } from './kinds'
+
+type Linkable = Pick<Project, 'status' | 'platformUrls' | 'githubUrl'>
 
 interface ProjectLink {
   key: string
@@ -13,30 +16,26 @@ interface ProjectLink {
 
 // Short, same-for-every-card link text (Web, App Store, Google Play,
 // GitHub); the longer "Open the iOS version" follows for screen readers.
-export function useProjectLinks(project: Project): ProjectLink[] {
+export function useProjectLinks(project: Linkable): ProjectLink[] {
   const { t } = useLocale()
   if (project.status === 'discontinued') return []
   const { web, ios, android } = project.platformUrls
   const links: ProjectLink[] = []
-  if (web) links.push({ key: 'web', href: web, label: 'Web', aria: t('projects.platform.web') })
+  if (web && isChromeExtension(web)) {
+    links.push({ key: 'web', href: web, label: 'Chrome Web Store', aria: t('projects.platform.chrome') })
+  } else if (web) {
+    links.push({ key: 'web', href: web, label: 'Web', aria: t('projects.platform.web') })
+  }
   if (ios) links.push({ key: 'ios', href: ios, label: 'App Store', aria: t('projects.platform.ios') })
   if (android) links.push({ key: 'android', href: android, label: 'Google Play', aria: t('projects.platform.android') })
   if (project.githubUrl) links.push({ key: 'github', href: project.githubUrl, label: 'GitHub', aria: t('projects.github') })
   return links
 }
 
-/** Platforms the project runs on, as a short label: "iOS, Android, web". */
-export function projectKinds(project: Project): string {
-  const kinds = [
-    project.platformUrls.ios ? 'iOS' : null,
-    project.platformUrls.android ? 'Android' : null,
-    project.platformUrls.web ? 'web' : null,
-  ].filter(Boolean)
-  return kinds.join(', ')
-}
+export { projectKinds } from './kinds'
 
 interface ProjectLinksProps {
-  project: Project
+  project: Linkable
   variant?: 'text' | 'button'
   /** The first link as the filled button (detail page, spotlight card). */
   primaryFirst?: boolean

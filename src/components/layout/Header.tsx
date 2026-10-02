@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { useLocale } from '@/i18n/useLocale'
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher'
 
-export function Header() {
-  const { t } = useLocale()
+export function Header({ showLocaleSwitcher = true }: { showLocaleSwitcher?: boolean }) {
+  const { t, path } = useLocale()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   // The name is the link home, so the menu holds only what is not there.
   const navLinks = [
-    { href: '/projects', label: t('nav.projects') },
-    { href: '/#contact', label: t('nav.contact') },
+    { href: path('/projects'), label: t('nav.projects') },
+    { href: path('/#contact'), label: t('nav.contact') },
   ]
 
   useEffect(() => {
@@ -27,11 +27,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-800 bg-ink/90 backdrop-blur-md">
       <nav className="shell flex h-[68px] items-center justify-between gap-4" aria-label={t('nav.label')}>
+        {/* The full name with its Turkish letters is what gets indexed; the
+            design shows it in lowercase. */}
         <Link
-          href="/"
-          className="inline-flex min-h-11 items-center font-mono text-[17px] font-semibold text-slate-50"
+          href={path('/')}
+          className="inline-flex min-h-11 items-center font-mono text-[17px] font-semibold lowercase text-slate-50"
         >
-          burak altintas
+          Burak Altıntaş
         </Link>
 
         {/* Desktop nav */}
@@ -41,14 +43,16 @@ export function Header() {
               {label}
             </Link>
           ))}
-          <div className="pl-2">
-            <LocaleSwitcher />
-          </div>
+          {showLocaleSwitcher && (
+            <div className="pl-2">
+              <LocaleSwitcher />
+            </div>
+          )}
         </div>
 
         {/* Mobile: the language button stays in the bar, the links fold into a menu. */}
         <div className="flex items-center gap-2 md:hidden">
-          <LocaleSwitcher />
+          {showLocaleSwitcher && <LocaleSwitcher />}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex h-11 w-11 flex-col items-center justify-center gap-1.5"
