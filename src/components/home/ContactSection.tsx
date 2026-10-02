@@ -1,29 +1,50 @@
 'use client'
 
 import { useLocale } from '@/i18n/useLocale'
-import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { SocialLinks } from '@/components/ui/SocialLinks'
 import { siteConfig } from '@/data/site'
+
+const socials = [
+  { href: siteConfig.socials.github, label: 'GitHub' },
+  { href: siteConfig.socials.linkedin, label: 'LinkedIn' },
+  { href: siteConfig.socials.twitter, label: 'X' },
+  { href: siteConfig.socials.medium, label: 'Medium' },
+  { href: siteConfig.socials.instagram, label: 'Instagram' },
+]
 
 export function ContactSection() {
   const { t } = useLocale()
 
   return (
-    <AnimatedSection id="contact" className="mx-auto max-w-6xl px-6 py-20">
-      <SectionHeading
-        title={t('contact.title')}
-        subtitle={t('contact.subtitle')}
-      />
-      <div className="flex flex-col items-center gap-6">
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="shell grid scroll-mt-20 items-end gap-x-12 gap-y-7 pb-[clamp(64px,8vw,96px)] pt-[clamp(72px,10vw,120px)] md:grid-cols-2"
+    >
+      <div className="flex flex-col gap-3.5">
+        <SectionHeading title={t('contact.title')} id="contact-title" />
+        <p className="text-[17px] text-slate-300">{t('contact.subtitle')}</p>
         <a
           href={`mailto:${siteConfig.email}`}
-          className="text-base font-medium text-blue-400 hover:text-blue-300 transition-colors sm:text-xl break-all sm:break-normal"
+          className="break-all text-[clamp(18px,2.4vw,24px)] font-semibold text-blue-400 underline underline-offset-[5px] hover:text-blue-300"
         >
           {siteConfig.email}
         </a>
-        <SocialLinks />
       </div>
-    </AnimatedSection>
+      <ul className="flex flex-wrap gap-2">
+        {socials.map(({ href, label }) => (
+          <li key={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center rounded-lg border border-slate-700 px-3.5 text-[15px] text-slate-200 transition-colors hover:border-slate-500 hover:text-white"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
   )
 }

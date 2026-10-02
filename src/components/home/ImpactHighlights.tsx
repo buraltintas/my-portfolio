@@ -1,31 +1,27 @@
-'use client';
+'use client'
 
-import { useLocale } from '@/i18n/useLocale';
-import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { Card } from '@/components/ui/Card';
+import { useLocale } from '@/i18n/useLocale'
 
 export function ImpactHighlights() {
-  const { t } = useLocale();
+  const { t } = useLocale()
 
   const metrics = [
+    { value: '15+', label: t('impact.years') },
     { value: '7+', label: t('impact.production') },
-    { value: '20+', label: t('impact.projects') },
     { value: '3+', label: t('impact.apps') },
-    { value: '5+', label: t('impact.years') },
-  ];
+    { value: '20+', label: t('impact.projects') },
+  ]
 
   return (
-    <AnimatedSection className='mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16'>
-      <div className='grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4'>
+    <section className="shell pt-[clamp(48px,7vw,80px)]" aria-label={t('impact.label')}>
+      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[10px] border border-slate-800 bg-slate-800 md:grid-cols-4">
         {metrics.map(({ value, label }) => (
-          <Card key={label} className='p-4 text-center sm:p-6'>
-            <p className='text-2xl font-bold text-white sm:text-3xl'>{value}</p>
-            <p className='mt-1 text-xs text-slate-400 sm:mt-2 sm:text-sm'>
-              {label}
-            </p>
-          </Card>
+          <div key={label} className="flex flex-col gap-0.5 bg-ink px-[22px] py-5">
+            <span className="font-mono text-[30px] font-semibold text-slate-50">{value}</span>
+            <span className="text-[15px] text-slate-400">{label}</span>
+          </div>
         ))}
       </div>
-    </AnimatedSection>
-  );
+    </section>
+  )
 }

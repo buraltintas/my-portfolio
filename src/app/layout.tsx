@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Source_Code_Pro } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { IBM_Plex_Sans, Source_Code_Pro } from 'next/font/google'
 import Script from 'next/script'
 import { siteConfig } from '@/data/site'
 import { LocaleProvider } from '@/i18n/LocaleProvider'
@@ -10,9 +10,19 @@ import './globals.css'
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600'],
   variable: '--font-source-code-pro',
   display: 'swap',
 })
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-plex-sans',
+  display: 'swap',
+})
+
+export const viewport: Viewport = { themeColor: '#020617' }
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +51,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
@@ -49,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={sourceCodePro.variable} suppressHydrationWarning>
+    <html lang="en" className={`${sourceCodePro.variable} ${plexSans.variable}`} suppressHydrationWarning>
       <head suppressHydrationWarning>
         <meta name="google-adsense-account" content="ca-pub-7640689562014954" />
         <script
@@ -73,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${siteConfig.analytics.gaId}');`}
         </Script>
       </head>
-      <body className="font-[family-name:var(--font-source-code-pro)]" suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         {/* GTM noscript */}
         <noscript>
           <iframe
@@ -86,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <LocaleProvider>
           <SkipToContent />
           <Header />
-          <main id="main-content" className="min-h-screen pt-16 md:pt-[73px]">
+          <main id="main-content" tabIndex={-1} className="min-h-screen outline-none">
             {children}
           </main>
           <Footer />

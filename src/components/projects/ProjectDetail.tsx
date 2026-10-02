@@ -2,101 +2,216 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useMemo, useState } from 'react'
 import { useLocale } from '@/i18n/useLocale'
-import { Badge } from '@/components/ui/Badge'
-import { ProjectPlatformLinks } from '@/components/projects/ProjectPlatformLinks'
 import { ProjectGallery } from '@/components/projects/ProjectGallery'
 import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
-import type { Project } from '@/types'
+import { ProjectLinks, projectKinds } from '@/components/projects/ProjectLinks'
+import type { LocaleString, Project } from '@/types'
 
 interface ProjectDetailProps {
   project: Project
+  next?: { slug: string; title: LocaleString }
 }
 
-export function ProjectDetail({ project }: ProjectDetailProps) {
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/ı/g, 'i')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+
+// Gives every <h2> in the case study an id, and returns them for the
+// "on this page" list.
+function withHeadingIds(html: string) {
+  const headings: { id: string; text: string }[] = []
+  const out = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, '').trim()
+    const id = slugify(text) || `section-${headings.length + 1}`
+    headings.push({ id, text })
+    return `<h2 id="${id}">${inner}</h2>`
+  })
+  return { html: out, headings }
+}
+
+export function ProjectDetail({ project, next }: ProjectDetailProps) {
   const { locale, t } = useLocale()
-  const content = locale === 'tr' && project.contentTr ? project.contentTr : project.content
+  const raw = locale === 'tr' && project.contentTr ? project.contentTr : project.content
   const discontinued = project.status === 'discontinued'
-  const gallery = project.gallery.length > 0 ? <ProjectGallery images={project.gallery} /> : null
+  const { html, headings } = useMemo(() => withHeadingIds(raw ?? ''), [raw])
+  const kinds = projectKinds(project)
+  const hasGallery = project.gallery.length > 0
+
+  const meta = [
+    kinds ? { term: t('projects.meta.platform'), value: kinds, mono: false } : null,
+    project.tech.length ? { term: t('projects.meta.tech'), value: project.tech.join(', '), mono: true } : null,
+  ].filter(Boolean) as { term: string; value: string; mono: boolean }[]
+
+  // In page order: closed projects show their screenshots before the text.
+  const galleryItem = hasGallery ? [{ id: 'gallery', text: t('projects.gallery') }] : []
+  const toc = discontinued ? [...galleryItem, ...headings] : [...headings, ...galleryItem]
+  const tocKey = toc.map((item) => item.id).join(' ')
+  const [active, setActive] = useState<string | undefined>(toc[0]?.id)
+
+  useEffect(() => {
+    const targets = tocKey
+      .split(' ')
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+    if (targets.length === 0) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting)
+        if (visible[0]) setActive(visible[0].target.id)
+      },
+      { rootMargin: '-96px 0px -60% 0px' }
+    )
+    targets.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [tocKey])
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
-      <Link
-        href="/projects"
-        className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
-      >
-        &larr; {t('projects.backAll')}
-      </Link>
-
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <h1 className="text-3xl font-bold text-white sm:text-4xl">{project.title[locale]}</h1>
-        {discontinued && <DiscontinuedBadge label={t('projects.discontinued')} />}
-      </div>
-      <p className={discontinued ? 'mb-3 text-base text-slate-400 sm:text-lg' : 'mb-8 text-base text-slate-400 sm:text-lg'}>
-        {project.description[locale]}
-      </p>
-      {discontinued && (
-        <p className="mb-8 text-sm text-slate-500">{t('projects.discontinuedNote')}</p>
-      )}
-
-      <div className="mb-8 flex flex-wrap gap-2">
-        {project.tech.map((tech) => (
-          <Badge key={tech}>{tech}</Badge>
-        ))}
+    <div className="pb-[clamp(56px,8vw,88px)]">
+      <div className="shell pt-5">
+        <Link
+          href="/projects"
+          className="inline-flex min-h-11 items-center font-mono text-sm text-slate-300 hover:text-white"
+        >
+          <span aria-hidden="true">←&nbsp;</span>
+          {t('projects.backAll')}
+        </Link>
       </div>
 
-      <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
-        {!discontinued && (
-          <ProjectPlatformLinks
-            platformUrls={project.platformUrls}
-            className="gap-3"
-            iconClassName="h-12 w-12"
+      <section className="shell flex flex-wrap items-start gap-x-14 gap-y-8 pt-4">
+        <div className="flex min-w-0 flex-[3_1_min(560px,100%)] flex-col gap-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-[clamp(40px,6vw,60px)] font-bold leading-[1.02] tracking-[-0.025em] text-slate-50">
+              {project.title[locale]}
+            </h1>
+            {discontinued && <DiscontinuedBadge label={t('projects.discontinued')} />}
+          </div>
+          <p className="max-w-[620px] text-[clamp(18px,2vw,21px)] leading-[1.55] text-slate-300 [text-wrap:pretty]">
+            {project.description[locale]}
+          </p>
+          {discontinued && <p className="max-w-[620px] text-[15px] text-slate-400">{t('projects.discontinuedNote')}</p>}
+          <ProjectLinks project={project} variant="button" primaryFirst className="pt-1.5" />
+        </div>
+        {meta.length > 0 && (
+          <dl className="grid flex-[1_1_280px] grid-cols-[auto_minmax(0,1fr)] border-t border-slate-800 text-[15px] leading-normal">
+            {meta.map((row, i) => (
+              <div key={row.term} className="contents">
+                <dt
+                  className={`py-3 pr-[18px] font-mono text-[13px] text-slate-400 ${
+                    i < meta.length - 1 ? 'border-b border-slate-800' : ''
+                  }`}
+                >
+                  {row.term}
+                </dt>
+                <dd
+                  className={`py-3 ${row.mono ? 'font-mono text-[13px] leading-[1.7] text-slate-300' : ''} ${
+                    i < meta.length - 1 ? 'border-b border-slate-800' : ''
+                  }`}
+                >
+                  {row.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </section>
+
+      <div className="shell pt-10">
+        {/* A cover that is not 16:9 is shown whole over a blurred copy of itself. */}
+        <div className="relative aspect-video overflow-hidden rounded-[14px] border border-slate-800 bg-slate-900">
+          <Image
+            src={project.image}
+            alt=""
+            aria-hidden="true"
+            fill
+            className="scale-110 object-cover opacity-40 blur-2xl"
+            sizes="(max-width: 1120px) 100vw, 1080px"
           />
-        )}
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t('projects.github')}
-            title={t('projects.github')}
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-400 transition-colors hover:border-slate-500 hover:text-white"
-          >
-            <GitHubIcon className="h-6 w-6" />
-          </a>
-        )}
+          <Image
+            src={project.image}
+            alt=""
+            fill
+            className="object-contain"
+            sizes="(max-width: 1120px) 100vw, 1080px"
+            priority
+          />
+        </div>
       </div>
 
-      <div className="relative mb-12 aspect-video overflow-hidden rounded-xl border border-slate-800">
-        <Image
-          src={project.image}
-          alt={project.title[locale]}
-          fill
-          className="object-cover"
-          sizes="(max-width: 896px) 100vw, 896px"
-          priority
-        />
-      </div>
-
-      {discontinued && gallery}
-
-      {content && (
-        <section className="rounded-2xl border border-slate-800/80 bg-slate-900/30 p-5 shadow-[0_0_0_1px_rgba(15,23,42,0.3)] sm:p-8">
-          <article className="project-content" lang={locale}>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          </article>
-        </section>
+      {discontinued && hasGallery && (
+        <div className="shell pt-[clamp(48px,7vw,80px)]">
+          <ProjectGallery images={project.gallery} />
+        </div>
       )}
 
-      {!discontinued && gallery && <div className="mt-12">{gallery}</div>}
-    </div>
-  )
-}
+      {html && (
+        <div className="shell grid gap-x-16 gap-y-10 pt-[clamp(48px,7vw,80px)] lg:grid-cols-[minmax(0,700px)_minmax(220px,1fr)]">
+          <article
+            className="project-content min-w-0"
+            lang={locale}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          {toc.length > 1 && (
+            <nav
+              aria-label={t('projects.onThisPage')}
+              className="order-first flex flex-col self-start border-l border-slate-800 pl-5 text-[15px] lg:sticky lg:top-24 lg:order-none"
+            >
+              <span className="pb-1.5 font-mono text-[13px] text-slate-400">{t('projects.onThisPage')}</span>
+              {toc.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  aria-current={active === item.id ? 'true' : undefined}
+                  className={`flex min-h-9 items-center hover:text-white ${
+                    active === item.id ? 'text-slate-50' : 'text-slate-300'
+                  }`}
+                >
+                  {item.text}
+                </a>
+              ))}
+            </nav>
+          )}
+        </div>
+      )}
 
-function GitHubIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.4 2.8 8.1 6.7 9.4.5.1.7-.2.7-.5v-2c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.8 0 0 .8-.3 2.8 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.5.2 2.6.1 2.8.7.8 1 1.7 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.2 10.2 0 0 0 22 12.2C22 6.6 17.5 2 12 2Z" />
-    </svg>
+      {!discontinued && hasGallery && (
+        <div className="shell pt-[clamp(64px,9vw,104px)]">
+          <ProjectGallery images={project.gallery} />
+        </div>
+      )}
+
+      <nav aria-label={t('projects.pagination')} className="shell pt-[clamp(64px,9vw,104px)]">
+        <div className="grid gap-px overflow-hidden rounded-[10px] border border-slate-800 bg-slate-800 sm:grid-cols-2">
+          <Link
+            href="/projects"
+            className="flex flex-col gap-1 bg-ink px-[22px] py-5 hover:bg-slate-900 focus-visible:-outline-offset-2"
+          >
+            <span className="font-mono text-[13px] text-slate-400">
+              <span aria-hidden="true">← </span>
+              {t('projects.backAll')}
+            </span>
+            <span className="text-lg font-semibold text-slate-50">{t('projects.subtitle')}</span>
+          </Link>
+          {next && (
+            <Link
+              href={`/projects/${next.slug}`}
+              className="flex flex-col gap-1 bg-ink px-[22px] py-5 text-right hover:bg-slate-900 focus-visible:-outline-offset-2"
+            >
+              <span className="font-mono text-[13px] text-slate-400">
+                {t('projects.next')}
+                <span aria-hidden="true"> →</span>
+              </span>
+              <span className="text-lg font-semibold text-slate-50">{next.title[locale]}</span>
+            </Link>
+          )}
+        </div>
+      </nav>
+    </div>
   )
 }

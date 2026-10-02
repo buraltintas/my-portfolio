@@ -62,6 +62,11 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
+  const all = getAllProjects()
+  const at = all.findIndex((p) => p.slug === project.slug)
+  const following = all[(at + 1) % all.length]
+  const next = following && following.slug !== project.slug ? { slug: following.slug, title: following.title } : undefined
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -82,7 +87,7 @@ export default async function ProjectPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProjectDetail project={project} />
+      <ProjectDetail project={project} next={next} />
     </>
   )
 }

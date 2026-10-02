@@ -99,8 +99,8 @@ export const experiences: Experience[] = [
       tr: 'Oca 2011 – Ağu 2021',
     },
     description: {
-      en: 'Built a strong business and process perspective across a long pre-software professional period. Managed customer operations at scale, identified recurring service bottlenecks, and generated practical improvement ideas that later shaped my product and engineering mindset.',
-      tr: 'Yazılım öncesi uzun profesyonel dönemde güçlü bir iş ve süreç bakış açısı kazandım. Büyük ölçekte müşteri operasyonlarını yönettim, tekrar eden hizmet darboğazlarını tespit ettim ve daha sonra ürün ve mühendislik yaklaşımımı şekillendiren uygulanabilir iyileştirme fikirleri geliştirdim.',
+      en: 'Built a strong business and process perspective across a long pre-software professional period. I submitted 184 formal proposals to improve the bank’s internal screens and its web and mobile interfaces; 60% of them were put into practice and I was awarded for them. The bank’s software team is what steered me fully into software; until then it had been a hobby.',
+      tr: 'Yazılım öncesi uzun profesyonel dönemde güçlü bir iş ve süreç bakış açısı kazandım. Bankanın iç ekranları ile web ve mobil arayüzlerinin geliştirilmesi için 184 resmi öneri sundum; bunların %60’ı hayata geçirildi ve ödüllendirildim. Beni tamamen yazılıma yönlendiren de bankanın yazılım ekibi oldu; o güne kadar yazılım benim için bir hobiydi.',
     },
     tech: [
       'Customer Operations',

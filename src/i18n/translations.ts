@@ -4,6 +4,9 @@ const translations = {
     'nav.home': 'Home',
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
+    'nav.label': 'Main menu',
+    'nav.menu': 'Menu',
+    'a11y.skip': 'Skip to content',
 
     // Hero
     'hero.greeting': "Hi, I'm Burak",
@@ -19,7 +22,8 @@ const translations = {
     'impact.production': 'Production Projects',
     'impact.projects': 'Personal Projects',
     'impact.apps': 'Apps Published',
-    'impact.years': 'Years Experience',
+    'impact.years': 'Years Experience (5+ in software)',
+    'impact.label': 'Highlights',
 
     // Selected Work
     'selectedWork.title': 'Selected Works',
@@ -28,6 +32,9 @@ const translations = {
 
     // Experience
     'experience.title': 'Experience',
+
+    // Education
+    'education.title': 'Education',
 
     // Skills
     'skills.title': 'Skills & Tools',
@@ -50,6 +57,18 @@ const translations = {
     'projects.discontinued': 'Discontinued',
     'projects.discontinuedNote': 'This product was shut down because I was too busy to keep supporting it. The screenshots below show it as it was.',
     'projects.gallery': 'Screenshots',
+    'projects.gallery.enlarge': 'Enlarge',
+    'projects.gallery.count': 'images, click to enlarge',
+    'projects.gallery.web': 'Web',
+    'projects.gallery.mobile': 'Mobile app',
+    'projects.gallery.close': 'Close',
+    'projects.gallery.prev': 'Previous image',
+    'projects.gallery.next': 'Next image',
+    'projects.meta.platform': 'platform',
+    'projects.meta.tech': 'tech',
+    'projects.onThisPage': 'On this page',
+    'projects.pagination': 'Project navigation',
+    'projects.next': 'Next project',
 
     // 404
     'notFound.title': 'Page Not Found',
@@ -65,6 +84,9 @@ const translations = {
     'nav.home': 'Ana Sayfa',
     'nav.projects': 'Projeler',
     'nav.contact': 'İletişim',
+    'nav.label': 'Ana menü',
+    'nav.menu': 'Menü',
+    'a11y.skip': 'İçeriğe geç',
 
     // Hero
     'hero.greeting': 'Merhaba, Ben Burak',
@@ -80,7 +102,8 @@ const translations = {
     'impact.production': 'Production Proje',
     'impact.projects': 'Kişisel Proje',
     'impact.apps': 'Yayınlanan Uygulama',
-    'impact.years': 'Yıl Deneyim',
+    'impact.years': 'Yıl Deneyim (5+ yıl yazılım)',
+    'impact.label': 'Rakamlarla',
 
     // Selected Work
     'selectedWork.title': 'Seçili Çalışmalar',
@@ -89,6 +112,9 @@ const translations = {
 
     // Experience
     'experience.title': 'Deneyim',
+
+    // Education
+    'education.title': 'Eğitim',
 
     // Skills
     'skills.title': 'Beceriler & Araçlar',
@@ -111,6 +137,18 @@ const translations = {
     'projects.discontinued': 'Kapatıldı',
     'projects.discontinuedNote': 'Bu ürün, yoğunluk sebebiyle destek veremediğim için kapatıldı. Aşağıdaki ekran görüntüleri yayındayken nasıl göründüğünü gösteriyor.',
     'projects.gallery': 'Ekran görüntüleri',
+    'projects.gallery.enlarge': 'Büyüt',
+    'projects.gallery.count': 'görsel, büyütmek için tıkla',
+    'projects.gallery.web': 'Web',
+    'projects.gallery.mobile': 'Mobil uygulama',
+    'projects.gallery.close': 'Kapat',
+    'projects.gallery.prev': 'Önceki görsel',
+    'projects.gallery.next': 'Sonraki görsel',
+    'projects.meta.platform': 'platform',
+    'projects.meta.tech': 'teknoloji',
+    'projects.onThisPage': 'Bu sayfada',
+    'projects.pagination': 'Proje gezinme',
+    'projects.next': 'Sonraki proje',
 
     // 404
     'notFound.title': 'Sayfa Bulunamadı',
