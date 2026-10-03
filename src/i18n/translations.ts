@@ -3,7 +3,6 @@ const translations = {
     // Header
     'nav.home': 'Home',
     'nav.projects': 'Projects',
-    'nav.writing': 'Writing',
     'nav.contact': 'Contact',
     'nav.label': 'Main menu',
     'nav.menu': 'Menu',
@@ -105,7 +104,6 @@ const translations = {
     // Header
     'nav.home': 'Ana Sayfa',
     'nav.projects': 'Projeler',
-    'nav.writing': 'Yazılar',
     'nav.contact': 'İletişim',
     'nav.label': 'Ana menü',
     'nav.menu': 'Menü',
