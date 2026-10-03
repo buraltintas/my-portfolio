@@ -2,6 +2,7 @@ import { siteConfig } from '@/data/site'
 import { experiences } from '@/data/experience'
 import { educations } from '@/data/education'
 import { skillCategories } from '@/data/skills'
+import { articles } from '@/data/writing'
 import { getAllProjects } from '@/lib/projects'
 import { projectKinds } from '@/components/projects/kinds'
 import { pageUrl } from '@/lib/seo'
@@ -49,8 +50,15 @@ export function llmsTxt(): string {
   }
   lines.push('')
 
+  lines.push('## Writing', '')
+  for (const a of articles) {
+    lines.push(`- [${a.title}](${a.url}) (${a.date}): ${a.summary.en}`)
+  }
+  lines.push('')
+
   lines.push('## Links', '')
   lines.push(`- [Projects](${pageUrl('en', '/projects')}): all ${projects.length} projects with case studies`)
+  lines.push(`- [Writing](${pageUrl('en', '/writing')}): articles on frontend engineering, published on Simpra Tech`)
   lines.push(`- [Türkçe](${pageUrl('tr', '/')}): the same site in Turkish`)
   lines.push(`- [GitHub](${siteConfig.socials.github})`)
   lines.push(`- [LinkedIn](${siteConfig.socials.linkedin})`)

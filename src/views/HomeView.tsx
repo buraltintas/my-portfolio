@@ -4,6 +4,8 @@ import { ImpactHighlights } from '@/components/home/ImpactHighlights'
 import { SelectedWork } from '@/components/home/SelectedWork'
 import { ExperienceTimeline } from '@/components/home/ExperienceTimeline'
 import { Skills } from '@/components/home/Skills'
+import { About } from '@/components/home/About'
+import { LatestWriting } from '@/components/home/LatestWriting'
 import { ContactSection } from '@/components/home/ContactSection'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { getFeaturedProjects, toCard } from '@/lib/projects'
@@ -32,8 +34,10 @@ export function HomeView({ locale }: { locale: Locale }) {
       <Hero />
       <ImpactHighlights />
       <SelectedWork projects={featured} />
+      <About />
       <ExperienceTimeline />
       <Skills />
+      <LatestWriting />
       <ContactSection />
     </>
   )

@@ -90,6 +90,7 @@ export function getAllProjects(): Project[] {
         description: data.description,
         seoTitle: data.seoTitle,
         seoDescription: data.seoDescription,
+        released: data.released instanceof Date ? data.released.toISOString().slice(0, 10) : data.released,
         slug: data.slug,
         image: data.image,
         platformUrls: getPlatformUrls(data),
@@ -136,4 +137,19 @@ export function projectOgImage(project: Project): string {
   const match = /^\/images\/projects\/([^/]+)\.\w+$/.exec(project.image)
   const og = match && `/images/projects/og/${match[1]}.jpg`
   return og && fs.existsSync(path.join(process.cwd(), 'public', og)) ? og : '/og.png'
+}
+
+/** Up to `count` other projects sharing the most tech; live ones always come first. */
+export function relatedProjects(project: Project, count = 3): Project[] {
+  const tech = new Set(project.tech.map((t) => t.toLowerCase()))
+  const live = (p: Project) => (p.status === 'live' ? 1 : 0)
+  return getAllProjects()
+    .filter((p) => p.slug !== project.slug)
+    .map((p) => ({
+      p,
+      score: p.tech.filter((t) => tech.has(t.toLowerCase())).length * 2 + (p.featured ? 1 : 0),
+    }))
+    .sort((a, b) => live(b.p) - live(a.p) || b.score - a.score || a.p.order - b.p.order)
+    .slice(0, count)
+    .map(({ p }) => p)
 }

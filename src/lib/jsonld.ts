@@ -2,6 +2,7 @@ import { siteConfig } from '@/data/site'
 import { educations } from '@/data/education'
 import type { Locale } from '@/i18n/types'
 import type { Project } from '@/types'
+import type { Article } from '@/data/writing'
 import { isChromeExtension } from '@/components/projects/kinds'
 import { absoluteUrl, pageUrl } from '@/lib/seo'
 
@@ -22,6 +23,7 @@ const ref = (id: string) => ({ '@id': id })
 
 const crumbLabels = {
   projects: { en: 'Projects', tr: 'Projeler' },
+  writing: { en: 'Writing', tr: 'Yazılar' },
 }
 
 export function personStub(): Node {
@@ -186,6 +188,7 @@ function projectNode(project: Project, locale: Locale): Node {
     image: absoluteUrl(project.image),
     ...(live && web && !extension ? { url: web } : {}),
     ...(live && listings.length ? { sameAs: listings } : {}),
+    ...(project.released ? { datePublished: project.released } : {}),
     keywords: project.tech.join(', '),
     creativeWorkStatus: live ? 'Published' : 'Discontinued',
     author: ref(ids.person),
@@ -221,6 +224,47 @@ export function projectGraph(project: Project, locale: Locale, title: string, de
       { name: crumbLabels.projects[locale], path: '/projects' },
       { name: project.title[locale] },
     ]),
+    { '@type': 'WebSite', '@id': ids.website, url: SITE, name: siteConfig.name },
+    personStub(),
+  ]
+}
+
+export function writingGraph(locale: Locale, title: string, description: string, articles: Article[]): Node[] {
+  const url = pageUrl(locale, '/writing')
+  return [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      inLanguage: locale,
+      isPartOf: ref(ids.website),
+      about: ref(ids.person),
+      author: ref(ids.person),
+      breadcrumb: ref(`${url}#breadcrumb`),
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: articles.length,
+        itemListElement: articles.map((a, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'BlogPosting',
+            '@id': a.url,
+            headline: a.title,
+            url: a.url,
+            datePublished: a.date,
+            description: a.summary.en,
+            inLanguage: 'en',
+            keywords: a.topics.join(', '),
+            author: ref(ids.person),
+            publisher: { '@type': 'Organization', name: 'Simpra Tech', url: 'https://blog.simprasuite.com/' },
+          },
+        })),
+      },
+    },
+    breadcrumbs(locale, url, [{ name: crumbLabels.writing[locale] }]),
     { '@type': 'WebSite', '@id': ids.website, url: SITE, name: siteConfig.name },
     personStub(),
   ]

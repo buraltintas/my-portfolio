@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ProjectDetail } from '@/components/projects/ProjectDetail'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { getAllProjects, getProject, projectOgImage } from '@/lib/projects'
+import { getAllProjects, getProject, projectOgImage, relatedProjects, toCard } from '@/lib/projects'
 import { projectGraph } from '@/lib/jsonld'
 import { pageMetadata } from '@/lib/seo'
 import type { Locale } from '@/i18n/types'
@@ -34,10 +34,7 @@ export function ProjectView({ slug, locale }: { slug: string; locale: Locale }) 
   const project = getProject(slug)
   if (!project) notFound()
 
-  const all = getAllProjects()
-  const at = all.findIndex((p) => p.slug === project.slug)
-  const following = all[(at + 1) % all.length]
-  const next = following && following.slug !== project.slug ? { slug: following.slug, title: following.title } : undefined
+  const related = relatedProjects(project).map((p) => toCard(p, locale))
 
   // Only this language's case study goes to the client.
   const localized: Project = {
@@ -49,7 +46,7 @@ export function ProjectView({ slug, locale }: { slug: string; locale: Locale }) 
   return (
     <>
       <JsonLd graph={projectGraph(project, locale, titleOf(project, locale), descriptionOf(project, locale))} />
-      <ProjectDetail project={localized} next={next} />
+      <ProjectDetail project={localized} related={related} />
     </>
   )
 }

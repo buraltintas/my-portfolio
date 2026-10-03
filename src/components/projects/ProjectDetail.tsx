@@ -8,11 +8,12 @@ import { siteConfig } from '@/data/site'
 import { ProjectGallery } from '@/components/projects/ProjectGallery'
 import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
 import { ProjectLinks, projectKinds } from '@/components/projects/ProjectLinks'
-import type { LocaleString, Project } from '@/types'
+import type { Project, ProjectCardData } from '@/types'
 
 interface ProjectDetailProps {
   project: Project
-  next?: { slug: string; title: LocaleString }
+  /** Other projects to read next, already in this page's language. */
+  related: ProjectCardData[]
 }
 
 const slugify = (text: string) =>
@@ -37,7 +38,7 @@ function withHeadingIds(html: string) {
   return { html: out, headings }
 }
 
-export function ProjectDetail({ project, next }: ProjectDetailProps) {
+export function ProjectDetail({ project, related }: ProjectDetailProps) {
   const { locale, t, path } = useLocale()
   const raw = locale === 'tr' && project.contentTr ? project.contentTr : project.content
   const discontinued = project.status === 'discontinued'
@@ -51,8 +52,14 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
       {siteConfig.name}
     </Link>
   )
+  const released = project.released
+    ? new Intl.DateTimeFormat(locale === 'tr' ? 'tr-TR' : 'en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(
+        new Date(`${project.released}T00:00:00Z`)
+      )
+    : null
   const meta = [
     { term: t('projects.meta.by'), value: byline, mono: false },
+    released ? { term: t('projects.meta.released'), value: released, mono: false } : null,
     kinds ? { term: t('projects.meta.platform'), value: kinds, mono: false } : null,
     project.tech.length ? { term: t('projects.meta.tech'), value: project.tech.join(', '), mono: true } : null,
   ].filter(Boolean) as { term: string; value: ReactNode; mono: boolean }[]
@@ -194,32 +201,33 @@ export function ProjectDetail({ project, next }: ProjectDetailProps) {
         </div>
       )}
 
-      <nav aria-label={t('projects.pagination')} className="shell pt-[clamp(64px,9vw,104px)]">
-        <div className="grid gap-px overflow-hidden rounded-[10px] border border-slate-800 bg-slate-800 sm:grid-cols-2">
+      {related.length > 0 && (
+        <nav aria-labelledby="more-projects" className="shell flex flex-col gap-5 pt-[clamp(64px,9vw,104px)]">
+          <h2 id="more-projects" className="text-[clamp(24px,2.8vw,28px)] font-bold leading-tight text-slate-50">
+            {t('projects.more')}
+          </h2>
+          <div className="grid gap-px overflow-hidden rounded-[10px] border border-slate-800 bg-slate-800 sm:grid-cols-3">
+            {related.map((item) => (
+              <Link
+                key={item.slug}
+                href={path(`/projects/${item.slug}`)}
+                className="flex flex-col gap-1.5 bg-ink px-[22px] py-5 hover:bg-slate-900 focus-visible:-outline-offset-2"
+              >
+                <span className="font-mono text-[13px] text-slate-400">{projectKinds(item)}</span>
+                <span className="text-lg font-semibold text-slate-50">{item.title}</span>
+                <span className="text-[15px] leading-[1.5] text-slate-400">{item.description}</span>
+              </Link>
+            ))}
+          </div>
           <Link
             href={path('/projects')}
-            className="flex flex-col gap-1 bg-ink px-[22px] py-5 hover:bg-slate-900 focus-visible:-outline-offset-2"
+            className="inline-flex min-h-11 items-center self-start font-mono text-sm text-slate-300 hover:text-white"
           >
-            <span className="font-mono text-[13px] text-slate-400">
-              <span aria-hidden="true">← </span>
-              {t('projects.backAll')}
-            </span>
-            <span className="text-lg font-semibold text-slate-50">{t('projects.subtitle')}</span>
+            <span aria-hidden="true">←&nbsp;</span>
+            {t('projects.backAll')}
           </Link>
-          {next && (
-            <Link
-              href={path(`/projects/${next.slug}`)}
-              className="flex flex-col gap-1 bg-ink px-[22px] py-5 text-right hover:bg-slate-900 focus-visible:-outline-offset-2"
-            >
-              <span className="font-mono text-[13px] text-slate-400">
-                {t('projects.next')}
-                <span aria-hidden="true"> →</span>
-              </span>
-              <span className="text-lg font-semibold text-slate-50">{next.title[locale]}</span>
-            </Link>
-          )}
-        </div>
-      </nav>
+        </nav>
+      )}
     </div>
   )
 }

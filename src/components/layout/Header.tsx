@@ -12,6 +12,7 @@ export function Header({ showLocaleSwitcher = true }: { showLocaleSwitcher?: boo
   // The name is the link home, so the menu holds only what is not there.
   const navLinks = [
     { href: path('/projects'), label: t('nav.projects') },
+    { href: path('/writing'), label: t('nav.writing') },
     { href: path('/#contact'), label: t('nav.contact') },
   ]
 

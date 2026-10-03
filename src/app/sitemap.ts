@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     '/',
     '/projects',
+    '/writing',
     ...getAllProjects().map((p) => `/projects/${p.slug}`),
     ...Object.values(poseBuddyPages)
       .filter((page) => page.index)

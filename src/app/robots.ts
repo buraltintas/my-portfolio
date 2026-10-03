@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: ['/', '/llms.txt', '/ads.txt', '/app-ads.txt'],
+      allow: ['/', '/llms.txt', '/ads.txt', '/app-ads.txt', `/${siteConfig.indexNowKey}.txt`],
       disallow: ['/*.txt'],
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
