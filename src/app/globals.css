@@ -41,6 +41,32 @@ body {
   @apply mx-auto w-full max-w-[1120px] px-5;
 }
 
+/* A timeline dot for something still going on: a soft ring keeps
+   spreading from it, like a "live" light. Still for reduced motion. */
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  animation: live-pulse 2.4s ease-out infinite;
+}
+
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(59 130 246 / 0.55);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px rgb(59 130 246 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot::after {
+    animation: none;
+  }
+}
+
 /* Glass utility */
 .glass {
   @apply bg-slate-900/50 backdrop-blur-md border border-slate-800/50;

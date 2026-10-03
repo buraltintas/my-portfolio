@@ -32,7 +32,7 @@ export function ExperienceTimeline() {
                 <span
                   aria-hidden="true"
                   className={`absolute -left-2 top-[5px] h-3.5 w-3.5 rounded-full ${
-                    current ? 'border-[3px] border-ink bg-blue-500' : 'border-2 border-slate-500 bg-ink'
+                    current ? 'live-dot border-[3px] border-ink bg-blue-500' : 'border-2 border-slate-500 bg-ink'
                   }`}
                 />
                 <h3 className="text-[19px] font-semibold leading-[1.3] text-slate-50">
@@ -68,7 +68,7 @@ export function ExperienceTimeline() {
                 <span
                   aria-hidden="true"
                   className={`absolute -left-2 top-[5px] h-3.5 w-3.5 rounded-full ${
-                    current ? 'border-[3px] border-ink bg-blue-500' : 'border-2 border-slate-500 bg-ink'
+                    current ? 'live-dot border-[3px] border-ink bg-blue-500' : 'border-2 border-slate-500 bg-ink'
                   }`}
                 />
                 <h3 className="text-[17px] font-semibold leading-[1.35] text-slate-50">
