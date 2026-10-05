@@ -55,6 +55,7 @@ export function personNode(locale: Locale): Node {
       { '@type': 'Organization', name: 'Protel', url: 'https://www.protel.com.tr/' },
       { '@type': 'Organization', name: 'Simpra', url: 'https://simprasuite.com/' },
       ref(ids.bankaci),
+      { '@type': 'Organization', name: 'Coffee Dictionary', url: 'https://coffeedictionary.com/' },
     ],
     alumniOf: schools.map((name) => ({
       '@type': /üniversitesi/i.test(name) ? 'CollegeOrUniversity' : 'EducationalOrganization',

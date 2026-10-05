@@ -16,7 +16,7 @@ export function llmsTxt(): string {
   lines.push(`# ${siteConfig.name}`, '')
   lines.push(`> ${siteConfig.bio.en}`, '')
   lines.push(
-    `Also written as "${siteConfig.alternateName}". ${siteConfig.jobTitle} at Protel & Simpra, founder of Bankacı (https://bankaci.app) and technical lead of Coffee Dictionary (https://coffeedictionary.com). ` +
+    `Also written as "${siteConfig.alternateName}". ${siteConfig.jobTitle} at Protel & Simpra, founder of Bankacı (https://bankaci.app) and co-founder and technical lead of Coffee Dictionary (https://coffeedictionary.com). ` +
       `This site is in English at ${pageUrl('en', '/')} and in Turkish at ${pageUrl('tr', '/')}.`,
     ''
   )

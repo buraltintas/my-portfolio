@@ -8,6 +8,33 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: 'Coffee Dictionary',
+    role: {
+      en: 'Co-founder',
+      tr: 'Kurucu Ortak',
+    },
+    // From the first commit of the API repository (Feb 1, 2026).
+    period: {
+      en: 'Feb 2026 – Present',
+      tr: 'Şub 2026 – Günümüz',
+    },
+    description: {
+      en: 'I co-founded Coffee Dictionary and run its entire technical side: a coffee glossary with a daily featured term, detailed explanations and curated events, on iOS and the web (coffeedictionary.com). I built the Go API, the React Native app, the Next.js website and the admin panel, and handle deployment and App Store publishing.',
+      tr: "Coffee Dictionary'nin kurucu ortağıyım ve tüm teknik tarafını yürütüyorum: günlük öne çıkan terim, detaylı açıklamalar ve etkinliklerle iOS ve web'de (coffeedictionary.com) yayında olan bir kahve sözlüğü. Go API'yi, React Native uygulamasını, Next.js web sitesini ve yönetim panelini geliştirdim; yayına alma ve App Store süreçlerini yürütüyorum.",
+    },
+    tech: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Go',
+      'PostgreSQL',
+      'Next.js',
+      'TanStack Query',
+      'Tailwind CSS',
+      'Google Cloud Run',
+    ],
+  },
+  {
     company: 'Bankacı',
     role: {
       en: 'Founder',

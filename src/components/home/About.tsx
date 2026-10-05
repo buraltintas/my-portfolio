@@ -20,9 +20,9 @@ const copy: Record<'en' | 'tr', Part[][]> = {
     [
       'Alongside that I build products end to end. I founded ',
       { text: 'Bankacı', slug: 'banker' },
-      ', a loan calculator and loan marketplace on iOS, Android and the web, and run it myself: product, design, the mobile app, the Go backend and the Google Cloud infrastructure. I also lead the entire technical side of ',
+      ', a loan calculator and loan marketplace on iOS, Android and the web, and run it myself: product, design, the mobile app, the Go backend and the Google Cloud infrastructure. I am also a co-founder of ',
       { text: 'Coffee Dictionary', slug: 'coffee-dictionary' },
-      ', a coffee glossary on iOS and the web.',
+      ', a coffee glossary on iOS and the web, where I run the entire technical side.',
     ],
     [
       'My other projects include ',
@@ -51,7 +51,7 @@ const copy: Record<'en' | 'tr', Part[][]> = {
       { text: 'Bankacı', slug: 'banker' },
       "'yı kurdum; ürünü, tasarımı, mobil uygulamayı, Go backend'i ve Google Cloud altyapısını kendim yürütüyorum. iOS ve web'deki kahve sözlüğü ",
       { text: 'Coffee Dictionary', slug: 'coffee-dictionary' },
-      "'nin de tüm teknik tarafını yürütüyorum.",
+      "'nin de kurucu ortağıyım ve tüm teknik tarafını yürütüyorum.",
     ],
     [
       'Diğer projelerim arasında ev ve yaşam mağazalarını keşfetme platformu ',
