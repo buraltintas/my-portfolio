@@ -19,8 +19,8 @@ export const experiences: Experience[] = [
       tr: 'Şub 2026 – Günümüz',
     },
     description: {
-      en: 'I co-founded Coffee Dictionary and run its entire technical side: a coffee glossary in three languages with a term of the day, detailed explanations and the most looked-up terms, on iOS and the web (coffeedictionary.com). I built the Go API, the React Native app, the Next.js website and the admin panel, and handle deployment and App Store publishing.',
-      tr: "Coffee Dictionary'nin kurucu ortağıyım ve tüm teknik tarafını yürütüyorum: günün terimi, detaylı açıklamalar ve en çok aranan terimlerle üç dilde, iOS ve web'de (coffeedictionary.com) yayında olan bir kahve sözlüğü. Go API'yi, React Native uygulamasını, Next.js web sitesini ve yönetim panelini geliştirdim; yayına alma ve App Store süreçlerini yürütüyorum.",
+      en: 'I co-founded Coffee Dictionary and run its entire technical side: a coffee glossary in three languages with a term of the day, detailed explanations and the most looked-up terms, on iOS and the web (coffeedictionary.com), grown by approved community editors who propose terms and improve translations. I built the Go API, the React Native app, the Next.js website and the admin panel, and handle deployment and App Store publishing.',
+      tr: "Coffee Dictionary'nin kurucu ortağıyım ve tüm teknik tarafını yürütüyorum: günün terimi, detaylı açıklamalar ve en çok aranan terimlerle üç dilde, iOS ve web'de (coffeedictionary.com) yayında olan, onaylı topluluk editörlerinin terim önerip çevirileri iyileştirdiği bir kahve sözlüğü. Go API'yi, React Native uygulamasını, Next.js web sitesini ve yönetim panelini geliştirdim; yayına alma ve App Store süreçlerini yürütüyorum.",
     },
     tech: [
       'React Native',
