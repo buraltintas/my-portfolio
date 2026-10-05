@@ -33,13 +33,6 @@ const translations = {
 
     // About
     'about.title': 'About',
-    'about.p1':
-      "I'm Burak Altıntaş (Burak Altintas without the Turkish letters), a frontend developer who builds web and mobile apps with React, React Native and Next.js.",
-    'about.p2':
-      'Since June 2022 I have worked on software for the hospitality industry at Protel & Simpra. On CheckandPlace, a reservation system serving guests from 156+ countries, I built the AI assistant that makes online booking faster and easier.',
-    'about.p3':
-      'I am also the founder of Bankacı, a loan calculator and loan marketplace on iOS, Android and the web, which I run end to end: product, design, the mobile app, the Go backend and the Google Cloud infrastructure.',
-    'about.p4': 'Before moving into software I worked at Türkiye İş Bankası from 2011 to 2021.',
 
     // Writing
     'writing.title': 'Writing',
@@ -134,13 +127,6 @@ const translations = {
 
     // About
     'about.title': 'Hakkımda',
-    'about.p1':
-      'Ben Burak Altıntaş; React, React Native ve Next.js ile web ve mobil uygulamalar geliştiren bir frontend geliştiriciyim.',
-    'about.p2':
-      "Haziran 2022'den beri Protel & Simpra'da misafir ağırlama sektörüne yönelik yazılımlar üzerinde çalışıyorum. 156'dan fazla ülkeden misafire hizmet veren CheckandPlace rezervasyon sisteminde online rezervasyonu hızlandıran ve kolaylaştıran yapay zekâ asistanını geliştirdim.",
-    'about.p3':
-      "Ayrıca iOS, Android ve web'de yayında olan kredi hesaplama ve kredi pazaryeri uygulaması Bankacı'nın kurucusuyum; ürünü, tasarımı, mobil uygulamayı, Go backend'i ve Google Cloud altyapısını uçtan uca yürütüyorum.",
-    'about.p4': "Yazılıma geçmeden önce 2011–2021 arasında Türkiye İş Bankası'nda çalıştım.",
 
     // Writing
     'writing.title': 'Yazılar',
