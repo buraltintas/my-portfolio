@@ -8,12 +8,13 @@ import { ProjectSpotlight } from '@/components/projects/ProjectSpotlight'
 import type { ProjectCardData } from '@/types'
 
 interface SelectedWorkProps {
+  /** Full-width cards first (projects with `spotlight: true`). */
+  spotlights: ProjectCardData[]
   projects: ProjectCardData[]
 }
 
-export function SelectedWork({ projects }: SelectedWorkProps) {
+export function SelectedWork({ spotlights, projects }: SelectedWorkProps) {
   const { t, path } = useLocale()
-  const [spotlight, ...rest] = projects
 
   return (
     <section id="work" className="shell flex flex-col gap-8 pt-[clamp(72px,10vw,120px)]">
@@ -24,9 +25,11 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
           <span aria-hidden="true">&nbsp;→</span>
         </Link>
       </div>
-      {spotlight && <ProjectSpotlight project={spotlight} />}
+      {spotlights.map((project) => (
+        <ProjectSpotlight key={project.slug} project={project} />
+      ))}
       <div className="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-        {rest.map((project) => (
+        {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>

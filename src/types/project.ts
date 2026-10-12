@@ -35,6 +35,8 @@ export interface Project {
   githubUrl: string
   tech: string[]
   featured: boolean
+  /** Shown as a full-width card at the top of Selected Works. */
+  spotlight: boolean
   order: number
   status: ProjectStatus
   gallery: ProjectImage[]

@@ -26,14 +26,16 @@ export function homeMetadata(locale: Locale): Metadata {
 }
 
 export function HomeView({ locale }: { locale: Locale }) {
-  const featured = getFeaturedProjects().map((p) => toCard(p, locale))
+  const featured = getFeaturedProjects()
+  const spotlights = featured.filter((p) => p.spotlight).map((p) => toCard(p, locale))
+  const cards = featured.filter((p) => !p.spotlight).map((p) => toCard(p, locale))
 
   return (
     <>
       <JsonLd graph={homeGraph(locale, siteConfig.title[locale])} />
       <Hero />
       <ImpactHighlights />
-      <SelectedWork projects={featured} />
+      <SelectedWork spotlights={spotlights} projects={cards} />
       <About />
       <ExperienceTimeline />
       <Skills />

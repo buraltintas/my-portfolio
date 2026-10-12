@@ -98,6 +98,7 @@ export function getAllProjects(): Project[] {
         githubUrl: data.githubUrl || '',
         tech: data.tech || [],
         featured: data.featured || false,
+        spotlight: data.spotlight === true,
         order: data.order || 99,
         status: data.status === 'discontinued' ? 'discontinued' : 'live',
         gallery: Array.isArray(data.gallery) ? data.gallery : [],
