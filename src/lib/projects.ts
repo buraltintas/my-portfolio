@@ -93,6 +93,7 @@ export function getAllProjects(): Project[] {
         released: data.released instanceof Date ? data.released.toISOString().slice(0, 10) : data.released,
         slug: data.slug,
         image: data.image,
+        imageTr: data.imageTr,
         platformUrls: getPlatformUrls(data),
         githubUrl: data.githubUrl || '',
         tech: data.tech || [],
@@ -100,6 +101,7 @@ export function getAllProjects(): Project[] {
         order: data.order || 99,
         status: data.status === 'discontinued' ? 'discontinued' : 'live',
         gallery: Array.isArray(data.gallery) ? data.gallery : [],
+        galleryTr: Array.isArray(data.galleryTr) ? data.galleryTr : undefined,
         content,
         contentTr,
       } as Project
@@ -119,12 +121,18 @@ export function getFeaturedProjects(): Project[] {
   return getAllProjects().filter((p) => p.featured)
 }
 
+/** The project with the cover and screenshots for one language. */
+export function localizeMedia(project: Project, locale: Locale): Project {
+  if (locale !== 'tr') return project
+  return { ...project, image: project.imageTr ?? project.image, gallery: project.galleryTr ?? project.gallery }
+}
+
 export function toCard(project: Project, locale: Locale): ProjectCardData {
   return {
     slug: project.slug,
     title: project.title[locale],
     description: project.description[locale],
-    image: project.image,
+    image: localizeMedia(project, locale).image,
     platformUrls: project.platformUrls,
     githubUrl: project.githubUrl,
     tech: project.tech,

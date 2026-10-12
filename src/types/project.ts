@@ -29,6 +29,8 @@ export interface Project {
   released?: string
   slug: string
   image: string
+  /** Cover for the Turkish pages when it differs (e.g. a Turkish UI). */
+  imageTr?: string
   platformUrls: ProjectPlatformUrls
   githubUrl: string
   tech: string[]
@@ -36,6 +38,8 @@ export interface Project {
   order: number
   status: ProjectStatus
   gallery: ProjectImage[]
+  /** Screenshots for the Turkish pages when they differ. */
+  galleryTr?: ProjectImage[]
   content?: string
   contentTr?: string
 }
