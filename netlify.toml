@@ -40,12 +40,22 @@
 
 [[redirects]]
   from = "/images/projects/coffee-dictionary.png"
-  to = "/images/projects/coffee-dictionary-en.webp"
+  to = "/images/projects/coffee-dictionary-promo-en.webp"
   status = 301
 
 [[redirects]]
   from = "/images/projects/coffee-dictionary.webp"
-  to = "/images/projects/coffee-dictionary-en.webp"
+  to = "/images/projects/coffee-dictionary-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/coffee-dictionary-en.webp"
+  to = "/images/projects/coffee-dictionary-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/coffee-dictionary-tr.webp"
+  to = "/images/projects/coffee-dictionary-promo-tr.webp"
   status = 301
 
 [[redirects]]
