@@ -25,7 +25,7 @@ export interface Project {
   seoTitle?: LocaleString
   /** Meta description; falls back to the description. */
   seoDescription?: LocaleString
-  /** First store release, YYYY-MM-DD. */
+  /** First public release (store release or launch), YYYY-MM-DD. */
   released?: string
   slug: string
   image: string

@@ -175,8 +175,16 @@ function projectNode(project: Project, locale: Locale): Node {
   const { web, ios, android } = project.platformUrls
   const live = project.status !== 'discontinued'
   const extension = isChromeExtension(web)
-  const kind = extension ? 'SoftwareApplication' : ios || android ? 'MobileApplication' : 'WebApplication'
-  const listings = [web, ios, android].filter((url): url is string => !!url)
+  // A project with no app or site of its own is its source repository.
+  const repoOnly = !web && !ios && !android && !!project.githubUrl
+  const kind = extension
+    ? 'SoftwareApplication'
+    : ios || android
+      ? 'MobileApplication'
+      : repoOnly
+        ? 'SoftwareSourceCode'
+        : 'WebApplication'
+  const listings = [web, ios, android, repoOnly ? project.githubUrl : undefined].filter((url): url is string => !!url)
   const bankaci = project.slug === 'banker'
 
   return {
@@ -188,6 +196,7 @@ function projectNode(project: Project, locale: Locale): Node {
     inLanguage: locale,
     image: absoluteUrl(project.image),
     ...(live && web && !extension ? { url: web } : {}),
+    ...(repoOnly ? { url: project.githubUrl } : {}),
     ...(live && listings.length ? { sameAs: listings } : {}),
     ...(project.released ? { datePublished: project.released } : {}),
     keywords: project.tech.join(', '),

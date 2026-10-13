@@ -1,0 +1,133 @@
+---
+title:
+  en: 'day-zero-kit'
+  tr: 'day-zero-kit'
+description:
+  en: 'A project setup guide and eight AI agent skills for building everything around a new product from day one: spend caps, alerts, backups, a bot door and project memory.'
+  tr: "Yeni bir ürünün etrafındaki her şeyi ilk günden kurmak için rehber ve sekiz ajan skill'i: harcama sınırları, alarmlar, yedekler, bot kapısı ve proje hafızası."
+seoTitle:
+  en: 'day-zero-kit — Project Setup Guide & AI Skills'
+  tr: "day-zero-kit — Kurulum Rehberi ve Skill'ler"
+seoDescription:
+  en: "day-zero-kit is Burak Altıntaş's open-source guide and Claude Code skills for setting up a new product on Neon, Go, Next.js and Expo, cheap and safe."
+  tr: "day-zero-kit, Burak Altıntaş'ın Neon, Go, Next.js ve Expo ile yeni bir ürünü ilk günden ucuz, güvenli ve kullanıcıyı kırmadan kurmak için açık kaynak rehberi."
+released: '2026-10-08'
+slug: 'day-zero-kit'
+image: '/images/projects/day-zero-kit-en.webp'
+imageTr: '/images/projects/day-zero-kit-tr.webp'
+platformUrls: {}
+githubUrl: 'https://github.com/buraltintas/day-zero-kit'
+tech: ['Claude Code', 'Agent Skills', 'Neon Postgres', 'Go', 'Next.js', 'Expo', 'Cloud Run', 'Python']
+featured: true
+order: 1.6
+gallery:
+  - src: '/images/projects/day-zero-kit/scoreboard-en.webp'
+    width: 1600
+    height: 1340
+    caption:
+      en: 'Knocks taken, goals scored: numbers from the bills and logs of my live products, August to October 2026.'
+      tr: 'Yenen dayaklar, atılan goller: canlı ürünlerimin Ağustos–Ekim 2026 faturalarından ve loglarından rakamlar.'
+  - src: '/images/projects/day-zero-kit/architecture-en.webp'
+    width: 1600
+    height: 991
+    caption:
+      en: 'The stack the guide is written for: Next.js behind Cloudflare, a Go API on Cloud Run, Neon Postgres, scheduled jobs and backups.'
+      tr: "Rehberin yazıldığı yığın: Cloudflare arkasında Next.js, Cloud Run'da Go API, Neon Postgres, zamanlanmış işler ve yedekler."
+galleryTr:
+  - src: '/images/projects/day-zero-kit/scoreboard-tr.webp'
+    width: 1600
+    height: 1340
+    caption:
+      en: 'Knocks taken, goals scored: numbers from the bills and logs of my live products, August to October 2026.'
+      tr: 'Yenen dayaklar, atılan goller: canlı ürünlerimin Ağustos–Ekim 2026 faturalarından ve loglarından rakamlar.'
+  - src: '/images/projects/day-zero-kit/architecture-tr.webp'
+    width: 1600
+    height: 991
+    caption:
+      en: 'The stack the guide is written for: Next.js behind Cloudflare, a Go API on Cloud Run, Neon Postgres, scheduled jobs and backups.'
+      tr: "Rehberin yazıldığı yığın: Cloudflare arkasında Next.js, Cloud Run'da Go API, Neon Postgres, zamanlanmış işler ve yedekler."
+contentTr: |
+  <h2>Genel Bakış</h2>
+  <p>day-zero-kit, bir Proje Kurulum Rehberi ve yapay zekâ kod ajanları için sekiz skill'den oluşur. Yeni bir ürünün kodunu yazmadan önce etrafını kurar: hesaplar, ortamlar, bütçe alarmları ve harcama sınırları, bot kapısı, uyarılar, yedek, mobil kit ve proje hafızası ilk günden hazır olur. Ekip yalnız ürün akışına bakar, altyapıyı ajan rehberle kurar. Rehber Neon Postgres, Cloud Run'da Go API, Next.js ve Expo yığını için yazıldı.</p>
+
+  <h2>Problem</h2>
+  <p>İçindeki kurallar, beş yıl boyunca ürün kurarken yediğim dayaklardan çıktı: uyumayan veritabanları, tavansız açılan ücretli API'ler, kataloğu kazıyan botlar, kimseye haber vermeden biten krediler, eski sürümde kalıp yeni akışı göremeyen kullanıcılar.</p>
+
+  <h2>Çözüm</h2>
+  <p>Bu tecrübeyi rakamlarıyla birlikte bir rehbere, sonra bir ajanın izleyebileceği skill'lere dönüştürdüm. Ajan kurulum kararlarını tek tek sorar ve docs/DECISIONS.md'ye yazar, proje hafızası dosyalarını açar, kurulum planını aşama aşama uygular. Yalnız insanın yapabileceği işlerde durup sorar: hesaplar, ödemeler, alan adları, mağaza gönderimleri, canlıya deploy ve herkese açık her şey.</p>
+
+  <h2>Sonuçlar</h2>
+  <p>Kendi canlı ürünlerimin Ağustos–Ekim 2026 faturalarından ve loglarından (rehberde Ürün A–D diye geçerler):</p>
+  <ul>
+    <li>Aylık bulut faturası Eylül'deki ~₺3.900–4.400'den ~₺1.300'e indi (8 Ekim tahmini).</li>
+    <li>Veritabanı günde 6,5 CU-saatten ~2,1'e düştü: okumalar bellekten, veritabanı uyuyor.</li>
+    <li>Ayda ~₺1.500 tutan harita API'si açık veri ve kendi tablomuzla sıfıra indi.</li>
+    <li>Web isteklerinin %41'ini tek bir kazıyıcı alıyordu; bot kapısı ilk gününde 6.654 isteği reddetti.</li>
+    <li>Biten bir API kredisi 30 gün fark edilmedi; uyarılar kurulduktan sonra hatadan alarma 4 dakika.</li>
+  </ul>
+
+  <h2>Skill'ler</h2>
+  <ul>
+    <li><code>project-setup</code>: Kararları sorar, hafıza dosyalarını açar, altyapıyı gün 0'dan aşama aşama kurar ve doğrular.</li>
+    <li><code>decision-support</code>: Ücretli API, plan, analitik, gerçek zamanlı iletişim, OTA ve bölge kararlarında seçenekleri gerçek rakamlarla koyar.</li>
+    <li><code>release-gate</code>: Mağaza sürümünden ve canlıya deploy'dan önce yayın kapısını çalıştırır, kanıtla "çıkar / çıkmaz" önerir.</li>
+    <li><code>cost-audit</code>: Veritabanı uyanışı, instance tavanı, harcama freni, kota ve build dakikası için düzeltme listesi çıkarır.</li>
+    <li><code>security-audit</code>: Yetkiler, sırlar, bağımlılıklar, başkasının kaydını okuma, bot kapısı ve KVKK için bulgu listesi verir.</li>
+    <li><code>project-memory</code>: CHANGELOG, STATUS, TODO, DECISIONS ve devir notunu günceller.</li>
+    <li><code>alert-audit</code>: Her hata, kredi, kota ve süre dolumunun doğru kişiye, doğru kanaldan ulaştığını doğrular.</li>
+    <li><code>seo-geo-routine</code>: SEO ve GEO işlerini yürütür; önce botların veritabanını uyandırmadığını kontrol eder.</li>
+  </ul>
+
+  <h2>Teknik Öne Çıkanlar</h2>
+  <ul>
+    <li>Türkçe ve İngilizce skill setleriyle (<code>day-zero-kit-tr</code>, <code>day-zero-kit-en</code>) bir Claude Code eklenti pazaryeri; skill'ler Codex'te de kullanılabilir.</li>
+    <li>Her kural bir kanıt etiketi taşır: kanıtlı, ölçüldü ya da öneri.</li>
+    <li>Her push'ta bir Python betiği manifestleri, skill'leri, başvuru dosyalarının rehberle birebir eşleşmesini ve bağlantıları denetler.</li>
+    <li>Rehber metni CC BY 4.0, skill'ler ve betikler MIT lisanslı.</li>
+  </ul>
+
+  <h2>Neden Önemli</h2>
+  <p>Pahalıya öğrenilmiş dersleri tekrarlanabilir bir gün 0 kurulumuna çevirir: veritabanını gereksiz uyandırmamak, her harcamaya tavan ve alarm, sessiz hata bırakmamak, en az yetkiyle çalışmak, kullanıcıyı kırmadan değiştirmek, kararları ve proje hafızasını yazmak.</p>
+---
+
+<h2>Overview</h2>
+<p>day-zero-kit is a Project Setup Guide and a set of eight skills for AI coding agents. It builds everything around a new product before its code is written: accounts, environments, budget alarms and spend limits, a bot door, alerts, backups, a mobile kit and project memory, all ready from day one. The team looks only at product flows while an agent sets up the infrastructure from the guide. The guide is written for Neon Postgres, a Go API on Cloud Run, Next.js and Expo.</p>
+
+<h2>Problem</h2>
+<p>The rules come from five years of building products and the knocks along the way: databases that never slept, paid APIs switched on with no cap, bots scraping a catalogue, credits that ran out without telling anyone, and users stuck on an old version who could not see a new flow.</p>
+
+<h2>Solution</h2>
+<p>I turned that experience into a guide with the numbers, then into skills an agent can follow. The agent asks the setup decisions one by one and records them in docs/DECISIONS.md, opens the project memory files and applies the setup plan phase by phase. It stops and asks the owner for anything only a person can do: accounts, payments, domains, store submissions, production deploys and anything public.</p>
+
+<h2>Results</h2>
+<p>From the bills and logs of my own live products, August to October 2026 (the guide calls them Product A–D):</p>
+<ul>
+  <li>The monthly cloud bill went from about $80–90 in September to an estimated $27 (as of 8 October).</li>
+  <li>Database compute fell from 6.5 to about 2.1 CU-hours a day: reads come from memory and the database sleeps.</li>
+  <li>A maps API that cost about $31 a month went to $0 with open data and our own table.</li>
+  <li>One scraper took 41% of web requests; the bot door refused 6,654 requests on its first day.</li>
+  <li>A depleted API credit went unnoticed for 30 days; with alerting in place, error to alarm takes 4 minutes.</li>
+</ul>
+
+<h2>The Skills</h2>
+<ul>
+  <li><code>project-setup</code>: asks the decisions, opens the memory files and builds the infrastructure from day 0, phase by phase, and verifies it.</li>
+  <li><code>decision-support</code>: lays out options for paid APIs, plans, analytics, real-time delivery, OTA and region with real numbers.</li>
+  <li><code>release-gate</code>: runs the release gate before a store release or a production deploy and recommends ship or no-ship with evidence.</li>
+  <li><code>cost-audit</code>: a fix list for database wake-ups, instance caps, spend caps, quotas and build minutes.</li>
+  <li><code>security-audit</code>: findings on permissions, secrets, dependencies, reading other users' records, the bot door and KVKK.</li>
+  <li><code>project-memory</code>: keeps CHANGELOG, STATUS, TODO, DECISIONS and the handoff note up to date.</li>
+  <li><code>alert-audit</code>: checks that every error, credit, quota and expiry reaches the right person through the right channel.</li>
+  <li><code>seo-geo-routine</code>: runs SEO and GEO work, after first checking that bots do not wake the database.</li>
+</ul>
+
+<h2>Technical Highlights</h2>
+<ul>
+  <li>A Claude Code plugin marketplace with Turkish and English skill sets (<code>day-zero-kit-tr</code>, <code>day-zero-kit-en</code>); the skills can also be used in Codex.</li>
+  <li>Every rule carries an evidence tag: proven in production, measured, or a recommendation.</li>
+  <li>On every push, a Python check script verifies the manifests, the skills, that every reference file is an exact excerpt of the guide, and the links.</li>
+  <li>The guide text is licensed CC BY 4.0; the skills and scripts are MIT.</li>
+</ul>
+
+<h2>Why It Matters</h2>
+<p>It turns expensive lessons into a repeatable day-0 setup: do not wake the database for nothing, put a cap and an alarm on every spend, leave no silent failure, run with least privilege, change without breaking users, and write down decisions and project memory.</p>
