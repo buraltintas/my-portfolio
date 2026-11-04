@@ -3,17 +3,18 @@ title:
   en: 'Bankacı'
   tr: 'Bankacı'
 description:
-  en: 'Loan calculators and a loan marketplace for bankers and people looking for a loan, on iOS, Android and the web.'
-  tr: 'Bankacılar ve kredi arayanlar için kredi hesaplama uygulaması ve kredi pazaryeri. iOS, Android ve web.'
+  en: 'An iOS, Android and web app for loans, credit cards, deposits and investments, with a loan marketplace that connects borrowers with bankers.'
+  tr: 'Kredi, kredi kartı, mevduat ve yatırım için bir uygulama ve kredi arayanı bankacıyla buluşturan bir kredi pazaryeri. iOS, Android ve web.'
 seoTitle:
-  en: 'Bankacı — Loan Calculator & Loan Marketplace App'
-  tr: 'Bankacı — Kredi Hesaplama ve Kredi Pazaryeri'
+  en: 'Bankacı — Loan Calculator & Credit Card Campaigns'
+  tr: 'Bankacı — Kredi Hesaplama ve Kart Kampanyaları'
 seoDescription:
-  en: 'Bankacı is a loan calculator and loan marketplace by Burak Altıntaş for bankers and borrowers, on iOS, Android and the web, built with React Native and Go.'
-  tr: "Bankacı, bankacılar ve kredi arayanlar için kredi hesaplama ve pazaryeri uygulaması. Burak Altıntaş, iOS, Android ve web için React Native ve Go ile geliştirdi."
+  en: "Bankacı is Burak Altıntaş's iOS, Android and web app for loans, credit cards, deposits and investments, with a loan marketplace. Built with React Native and Go."
+  tr: 'Bankacı: kredi, kredi kartı, mevduat ve yatırım için iOS, Android ve web uygulaması ve kredi pazaryeri. Burak Altıntaş React Native ve Go ile geliştirdi.'
 released: '2025-02-26'
 slug: 'banker'
-image: '/images/projects/bankaci.webp'
+image: '/images/projects/bankaci-promo-en.webp'
+imageTr: '/images/projects/bankaci-promo-tr.webp'
 platformUrls:
   web: 'https://bankaci.app/'
   ios: 'https://apps.apple.com/tr/app/bankac%C4%B1/id6742378996'
@@ -28,7 +29,7 @@ tech:
     'Expo',
     'PostgreSQL',
     'Google Cloud Run',
-    'OpenAI',
+    'Claude (Anthropic)',
     'Swift (App Intents, WidgetKit)',
     'Kotlin',
     'RevenueCat',
@@ -41,84 +42,191 @@ gallery:
     width: 1600
     height: 1000
     caption:
-      en: 'bankaci.app home page.'
-      tr: 'bankaci.app ana sayfası.'
+      en: "bankaci.app home page."
+      tr: "bankaci.app ana sayfası."
   - src: '/images/projects/bankaci/banka-oranlari.jpg'
     width: 1600
     height: 1000
     caption:
-      en: 'Rates the banks publish on their own sites, with source links.'
-      tr: 'Bankaların kendi sitelerinde yayımladığı oranlar, kaynak bağlantılarıyla.'
-  - src: '/images/projects/bankaci/ana-sayfa-oranlar.webp'
+      en: "Rates the banks publish on their own sites, with source links."
+      tr: "Bankaların kendi sitelerinde yayımladığı oranlar, kaynak bağlantılarıyla."
+  - src: '/images/projects/bankaci/home-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'Home: shortcuts and the average rates users entered.'
-      tr: 'Ana sayfa: kısayollar ve kullanıcıların girdiği ortalama oranlar.'
-  - src: '/images/projects/bankaci/bireysel-kredi.webp'
+      en: "Home: shortcuts, adding a widget and featured campaigns."
+      tr: "Ana sayfa: kısayollar, widget ekleme ve öne çıkan kampanyalar."
+  - src: '/images/projects/bankaci/payment-plans-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'Personal loan, with the legal maximum term shown.'
-      tr: 'Bireysel kredi, yasal azami vade notuyla.'
-  - src: '/images/projects/bankaci/yedi-odeme-plani.webp'
+      en: "A personal loan with its seven payment plan types."
+      tr: "Bireysel kredi ve yedi ödeme planı tipi."
+  - src: '/images/projects/bankaci/loan-result-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'Seven payment plan types.'
-      tr: 'Yedi ödeme planı tipi.'
-  - src: '/images/projects/bankaci/kredi-sonucu.webp'
+      en: "A loan result, ready to share or save as a PDF."
+      tr: "Kredi sonucu; paylaşmaya ya da PDF olarak kaydetmeye hazır."
+  - src: '/images/projects/bankaci/bank-rates-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'The result with taxes included, with Share and PDF buttons.'
-      tr: 'Vergiler dahil sonuç, Paylaş ve PDF düğmeleriyle.'
-  - src: '/images/projects/bankaci/talepler.webp'
+      en: "Loan rates by bank, each with a Calculate button."
+      tr: "Bankalara göre kredi oranları, her birinde Hesapla düğmesi."
+  - src: '/images/projects/bankaci/my-cards-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'Requests: one inbox for link, pool and campaign leads.'
-      tr: 'Talepler: link, havuz ve kampanya talepleri tek kutuda.'
-  - src: '/images/projects/bankaci/widget.webp'
+      en: "Credit cards: save your own cards and follow their campaigns."
+      tr: "Kredi kartları: kendi kartlarını kaydet, kampanyalarını takip et."
+  - src: '/images/projects/bankaci/funds-en.webp'
     width: 1206
     height: 2622
     caption:
-      en: 'Home screen widget.'
-      tr: 'Ana ekran widget’ı.'
+      en: "My investment funds, with an optional monthly price email."
+      tr: "Yatırım fonlarım ve isteğe bağlı aylık fiyat e-postası."
+  - src: '/images/projects/bankaci/requests-en.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Requests: link, pool and campaign leads in one inbox."
+      tr: "Talepler: link, havuz ve kampanya talepleri tek kutuda."
+  - src: '/images/projects/bankaci/loan-assistant-en.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "The Loan AI Assistant answers with a calculated recommendation."
+      tr: "Kredi AI Asistanı hesaplanmış bir öneriyle yanıt veriyor."
+  - src: '/images/projects/bankaci/investment-assistant-en.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "The Investment AI Assistant works out the net return on a term deposit."
+      tr: "Yatırım AI Asistanı vadeli mevduatın net getirisini hesaplıyor."
+  - src: '/images/projects/bankaci/widget-en.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Home screen widgets."
+      tr: "Ana ekran widget'ları."
+galleryTr:
+  - src: '/images/projects/bankaci/bankaci-app.jpg'
+    width: 1600
+    height: 1000
+    caption:
+      en: "bankaci.app home page."
+      tr: "bankaci.app ana sayfası."
+  - src: '/images/projects/bankaci/banka-oranlari.jpg'
+    width: 1600
+    height: 1000
+    caption:
+      en: "Rates the banks publish on their own sites, with source links."
+      tr: "Bankaların kendi sitelerinde yayımladığı oranlar, kaynak bağlantılarıyla."
+  - src: '/images/projects/bankaci/duo-tr.webp'
+    width: 1600
+    height: 1126
+    caption:
+      en: "On an unfolded iPhone Duo the app shows two columns."
+      tr: "iPhone Duo açıkken uygulama iki sütuna geçiyor."
+  - src: '/images/projects/bankaci/home-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Home: shortcuts, adding a widget and featured campaigns."
+      tr: "Ana sayfa: kısayollar, widget ekleme ve öne çıkan kampanyalar."
+  - src: '/images/projects/bankaci/payment-plans-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "A personal loan with its seven payment plan types."
+      tr: "Bireysel kredi ve yedi ödeme planı tipi."
+  - src: '/images/projects/bankaci/loan-result-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "A loan result, ready to share or save as a PDF."
+      tr: "Kredi sonucu; paylaşmaya ya da PDF olarak kaydetmeye hazır."
+  - src: '/images/projects/bankaci/bank-rates-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Loan rates by bank, each with a Calculate button."
+      tr: "Bankalara göre kredi oranları, her birinde Hesapla düğmesi."
+  - src: '/images/projects/bankaci/my-cards-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Credit cards: save your own cards and follow their campaigns."
+      tr: "Kredi kartları: kendi kartlarını kaydet, kampanyalarını takip et."
+  - src: '/images/projects/bankaci/funds-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "My investment funds, with an optional monthly price email."
+      tr: "Yatırım fonlarım ve isteğe bağlı aylık fiyat e-postası."
+  - src: '/images/projects/bankaci/requests-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Requests: link, pool and campaign leads in one inbox."
+      tr: "Talepler: link, havuz ve kampanya talepleri tek kutuda."
+  - src: '/images/projects/bankaci/loan-assistant-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "The Loan AI Assistant answers with a calculated recommendation."
+      tr: "Kredi AI Asistanı hesaplanmış bir öneriyle yanıt veriyor."
+  - src: '/images/projects/bankaci/investment-assistant-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "The Investment AI Assistant works out the net return on a term deposit."
+      tr: "Yatırım AI Asistanı vadeli mevduatın net getirisini hesaplıyor."
+  - src: '/images/projects/bankaci/widget-tr.webp'
+    width: 1206
+    height: 2622
+    caption:
+      en: "Home screen widgets."
+      tr: "Ana ekran widget'ları."
 contentTr: |
   <h2>Genel Bakış</h2>
-  <p>Bankacı, kredi hesaplayan bankacılar ve kredi arayanlar için bir uygulama. İkisi de aynı hesaplama motorunu kullanıyor. Müşteri görüşmesine hazır giren bankacı, sonucu tek dokunuşla müşterisine gönderiyor; kredi arayan ise imzadan önce ne ödeyeceğini biliyor.</p>
-  <p>Ürün dört parçadan oluşuyor: iOS ve Android uygulaması, bankaci.app, bankaci.app'teki web portalı ve kredi arayanla bankacıyı buluşturan KrediBul (kredibul.bankaci.app). Uygulama Şubat 2025'ten beri App Store'da.</p>
+  <p>Bankacı, kredi hesaplayan bankacılar ve kredi arayanlar için bir kredi hesaplama uygulaması olarak başladı; iki taraf da hâlâ aynı hesaplama motorunu kullanıyor. Bankacı müşteriyle görüşmeden önce krediyi hesaplayıp sonucu tek dokunuşla müşterisine gönderiyor, kredi arayan da imzadan önce taksiti ve toplam maliyeti görüyor. Uygulama artık kredi kartı, mevduat ve yatırımı da kapsıyor.</p>
+  <p>Ürün dört parçadan oluşuyor: iOS ve Android uygulaması, bankaci.app, bankaci.app'teki web portalı ve kredi arayanla bankacıyı buluşturan KrediBul (kredibul.bankaci.app). bankaci.app uygulamayı emlak ofislerine ve oto galerilere de öneriyor; onlar da müşteriyle konut ve taşıt kredisinin taksitini hesaplayabiliyor. Uygulama Şubat 2025'ten beri App Store'da, güncel iOS sürümü Kasım 2026'da çıkan 4.5.0.</p>
 
   <h2>Problem</h2>
-  <p>Şubede kredi hesabı çoğu zaman bankanın kendi ekranında yapılıyor. Farklı ödeme planlarını karşılaştırmak, yasal sınırları kontrol etmek ve sonucu müşteriye düzgün bir belgeyle göndermek ayrı ayrı iş. Kredi arayan tarafta ise taksit, vergiler ve toplam maliyet çoğu zaman imzaya kadar netleşmiyor.</p>
+  <p>Şubede kredi hesabı çoğu zaman bankanın kendi ekranında yapılıyor. Ödeme planlarını karşılaştırmak, yasal sınırları kontrol etmek ve sonucu müşteriye düzgün bir belgeyle göndermek ayrı ayrı iş. Kredi arayan tarafta taksit, vergiler ve toplam maliyet çoğu zaman imzaya kadar netleşmiyor. Oranlar, mevduat teklifleri ve kart kampanyaları da her bankanın kendi sitesine dağılmış durumda.</p>
 
   <h2>Neler Yapıyor</h2>
   <ul>
-    <li><strong>Sekiz hesaplayıcı:</strong> bireysel (ihtiyaç, taşıt, konut), ticari (taksitli, spot, rotatif, çek/senet iskonto), konut refinansmanı, taksitten hesaplama, KMH ve kredi kartı, mevduat, ara ödeme ve kapama, tasarruf finansmanı.</li>
+    <li><strong>Dokuz hesaplayıcı:</strong> bireysel (ihtiyaç, taşıt, konut), ticari (taksitli, spot, rotatif, çek/senet iskonto), konut refinansmanı, taksitten hesaplama, KMH ve kredi kartı, mevduat (vadeli ve günlük kazandıran hesap), ara ödeme ve kapama, tasarruf finansmanı, yatırım (eurobond, DİBS ve hazine bonosu, fon).</li>
     <li><strong>Yedi ödeme planı:</strong> standart, peşin faizli, eşit anaparalı, özel/balon, anapara ödemesiz dönemli, artan ve azalan taksitli. KKDF ve BSMV hesabın içinde.</li>
     <li><strong>Yasal sınırlar:</strong> BDDK'nın vade ve kredi/değer sınırları ile TCMB'nin azami KMH ve kredi kartı oranları hesapta görünüyor, her biri dayanağıyla birlikte.</li>
     <li><strong>Taşıt kredisinde kasko değeri:</strong> araç TSB kasko listesinden seçiliyor, yasal kredi ve vade sınırı aracın değerinden geliyor.</li>
-    <li><strong>Bankaların yayımladığı oranlar:</strong> bankaların kendi sayfaları haftada bir okunuyor, oranlar kaynağıyla gösteriliyor. Bir orana dokununca hesaplayıcı o oranla açılıyor, sonuç bankaların oranlarıyla karşılaştırılıyor.</li>
+    <li><strong>Bankaların yayımladığı oranlar:</strong> bankaların kredi ve mevduat sayfaları haftada bir okunuyor, oranlar ve teklifler kaynağıyla gösteriliyor. Birine dokununca hesaplayıcı o oranla açılıyor; kredi ve mevduat sonucu bankaların oranlarıyla karşılaştırılıyor.</li>
+    <li><strong>Kredi kartları ve kampanyalar:</strong> kart merkezinde bankaların kart kampanyaları ve kart kataloğu, arama ve filtreyle. Üye kullandığı kartları Kartlarım'a ekliyor (en çok 20 kart, kart numarası sorulmuyor), bu kartlara yeni kampanya gelince bildirim ya da e-postayla haber alabiliyor. Kart bölümü ücretsiz. Ana sayfada ayrıca öne çıkan banka kampanyaları var, başvurusu bankanın kendi sitesinde.</li>
+    <li><strong>Yatırım:</strong> yatırım hesaplayıcısı fon fiyatını TEFAS'tan, bono fiyatını TCMB'den kendisi dolduruyor. Premium üye fonlarını Yatırım fonlarım listesinde tutuyor ve bu fonlarla ilgili ayda bir e-posta alıyor.</li>
     <li><strong>PDF ve paylaşım:</strong> sonuç PDF ya da görsel olarak gönderiliyor. Bir bankacının gönderdiği PDF, talep linki ve QR koduyla bitiyor; link yoksa ve iletişim bilgisi eklendiyse WhatsApp QR'ıyla.</li>
     <li><strong>Bankacılar için:</strong> kalıcı bir talep linki; linkten, havuzdan ve kampanyalardan gelen taleplerin toplandığı tek bir gelen kutusu; KrediBul havuzu ve kendi kampanyalarını yayımlama.</li>
+    <li><strong>WhatsApp'tan aktarma:</strong> bankacı, müşterinin WhatsApp mesajını, fotoğrafını ya da PDF'ini Paylaş menüsünden Bankacı'ya gönderiyor. Kimlik, vergi ve telefon numarası, IBAN ve kart numarası telefonda maskeleniyor; mesaj bir kez okunuyor ve ilgili hesaplayıcı doldurulmuş olarak açılıyor.</li>
+    <li><strong>Belge kontrol:</strong> Premium bankacı, talepte gelen ya da kendi yüklediği belgeleri değişiklik izlerine karşı kontrol ettirebiliyor. Sonuç bankacının kararına yardımcı olmak için var, kararı yine bankacı veriyor.</li>
     <li><strong>Kredi arayanlar için:</strong> KrediBul'a tek talep bırakma ve bankacıların kampanyalarına başvurma.</li>
-    <li><strong>AI Asistan:</strong> durum bir cümleyle anlatılıyor, asistan doğru hesaplayıcıyı ve plan yapısını öneriyor. Rakamların hepsi uygulamanın kendi hesaplama motorundan geliyor, modelden değil.</li>
+    <li><strong>İki AI asistan:</strong> Kredi AI Asistan'a durum bir cümleyle anlatılıyor, asistan doğru hesaplayıcıyı ve plan yapısını öneriyor. Yatırım AI Asistan bir tutar ve süre için vadeli mevduatı, günlük kazandıran hesabı, hazine bonosunu, fonu ve eurobondu yan yana koyuyor; öneri ya da tahmin yapmıyor. İkisinde de rakamları uygulamanın kendi hesaplama motoru üretiyor.</li>
     <li><strong>Siri:</strong> "Bankacı ile kredi hesapla" deyince Siri tutarı, vadeyi ve faizi soruyor, aylık taksiti ve toplam geri ödemeyi söylüyor (iOS 17 ve üstü).</li>
-    <li><strong>Ana ekran widget'ı</strong> iOS ve Android'de, <strong>haftalık faiz oranları e-postası</strong>, bildirimler, Türkçe ve İngilizce.</li>
-    <li><strong>Premium:</strong> aylık, yıllık ve ömür boyu paketler; aylık ve yıllıkta 7 gün ücretsiz deneme.</li>
+    <li><strong>Widget ve bildirimler:</strong> iOS ve Android'de ana ekran widget'ı, haftalık faiz oranları e-postası ve bildirimler. Uygulama Türkçe ve İngilizce.</li>
+    <li><strong>Premium:</strong> aylık, yıllık ve ömür boyu paketler; aylık ve yıllıkta 7 gün ücretsiz deneme. Davet kampanyasında üç arkadaşını getiren üye üç ay Premium kazanıyor.</li>
   </ul>
 
   <h2>Teknik Yapı</h2>
   <ul>
-    <li><strong>Mobil:</strong> Expo, React Native ve TypeScript. Siri için Swift App Intents, iOS widget'ı için WidgetKit ve SwiftUI, Android widget'ı ve uygulama içi güncelleme için Kotlin. Hesaplamalar Jest testleriyle korunuyor.</li>
-    <li><strong>Tek hesaplama motoru:</strong> TypeScript'le yazılmış hesaplama kodu uygulamada ve web portalında aynı; bu yüzden ikisi de aynı rakamı veriyor. Siri de Swift'te ayrı bir kopya yerine bu motoru JavaScriptCore içinde çalıştırıyor.</li>
+    <li><strong>Mobil:</strong> Expo, React Native ve TypeScript. Siri için Swift App Intents, iOS widget'ı için WidgetKit ve SwiftUI, Android widget'ı ve uygulama içi güncelleme için Kotlin. WhatsApp'tan paylaşılanlar iOS'ta bir paylaşım uzantısıyla, Android'de paylaşım intent'iyle geliyor. iPhone Duo açıkken uygulama iki sütuna geçiyor: Ana Sayfa solda, açılan sayfa sağda. Hesaplamalar Jest testleriyle korunuyor.</li>
+    <li><strong>Tek hesaplama motoru:</strong> TypeScript'le yazılmış hesaplama kodu uygulamada ve web portalında aynı, bu yüzden ikisi de aynı rakamı veriyor. Siri de Swift'te ayrı bir kopya yerine bu motoru JavaScriptCore içinde çalıştırıyor.</li>
     <li><strong>Backend:</strong> Go, HTTP için yalnızca standart kütüphane (net/http) ve PostgreSQL (Neon). Giriş e-posta koduyla.</li>
     <li><strong>Web:</strong> bankaci.app ve KrediBul Next.js ile yazıldı, sayfalar sunucuda render ediliyor. Her sayfa Türkçe ve İngilizce; yapılandırılmış veri, sitemap ve llms.txt var. Web portalı ise React ve Vite ile yazıldı.</li>
     <li><strong>Altyapı:</strong> Google Cloud Run, Cloud Build (test ve canlı ayrı ortam), Cloud Scheduler, her gün doğrulanan veritabanı yedeği.</li>
-    <li><strong>Banka oranlarını okuma:</strong> sayfa metni OpenAI'a katı bir JSON şemasıyla gönderiliyor; oranı JavaScript ile çizen sayfalar için ayrı bir headless Chromium servisi var.</li>
+    <li><strong>Yapay zekâ:</strong> iki asistan, banka kredi ve mevduat sayfalarının haftalık okuması, WhatsApp okuması ve Belge kontrol Anthropic'in Claude modeliyle çalışıyor. Sayfa metni Claude'a katı bir JSON şemasıyla gidiyor; oranı JavaScript ile çizen sayfalar için ayrı bir headless Chromium servisi var. Mevduat okumasında onaylı sürümden farklı çıkan okuma, ben onaylayana kadar yayına çıkmıyor.</li>
     <li><strong>Diğer:</strong> abonelik için RevenueCat, bildirimler için Expo Push, e-posta için Resend, reklam için AdMob.</li>
-    <li><strong>Gizlilik:</strong> hesaplama cihazda yapılıyor. Analitik hesaba bağlanmıyor; ad, telefon ya da e-posta içermiyor.</li>
+    <li><strong>Gizlilik:</strong> hesaplama cihazda yapılıyor. Hesaplama kayıtları ad, telefon ya da e-posta taşımıyor. Giriş yapmış üyenin uygulama açılışları ve kullanım sayıları yalnız analitik için hesabıyla birlikte tutuluyor. Asistana yazılan ve WhatsApp'tan okunan metinde kimlik ve vergi numarası, telefon, IBAN, kart numarası ve e-posta önceden maskeleniyor.</li>
   </ul>
 
   <h2>Benim Rolüm</h2>
@@ -133,38 +241,42 @@ contentTr: |
 ---
 
 <h2>Overview</h2>
-<p>Bankacı is an app for bankers who price loans and for people looking for one. Both run on the same calculation engine. The banker walks into the meeting prepared and sends the result to the customer in one tap; the borrower knows what they will pay before they sign.</p>
-<p>The product has four parts: the iOS and Android app, bankaci.app, a web portal on bankaci.app, and KrediBul (kredibul.bankaci.app), which connects borrowers with bankers. The app has been on the App Store since February 2025.</p>
+<p>Bankacı started as a loan calculator for bankers who price loans and for people looking for one, and both still use the same calculation engine. A banker works out the loan before the meeting and sends the result to the customer in one tap; the borrower sees the instalment and the total cost before signing. The app now covers credit cards, deposits and investments as well.</p>
+<p>The product has four parts: the iOS and Android app, bankaci.app, a web portal on bankaci.app, and KrediBul (kredibul.bankaci.app), which connects borrowers with bankers. bankaci.app also offers the app to estate agencies and car dealerships, so they can work out housing and vehicle loan instalments with their customers. The app has been on the App Store since February 2025, and the current iOS version is 4.5.0, released in November 2026.</p>
 
 <h2>Problem</h2>
-<p>In a branch, loan figures are usually worked out on the bank's own screen. Comparing payment plans, checking the legal limits and sending the customer a proper document are separate jobs. On the borrower's side, the instalment, the taxes and the total cost often stay unclear until the signature.</p>
+<p>In a branch, loan figures are usually worked out on the bank's own screen. Comparing payment plans, checking the legal limits and sending the customer a proper document are separate jobs. On the borrower's side, the instalment, the taxes and the total cost often stay unclear until the signature. Rates, deposit offers and card campaigns are spread across each bank's own site.</p>
 
 <h2>What It Does</h2>
 <ul>
-  <li><strong>Eight calculators:</strong> personal (consumer, vehicle, housing), business (instalment, spot, revolving, cheque and bill discounting), mortgage refinancing, how much you can borrow for a given instalment, overdraft and credit card, deposit, early repayment, and savings finance.</li>
+  <li><strong>Nine calculators:</strong> personal (consumer, vehicle, housing), business (instalment, spot, revolving, cheque and bill discounting), mortgage refinancing, how much you can borrow for a given instalment, overdraft and credit card, deposit (term deposit and daily-earning account), early repayment, savings finance, and investment (eurobonds, government bonds and T-bills, funds).</li>
   <li><strong>Seven payment plans:</strong> standard, prepaid interest, equal principal, custom/balloon, grace period, increasing and decreasing instalments. KKDF and BSMV taxes are included.</li>
   <li><strong>Legal limits:</strong> the banking regulator's (BDDK) term and loan-to-value limits and the central bank's (TCMB) maximum overdraft and credit card rates appear in the calculation, each with its legal basis.</li>
   <li><strong>Car value for vehicle loans:</strong> the car is picked from the TSB kasko (insurance value) list, and the legal loan and term limits follow from its value.</li>
-  <li><strong>Rates the banks publish:</strong> the banks' own pages are read once a week and the rates are shown with their source. Tapping a rate opens the calculator with it, and a result is compared with the banks' rates.</li>
+  <li><strong>Rates the banks publish:</strong> the banks' loan and deposit pages are read once a week, and the rates and offers are shown with their source. Tapping one opens the calculator with that rate, and loan and deposit results are compared with the banks' rates.</li>
+  <li><strong>Credit cards and campaigns:</strong> a card center lists the banks' card campaigns and a card catalog, with search and filters. Members add the cards they use to My cards (up to 20, no card number asked) and can get a notification or an email when those cards have new campaigns. The card section is free. The home screen also shows featured bank campaigns, which you apply for on the bank's own site.</li>
+  <li><strong>Investments:</strong> the investment calculator fills in fund prices from TEFAS and bond prices from TCMB. Premium members keep their funds in My funds and get a monthly email about them.</li>
   <li><strong>PDF and sharing:</strong> results go out as a PDF or an image. A banker's PDF ends with their request link and QR code; without a link, and with contact details added, it ends with a WhatsApp QR.</li>
   <li><strong>For bankers:</strong> a permanent request link; one inbox for leads from the link, the pool and campaigns; the KrediBul pool; and publishing their own campaigns.</li>
+  <li><strong>WhatsApp import:</strong> a banker shares a customer's WhatsApp messages, photos or PDFs to Bankacı. ID, tax and phone numbers, IBANs and card numbers are masked on the phone, the message is read once, and the matching calculator opens already filled in.</li>
+  <li><strong>Document check:</strong> Premium bankers can have the documents that came with a request, or ones they upload, checked for signs of editing. The result is there to help the banker decide; the decision stays with them.</li>
   <li><strong>For borrowers:</strong> one request on KrediBul and applications to bankers' campaigns.</li>
-  <li><strong>AI Assistant:</strong> describe the case in a sentence and the assistant suggests the right calculator and plan. Every number comes from the app's own calculation engine, not from the model.</li>
+  <li><strong>Two AI assistants:</strong> describe the case to the Loan AI Assistant in a sentence and it suggests the right calculator and plan. The Investment AI Assistant puts a term deposit, a daily-earning account, T-bills, funds and eurobonds side by side for an amount and a period, and makes no recommendations or forecasts. In both, the numbers come from the app's own calculation engine.</li>
   <li><strong>Siri:</strong> say "Calculate a loan with Bankacı" (in Turkish, "Bankacı ile kredi hesapla") and Siri asks for the amount, term and rate, then reads out the monthly instalment and the total repayment (iOS 17 and later).</li>
-  <li><strong>Home screen widget</strong> on iOS and Android, a <strong>weekly rates email</strong>, notifications, Turkish and English.</li>
-  <li><strong>Premium:</strong> monthly, yearly and lifetime plans, with a 7-day free trial on monthly and yearly.</li>
+  <li><strong>Widget and notifications:</strong> a home screen widget on iOS and Android, a weekly rates email and notifications. The app is in Turkish and English.</li>
+  <li><strong>Premium:</strong> monthly, yearly and lifetime plans, with a 7-day free trial on monthly and yearly. A member who brings in three friends gets three months of Premium.</li>
 </ul>
 
 <h2>Technical Highlights</h2>
 <ul>
-  <li><strong>Mobile:</strong> Expo, React Native and TypeScript. Swift App Intents for Siri, WidgetKit and SwiftUI for the iOS widget, Kotlin for the Android widget and in-app updates. The calculations are covered by Jest tests.</li>
+  <li><strong>Mobile:</strong> Expo, React Native and TypeScript. Swift App Intents for Siri, WidgetKit and SwiftUI for the iOS widget, Kotlin for the Android widget and in-app updates. Shares from WhatsApp arrive through a share extension on iOS and a share intent on Android. On an unfolded iPhone Duo the app switches to two columns, with Home on the left and the open page on the right. The calculations are covered by Jest tests.</li>
   <li><strong>One calculation engine:</strong> the TypeScript calculation code is the same in the app and the web portal, so both give the same numbers. Siri runs the same engine inside JavaScriptCore instead of a Swift copy.</li>
   <li><strong>Backend:</strong> Go with only the standard library's net/http for HTTP, and PostgreSQL (Neon). Sign-in with an email code.</li>
   <li><strong>Web:</strong> bankaci.app and KrediBul are server-rendered Next.js. Every page exists in Turkish and English, with structured data, a sitemap and llms.txt. The web portal is React with Vite.</li>
   <li><strong>Infrastructure:</strong> Google Cloud Run, Cloud Build with separate test and production environments, Cloud Scheduler, and a database backup that is restored and checked every day.</li>
-  <li><strong>Reading bank rates:</strong> page text goes to OpenAI with a strict JSON schema; pages that draw their rates with JavaScript go through a separate headless Chromium service.</li>
+  <li><strong>AI:</strong> Anthropic's Claude runs both assistants, the weekly reading of the banks' loan and deposit pages, WhatsApp import and Document check. Page text goes to Claude with a strict JSON schema; pages that draw their rates with JavaScript go through a separate headless Chromium service. A deposit reading that differs from the approved version waits for my approval before it goes live.</li>
   <li><strong>Other services:</strong> RevenueCat for subscriptions, Expo Push for notifications, Resend for email, AdMob for ads.</li>
-  <li><strong>Privacy:</strong> calculations run on the device. Analytics are not tied to the account and carry no name, phone number or email.</li>
+  <li><strong>Privacy:</strong> calculations run on the device. Calculation events carry no name, phone number or email. For signed-in members, app opens and usage counts are kept with the account, for analytics only. Text typed to the assistants or read from WhatsApp has ID and tax numbers, phone numbers, IBANs, card numbers and emails masked before it is sent.</li>
 </ul>
 
 <h2>My Role</h2>

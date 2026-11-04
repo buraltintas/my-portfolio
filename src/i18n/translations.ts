@@ -14,7 +14,7 @@ const translations = {
     'hero.subtitle.before': 'Frontend Developer at',
     'hero.subtitle.middle': ' and founder of ',
     'hero.subtitle.after':
-      '. I build web and mobile apps with React, React Native, and Next.js — from backend to App Store.',
+      '. I build web and mobile apps with React, React Native and Next.js, from the backend to the App Store.',
     'hero.cta.projects': 'View Projects',
     'hero.cta.contact': 'Contact Me',
     'hero.cta.cv': 'Download CV',
@@ -28,7 +28,7 @@ const translations = {
 
     // Selected Work
     'selectedWork.title': 'Selected Works',
-    'selectedWork.subtitle': 'Product-focused web and mobile projects I have built from idea to production.',
+    'selectedWork.subtitle': 'Web and mobile products I have taken from idea to production.',
     'selectedWork.viewAll': 'View All Projects',
 
     // About
@@ -53,7 +53,7 @@ const translations = {
     // Contact
     'contact.title': 'Get In Touch',
     'contact.subtitle':
-      'I enjoy being involved in the development of useful products. You can contact me!',
+      'I enjoy building useful products. Write to me if you have one in mind.',
 
     // Projects page
     'projects.title': 'All Projects',
@@ -68,6 +68,8 @@ const translations = {
     'projects.backAll': 'All Projects',
     'projects.discontinued': 'Discontinued',
     'projects.discontinuedNote': 'This product was shut down because I was too busy to keep supporting it. The screenshots below show it as it was.',
+    'projects.upcoming': 'Coming soon',
+    'projects.upcomingNote': 'This product is in development and not released yet.',
     'projects.gallery': 'Screenshots',
     'projects.gallery.enlarge': 'Enlarge',
     'projects.gallery.count': 'images, click to enlarge',
@@ -108,7 +110,7 @@ const translations = {
     'hero.subtitle.before': '',
     'hero.subtitle.middle': "'da Frontend Developer ve ",
     'hero.subtitle.after':
-      "'nın kurucusu. React, React Native ve Next.js ile kullanıcı odaklı web ve mobil uygulamalar geliştiriyorum — backend'den App Store'a kadar.",
+      "'nın kurucusu. React, React Native ve Next.js ile web ve mobil uygulamalar geliştiriyorum; backend'den App Store'a kadar.",
     'hero.cta.projects': 'Projeleri Gör',
     'hero.cta.contact': 'İletişime Geç',
     'hero.cta.cv': 'CV İndir',
@@ -147,7 +149,7 @@ const translations = {
     // Contact
     'contact.title': 'İletişime Geç',
     'contact.subtitle':
-      'Kullanışlı ürünlerin geliştirilmesinde yer almaktan keyif alıyorum. Benimle iletişime geçebilirsiniz!',
+      'İşe yarayan ürünler geliştirmeyi seviyorum. Aklınızda bir ürün varsa bana yazın.',
 
     // Projects page
     'projects.title': 'Tüm Projeler',
@@ -162,6 +164,8 @@ const translations = {
     'projects.backAll': 'Tüm Projeler',
     'projects.discontinued': 'Kapatıldı',
     'projects.discontinuedNote': 'Bu ürün, yoğunluk sebebiyle destek veremediğim için kapatıldı. Aşağıdaki ekran görüntüleri yayındayken nasıl göründüğünü gösteriyor.',
+    'projects.upcoming': 'Yakında',
+    'projects.upcomingNote': 'Bu ürün geliştiriliyor, henüz yayınlanmadı.',
     'projects.gallery': 'Ekran görüntüleri',
     'projects.gallery.enlarge': 'Büyüt',
     'projects.gallery.count': 'görsel, büyütmek için tıkla',

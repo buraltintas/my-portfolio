@@ -42,6 +42,7 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
   const { locale, t, path } = useLocale()
   const raw = locale === 'tr' && project.contentTr ? project.contentTr : project.content
   const discontinued = project.status === 'discontinued'
+  const upcoming = project.status === 'upcoming'
   const { html, headings } = useMemo(() => withHeadingIds(raw ?? ''), [raw])
   const kinds = projectKinds(project)
   const hasGallery = project.gallery.length > 0
@@ -106,11 +107,13 @@ export function ProjectDetail({ project, related }: ProjectDetailProps) {
               {project.title[locale]}
             </h1>
             {discontinued && <DiscontinuedBadge label={t('projects.discontinued')} />}
+            {upcoming && <DiscontinuedBadge tone="accent" label={t('projects.upcoming')} />}
           </div>
           <p className="max-w-[620px] text-[clamp(18px,2vw,21px)] leading-[1.55] text-slate-300 [text-wrap:pretty]">
             {project.description[locale]}
           </p>
           {discontinued && <p className="max-w-[620px] text-[15px] text-slate-400">{t('projects.discontinuedNote')}</p>}
+          {upcoming && <p className="max-w-[620px] text-[15px] text-slate-400">{t('projects.upcomingNote')}</p>}
           <ProjectLinks project={project} variant="button" primaryFirst className="pt-1.5" />
         </div>
         {meta.length > 0 && (

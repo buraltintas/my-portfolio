@@ -12,8 +12,8 @@ const copy = {
     tr: 'Burak Altıntaş Projeleri — Web ve Mobil Uygulamalar',
   },
   description: {
-    en: 'Web and mobile projects by Burak Altıntaş: Bankacı, Boşa Gezme!, Coffee Dictionary, MarketMatik, BootChat and more, built with React, React Native, Next.js and Go.',
-    tr: "Burak Altıntaş'ın web ve mobil projeleri: Bankacı, Boşa Gezme!, Coffee Dictionary, MarketMatik, BootChat ve dahası; React, React Native, Next.js ve Go ile geliştirildi.",
+    en: 'Web and mobile projects by Burak Altıntaş: Bankacı, Coffee Dictionary, Boşa Gezme!, Casamiyo, Notanica and more, built with React, React Native, Next.js and Go.',
+    tr: "Burak Altıntaş'ın web ve mobil projeleri: Bankacı, Coffee Dictionary, Boşa Gezme!, Casamiyo, Notanica ve dahası; React, React Native, Next.js ve Go ile geliştirildi.",
   },
 }
 

@@ -18,7 +18,10 @@ interface ProjectLink {
 // GitHub); the longer "Open the iOS version" follows for screen readers.
 export function useProjectLinks(project: Linkable): ProjectLink[] {
   const { t } = useLocale()
-  if (project.status === 'discontinued') return []
+  // A closed product keeps only its source code link.
+  if (project.status === 'discontinued') {
+    return project.githubUrl ? [{ key: 'github', href: project.githubUrl, label: 'GitHub', aria: t('projects.github') }] : []
+  }
   const { web, ios, android } = project.platformUrls
   const links: ProjectLink[] = []
   if (web && isChromeExtension(web)) {

@@ -45,6 +45,9 @@ export function ProjectCard({ project, headingLevel = 3 }: ProjectCardProps) {
         {project.status === 'discontinued' && (
           <DiscontinuedBadge className="absolute left-3 top-3" label={t('projects.discontinued')} />
         )}
+        {project.status === 'upcoming' && (
+          <DiscontinuedBadge className="absolute left-3 top-3" tone="accent" label={t('projects.upcoming')} />
+        )}
       </Link>
       <div className="flex items-baseline justify-between gap-3">
         <Heading className="text-[19px] font-semibold leading-snug text-slate-50">

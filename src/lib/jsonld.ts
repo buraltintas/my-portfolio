@@ -173,7 +173,7 @@ export function projectsGraph(locale: Locale, title: string, description: string
 // additionalType still says what kind of software it is.
 function projectNode(project: Project, locale: Locale): Node {
   const { web, ios, android } = project.platformUrls
-  const live = project.status !== 'discontinued'
+  const live = project.status === 'live'
   const extension = isChromeExtension(web)
   // A project with no app or site of its own is its source repository.
   const repoOnly = !web && !ios && !android && !!project.githubUrl
@@ -200,7 +200,7 @@ function projectNode(project: Project, locale: Locale): Node {
     ...(live && listings.length ? { sameAs: listings } : {}),
     ...(project.released ? { datePublished: project.released } : {}),
     keywords: project.tech.join(', '),
-    creativeWorkStatus: live ? 'Published' : 'Discontinued',
+    creativeWorkStatus: live ? 'Published' : project.status === 'upcoming' ? 'Incomplete' : 'Discontinued',
     author: ref(ids.person),
     creator: ref(ids.person),
     ...(bankaci ? { publisher: ref(ids.bankaci) } : {}),

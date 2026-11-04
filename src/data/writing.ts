@@ -35,8 +35,8 @@ export const articles: Article[] = [
     url: 'https://blog.simprasuite.com/timezone-terror-the-case-for-a-js-date-library-759cc7e92b2c',
     date: '2025-12-24',
     summary: {
-      en: 'What browsers actually do with JavaScript dates, why timezones are behind so many booking and location bugs, and why a library like Luxon is often the cleanest way out.',
-      tr: "Tarayıcıların JavaScript tarihleriyle aslında ne yaptığı, rezervasyon ve konum hatalarının çoğunun arkasında neden saat dilimlerinin olduğu ve Luxon gibi bir kütüphanenin neden çoğu zaman en temiz çözüm olduğu.",
+      en: 'What browsers do with JavaScript dates, why timezones are behind so many booking and location bugs, and why a library like Luxon is often the cleanest way out.',
+      tr: "Tarayıcıların JavaScript tarihleriyle ne yaptığı, rezervasyon ve konum hatalarının çoğunun arkasında neden saat dilimlerinin olduğu ve Luxon gibi bir kütüphanenin neden çoğu zaman en temiz çözüm olduğu.",
     },
     topics: ['JavaScript', 'Dates', 'Luxon'],
   },

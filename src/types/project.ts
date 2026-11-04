@@ -16,7 +16,8 @@ export interface ProjectImage {
   caption: LocaleString
 }
 
-export type ProjectStatus = 'live' | 'discontinued'
+/** upcoming: in development and not released yet. */
+export type ProjectStatus = 'live' | 'discontinued' | 'upcoming'
 
 export interface Project {
   title: LocaleString

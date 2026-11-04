@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from '@/i18n/useLocale'
 import { ProjectLinks } from '@/components/projects/ProjectLinks'
+import { DiscontinuedBadge } from '@/components/projects/DiscontinuedBadge'
 import type { ProjectCardData } from '@/types'
 
 interface ProjectSpotlightProps {
@@ -25,6 +26,9 @@ export function ProjectSpotlight({ project }: ProjectSpotlightProps) {
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 560px"
         />
+        {project.status === 'upcoming' && (
+          <DiscontinuedBadge className="absolute left-3 top-3" tone="accent" label={t('projects.upcoming')} />
+        )}
       </Link>
       <div className="flex flex-col gap-3.5 p-[clamp(22px,3vw,36px)]">
         <h3 className="text-[32px] font-bold leading-[1.1] tracking-[-0.015em] text-slate-50">

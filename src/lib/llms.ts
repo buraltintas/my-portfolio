@@ -44,7 +44,7 @@ export function llmsTxt(): string {
     const facts = [
       projectKinds(p) && `Platforms: ${projectKinds(p)}.`,
       p.tech.length && `Stack: ${p.tech.join(', ')}.`,
-      p.status === 'discontinued' ? 'Status: discontinued.' : null,
+      p.status === 'discontinued' ? 'Status: discontinued.' : p.status === 'upcoming' ? 'Status: in development, not released yet.' : null,
     ].filter(Boolean)
     lines.push(`- [${p.title.en}](${pageUrl('en', `/projects/${p.slug}`)}): ${p.description.en} ${facts.join(' ')}`.trim())
   }

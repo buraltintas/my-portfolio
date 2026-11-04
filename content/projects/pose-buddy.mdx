@@ -3,8 +3,8 @@ title:
   en: 'Pose Buddy'
   tr: 'Pose Buddy'
 description:
-  en: "A mobile puzzle game where players drag a stickman's joints to match target pose cards."
-  tr: "Oyuncuların bir çöp adamın eklemlerini sürükleyerek hedef poz kartlarını eşleştirdiği mobil bulmaca oyunu."
+  en: "An iOS puzzle game in six languages where players drag a stickman's joints to match target pose cards."
+  tr: "Oyuncuların bir çöp adamın eklemlerini sürükleyerek hedef poz kartlarını eşleştirdiği, altı dilde iOS bulmaca oyunu."
 seoTitle:
   en: 'Pose Buddy — Stickman Pose Puzzle Game for iOS'
   tr: 'Pose Buddy — iOS Poz Eşleştirme Bulmaca Oyunu'
@@ -16,28 +16,30 @@ slug: 'pose-buddy'
 image: '/images/projects/pose-buddy.webp'
 platformUrls:
   ios: 'https://apps.apple.com/app/pose-buddy/id6761292880'
-githubUrl: ''
+githubUrl: 'https://github.com/buraltintas/pose-buddy'
 tech:
   [
     'Phaser',
     'TypeScript',
     'Capacitor',
+    'AdMob',
     'Mobile Game',
     'iOS',
     'Game Design',
   ]
 featured: true
-order: 7
+order: 9
 ---
 
 <h2>Overview</h2>
-<p>Pose Buddy is a portrait-first mobile puzzle game prototype built with Phaser, TypeScript, and Capacitor. Players adjust a 9-joint stickman to match target pose cards, with similarity scoring, level progression, and a mobile-first touch interaction model.</p>
+<p>Pose Buddy is a portrait-first puzzle game for iPhone, built with Phaser, TypeScript and Capacitor. Version 1.0 has been on the App Store since March 28, 2026. Players move a stickman with nine joints to match a target pose card, and the game scores how close they get.</p>
 
 <h2>Problem</h2>
-<p>The goal was to create a fast, touch-focused pose-matching experience on mobile.</p>
+<p>I wanted a pose-matching game that felt quick and natural with touch controls on a phone.</p>
 
 <h2>Solution</h2>
-<p>Players adjust the 9-joint stickman's pose to match the target cards, earning points and advancing through levels.</p>
+<p>Each level shows a target card. Players drag the stickman's joints until the shapes match, get a similarity score and unlock the next level. The History gallery lists solved levels with their best scores and lets players replay them, and the Pose Library shows the target poses as silhouettes.</p>
+<p>The game is available in English, Turkish, German, Spanish, French and Portuguese. Optional reminder notifications are scheduled locally on the phone and are off by default. AdMob interstitial ads show only after a finished level, never during play.</p>
 
 <h2>My Role</h2>
 <ul>
@@ -51,7 +53,10 @@ order: 7
 <ul>
   <li>Pose matching</li>
   <li>Similarity scoring</li>
-  <li>Level progression</li>
+  <li>Level progression and level select</li>
+  <li>History gallery of solved levels and a Pose Library</li>
+  <li>Six languages: EN, TR, DE, ES, FR, PT</li>
+  <li>Optional local reminder notifications</li>
   <li>Mobile-first controls</li>
 </ul>
 
@@ -60,21 +65,24 @@ order: 7
   <li>Phaser</li>
   <li>TypeScript</li>
   <li>Capacitor</li>
+  <li>AdMob interstitial ads</li>
+  <li>Local notifications</li>
   <li>iOS distribution</li>
 </ul>
 
 <h2>Why It Matters</h2>
-<p>Pose Buddy demonstrates a compact mobile game loop with clear interaction feedback.</p>
+<p>Pose Buddy took a small game loop all the way to the App Store, with clear feedback on every drag.</p>
 
 contentTr: |
   <h2>Genel Bakış</h2>
-  <p>Pose Buddy, Phaser, TypeScript ve Capacitor ile geliştirilen dikey öncelikli bir mobil bulmaca prototipidir.</p>
+  <p>Pose Buddy, Phaser, TypeScript ve Capacitor ile geliştirilen, dikey ekran öncelikli bir iPhone bulmaca oyunudur. 1.0 sürümü 28 Mart 2026'dan beri App Store'da. Oyuncular dokuz eklemli bir çöp adamı hedef poz kartına uyacak şekilde ayarlar, oyun da ne kadar yaklaştıklarını puanlar.</p>
 
   <h2>Problem</h2>
-  <p>Mobilde hızlı ve dokunmatik odaklı bir poz eşleştirme deneyimi oluşturmak gerekiyordu.</p>
+  <p>Telefonda dokunmatik kontrollerle hızlı ve doğal hissettiren bir poz eşleştirme oyunu yapmak istedim.</p>
 
   <h2>Çözüm</h2>
-  <p>Oyuncular 9 eklemli stickman&apos;in pozunu hedef kartlara göre ayarlayarak puan toplar ve seviyeleri ilerletir.</p>
+  <p>Her seviyede bir hedef kart çıkar. Oyuncu çöp adamın eklemlerini sürükleyerek şekli eşleştirir, benzerlik puanı alır ve sonraki seviyeyi açar. Geçmiş galerisi çözülen seviyeleri en iyi puanlarıyla listeler ve yeniden oynatır; Poz Kütüphanesi de hedef pozları siluet olarak gösterir.</p>
+  <p>Oyun İngilizce, Türkçe, Almanca, İspanyolca, Fransızca ve Portekizce oynanabilir. İsteğe bağlı hatırlatma bildirimleri telefonda yerel olarak planlanır ve varsayılan olarak kapalıdır. AdMob geçiş reklamları yalnızca bir seviye bittikten sonra çıkar, oyun sırasında çıkmaz.</p>
 
   <h2>Benim Rolüm</h2>
   <ul>
@@ -88,7 +96,10 @@ contentTr: |
   <ul>
     <li>Poz eşleştirme</li>
     <li>Benzerlik puanlaması</li>
-    <li>Seviye ilerlemesi</li>
+    <li>Seviye ilerlemesi ve seviye seçimi</li>
+    <li>Çözülen seviyeler için Geçmiş galerisi ve Poz Kütüphanesi</li>
+    <li>Altı dil: EN, TR, DE, ES, FR, PT</li>
+    <li>İsteğe bağlı yerel hatırlatma bildirimleri</li>
     <li>Mobil öncelikli kontroller</li>
   </ul>
 
@@ -97,11 +108,13 @@ contentTr: |
     <li>Phaser</li>
     <li>TypeScript</li>
     <li>Capacitor</li>
+    <li>AdMob geçiş reklamları</li>
+    <li>Yerel bildirimler</li>
     <li>iOS dağıtımı</li>
   </ul>
 
   <h2>Neden Önemli</h2>
-  <p>Pose Buddy, anlaşılır etkileşim geri bildirimleriyle derli toplu bir mobil oyun döngüsü ortaya koyar.</p>
+  <p>Pose Buddy, küçük bir oyun döngüsünü App Store'a kadar taşıdı; her sürüklemede net bir geri bildirim verir.</p>
 
   <h2>Bağlantılar</h2>
   <ul>

@@ -3,38 +3,38 @@ title:
   en: 'Voting App'
   tr: 'Oylama Uygulaması'
 description:
-  en: 'You can start a poll with up to 6 options and share the voting link with voters. You can watch the votes live.'
-  tr: 'Bir oylama başlatıp oy verecek kişilere link gönderebilir ve oylamayı canlı izleyebilirsiniz.'
+  en: 'Start a poll with up to 6 options, share the voting link with voters and watch the votes come in live.'
+  tr: 'Bir oylama başlatıp oy verecek kişilere link gönderebilir ve oyları canlı izleyebilirsiniz.'
 seoTitle:
   en: 'Voting App — Create a Poll & See Live Results'
   tr: 'Oylama Uygulaması — Canlı Sonuçlu Anket Aracı'
 seoDescription:
-  en: 'Voting App is a real-time polling web app built by Burak Altıntaş with React and Firebase. Polls have up to 6 options, a shareable link and live results.'
-  tr: "Oylama Uygulaması, Burak Altıntaş'ın React ve Firebase ile geliştirdiği bir anket aracı: en fazla 6 seçenek eklenir, link paylaşılır, sonuçlar canlı izlenir."
+  en: 'Voting App is a real-time polling web app built by Burak Altıntaş with Next.js and Cloud Firestore. Polls have up to 6 options, a shareable link and live results.'
+  tr: "Oylama Uygulaması, Burak Altıntaş'ın Next.js ve Cloud Firestore ile geliştirdiği anket aracı: en fazla 6 seçenek eklenir, link paylaşılır, sonuçlar canlı izlenir."
 slug: 'voting-app'
 image: '/images/projects/voting-app.webp'
 platformUrls:
   web: 'https://vote-for-me.netlify.app/'
 githubUrl: 'https://github.com/buraltintas/voting-app'
-tech: ['React', 'Firebase', 'Real-time DB']
+tech: ['Next.js', 'React', 'Firebase', 'Cloud Firestore']
 featured: false
-order: 7
+order: 13
 ---
 
 <h2>Overview</h2>
-<p>Voting App is a small polling tool that lets users create a vote, share the link, and watch results update live.</p>
+<p>Voting App is a small polling tool: create a vote, share the link and watch the results update live.</p>
 
 <h2>Problem</h2>
-<p>Teams and groups often need a quick way to run polls without dealing with heavy survey software or onboarding steps.</p>
+<p>Teams and groups often need a quick poll without heavy survey software or a sign-up step.</p>
 
 <h2>Solution</h2>
-<p>Voting App lets users create up to six options, share a voting link, and follow the results in real time.</p>
+<p>Users create a poll with up to six options and share its voting link. Votes are stored in Cloud Firestore, and the results page listens to them with <code>onSnapshot</code>, so the counts change as people vote.</p>
 
 <h2>My Role</h2>
 <ul>
   <li>Product idea and UX direction</li>
-  <li>React frontend development</li>
-  <li>Firebase data setup</li>
+  <li>Next.js frontend development</li>
+  <li>Cloud Firestore data setup</li>
   <li>Live results flow implementation</li>
 </ul>
 
@@ -48,30 +48,30 @@ order: 7
 
 <h2>Technical Highlights</h2>
 <ul>
-  <li>React</li>
+  <li>Next.js 13.2 and React</li>
   <li>Firebase</li>
-  <li>Realtime Database</li>
+  <li>Cloud Firestore with real-time listeners</li>
   <li>Netlify deployment</li>
 </ul>
 
 <h2>Why It Matters</h2>
-<p>Voting App packages a common polling workflow into a simple real-time product that people can use immediately.</p>
+<p>A group can run a poll and see the results right away, without anyone creating an account.</p>
 
 contentTr: |
   <h2>Genel Bakış</h2>
-  <p>Voting App, bir oylama oluşturup bağlantıyı paylaşmaya ve sonuçları canlı izlemeye odaklanan küçük bir anket aracıdır.</p>
+  <p>Oylama Uygulaması küçük bir anket aracıdır: bir oylama oluşturulur, linki paylaşılır ve sonuçlar canlı izlenir.</p>
 
   <h2>Problem</h2>
-  <p>Grupların karmaşık anket araçlarına girmeden hızlıca oylama yapmaya ihtiyacı vardı.</p>
+  <p>Grupların ağır anket araçlarına ve kayıt adımlarına girmeden hızlıca oylama yapabilmesi gerekiyordu.</p>
 
   <h2>Çözüm</h2>
-  <p>Uygulama, en fazla 6 seçenekli oylama kurmayı, link paylaşmayı ve sonuçları gerçek zamanlı görmeyi sağlar.</p>
+  <p>Kullanıcı en fazla altı seçenekli bir oylama kurar ve oylama linkini paylaşır. Oylar Cloud Firestore'da tutulur; sonuç sayfası onları <code>onSnapshot</code> ile dinler, böylece sayılar oy geldikçe değişir.</p>
 
   <h2>Benim Rolüm</h2>
   <ul>
     <li>Ürün fikri ve UX yönlendirmesi</li>
-    <li>React frontend geliştirme</li>
-    <li>Firebase veri kurulumu</li>
+    <li>Next.js ile frontend geliştirme</li>
+    <li>Cloud Firestore veri kurulumu</li>
     <li>Canlı sonuç akışı</li>
   </ul>
 
@@ -85,11 +85,11 @@ contentTr: |
 
   <h2>Teknik Öne Çıkanlar</h2>
   <ul>
-    <li>React</li>
+    <li>Next.js 13.2 ve React</li>
     <li>Firebase</li>
-    <li>Realtime Database</li>
-    <li>Netlify deployment</li>
+    <li>Gerçek zamanlı dinleyicilerle Cloud Firestore</li>
+    <li>Netlify'da yayın</li>
   </ul>
 
   <h2>Neden Önemli</h2>
-  <p>Voting App, günlük oylama akışını hızlı kullanılabilir bir ürüne dönüştürür.</p>
+  <p>Bir grup, kimse hesap açmadan hemen oylama yapıp sonuçları görebilir.</p>

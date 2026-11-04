@@ -9,87 +9,87 @@ seoTitle:
   en: "BootChat — Real-Time Chat with Google Sign-In"
   tr: "BootChat — Gerçek Zamanlı Sohbet Uygulaması"
 seoDescription:
-  en: "BootChat is a real-time chat web app built by Burak Altıntaş with React and Firebase. Users sign in with Google and messages stay in sync across clients."
-  tr: "BootChat, Burak Altıntaş'ın React ve Firebase ile geliştirdiği gerçek zamanlı sohbet uygulaması. Google ile giriş yapılıyor, mesajlar anında senkron kalıyor."
+  en: "BootChat is a real-time chat web app built by Burak Altıntaş with React and Cloud Firestore. Users sign in with Google and messages stay in sync across clients."
+  tr: "BootChat, Burak Altıntaş'ın React ve Cloud Firestore ile geliştirdiği gerçek zamanlı sohbet uygulaması. Google ile giriş yapılıyor, mesajlar anında senkron kalıyor."
 slug: "bootchat"
 image: "/images/projects/bootchat.webp"
 platformUrls:
   web: "https://bootchat.vercel.app/"
 githubUrl: "https://github.com/buraltintas/bootchat"
-tech: ["React", "Firebase", "Google Auth"]
+tech: ["React", "Create React App", "Firebase", "Cloud Firestore", "Google Auth"]
 featured: true
-order: 9
+order: 11
 ---
 
 <h2>Overview</h2>
-<p>BootChat is a simple instant messaging app that lets users sign in with Google and exchange messages in real time.</p>
+<p>BootChat is a simple instant messaging app. Users sign in with Google and exchange messages in real time across three channels.</p>
 
 <h2>Problem</h2>
-<p>I wanted to build a lightweight chat product to explore authenticated real-time messaging without adding unnecessary complexity.</p>
+<p>I wanted to build a small chat product to try authenticated real-time messaging without extra complexity.</p>
 
 <h2>Solution</h2>
-<p>BootChat uses Firebase authentication and a real-time database to keep messages synced across clients with a minimal sign-in flow.</p>
+<p>Sign-in uses Firebase Authentication with a Google popup. Each channel is a Cloud Firestore collection, and the app listens to it with <code>onSnapshot</code>, so new messages show up on every open client.</p>
 
 <h2>My Role</h2>
 <ul>
   <li>Product idea and UI direction</li>
   <li>Frontend development with React</li>
   <li>Google authentication setup</li>
-  <li>Realtime data integration</li>
+  <li>Cloud Firestore integration</li>
 </ul>
 
 <h2>Key Features</h2>
 <ul>
-  <li>Google sign-in</li>
+  <li>One-click Google sign-in</li>
   <li>Real-time message sync</li>
+  <li>Three chat channels</li>
   <li>Simple chat interface</li>
-  <li>Fast onboarding</li>
 </ul>
 
 <h2>Technical Highlights</h2>
 <ul>
-  <li>React</li>
+  <li>React with Create React App</li>
   <li>Firebase Authentication</li>
-  <li>Firebase Realtime Database</li>
+  <li>Cloud Firestore with real-time listeners</li>
   <li>Vercel deployment</li>
 </ul>
 
 <h2>Why It Matters</h2>
-<p>BootChat is a compact product study in authenticated real-time communication and a clean foundation for a messaging experience.</p>
+<p>BootChat let me try authenticated real-time messaging in a product small enough to finish.</p>
 
 contentTr: |
   <h2>Genel Bakış</h2>
-  <p>BootChat, kullanıcıların Google ile giriş yapıp gerçek zamanlı mesajlaşabildiği basit bir mesajlaşma uygulamasıdır.</p>
+  <p>BootChat, basit bir anlık mesajlaşma uygulamasıdır. Kullanıcılar Google ile giriş yapıp üç kanalda gerçek zamanlı mesajlaşır.</p>
 
   <h2>Problem</h2>
   <p>Kimlik doğrulamalı gerçek zamanlı mesajlaşmayı gereksiz karmaşıklık eklemeden denemek istedim.</p>
 
   <h2>Çözüm</h2>
-  <p>BootChat, Firebase kimlik doğrulaması ve gerçek zamanlı veritabanı ile mesajları tüm istemciler arasında senkron tutar.</p>
+  <p>Giriş, Firebase Authentication ve Google açılır penceresiyle yapılır. Her kanal bir Cloud Firestore koleksiyonudur; uygulama onu <code>onSnapshot</code> ile dinler, böylece yeni mesajlar açık olan her istemcide görünür.</p>
 
   <h2>Benim Rolüm</h2>
   <ul>
     <li>Ürün fikri ve arayüz yönlendirmesi</li>
     <li>React ile frontend geliştirme</li>
     <li>Google ile kimlik doğrulama kurulumu</li>
-    <li>Gerçek zamanlı veri entegrasyonu</li>
+    <li>Cloud Firestore entegrasyonu</li>
   </ul>
 
   <h2>Öne Çıkan Özellikler</h2>
   <ul>
-    <li>Google ile giriş</li>
+    <li>Tek tıkla Google ile giriş</li>
     <li>Gerçek zamanlı mesaj senkronizasyonu</li>
+    <li>Üç sohbet kanalı</li>
     <li>Basit sohbet arayüzü</li>
-    <li>Hızlı başlangıç</li>
   </ul>
 
   <h2>Teknik Öne Çıkanlar</h2>
   <ul>
-    <li>React</li>
+    <li>Create React App ile React</li>
     <li>Firebase Authentication</li>
-    <li>Firebase Realtime Database</li>
+    <li>Gerçek zamanlı dinleyicilerle Cloud Firestore</li>
     <li>Vercel üzerinde yayın</li>
   </ul>
 
   <h2>Neden Önemli</h2>
-  <p>BootChat, kimlik doğrulamalı gerçek zamanlı iletişim için kompakt bir ürün çalışmasıdır.</p>
+  <p>Kimlik doğrulamalı gerçek zamanlı mesajlaşmayı, bitirilebilecek kadar küçük bir üründe denedim.</p>

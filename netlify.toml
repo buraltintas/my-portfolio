@@ -25,7 +25,47 @@
 
 [[redirects]]
   from = "/images/projects/bankaci.jpg"
-  to = "/images/projects/bankaci.webp"
+  to = "/images/projects/bankaci-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci.webp"
+  to = "/images/projects/bankaci-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/og/bankaci.jpg"
+  to = "/images/projects/og/bankaci-promo-en.jpg"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/ana-sayfa-oranlar.webp"
+  to = "/images/projects/bankaci/home-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/bireysel-kredi.webp"
+  to = "/images/projects/bankaci/payment-plans-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/yedi-odeme-plani.webp"
+  to = "/images/projects/bankaci/payment-plans-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/kredi-sonucu.webp"
+  to = "/images/projects/bankaci/loan-result-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/talepler.webp"
+  to = "/images/projects/bankaci/requests-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bankaci/widget.webp"
+  to = "/images/projects/bankaci/widget-tr.webp"
   status = 301
 
 [[redirects]]
@@ -35,7 +75,17 @@
 
 [[redirects]]
   from = "/images/projects/bosa-gezme.png"
-  to = "/images/projects/bosa-gezme.webp"
+  to = "/images/projects/bosa-gezme-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/bosa-gezme.webp"
+  to = "/images/projects/bosa-gezme-promo-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/og/bosa-gezme.jpg"
+  to = "/images/projects/og/bosa-gezme-promo-en.jpg"
   status = 301
 
 [[redirects]]

@@ -100,7 +100,7 @@ export function getAllProjects(): Project[] {
         featured: data.featured || false,
         spotlight: data.spotlight === true,
         order: data.order || 99,
-        status: data.status === 'discontinued' ? 'discontinued' : 'live',
+        status: data.status === 'discontinued' || data.status === 'upcoming' ? data.status : 'live',
         gallery: Array.isArray(data.gallery) ? data.gallery : [],
         galleryTr: Array.isArray(data.galleryTr) ? data.galleryTr : undefined,
         content,

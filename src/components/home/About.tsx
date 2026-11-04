@@ -12,28 +12,34 @@ type Part = string | { text: string; slug: string }
 const copy: Record<'en' | 'tr', Part[][]> = {
   en: [
     [
-      "I'm Burak Altıntaş (Burak Altintas without the Turkish letters), a frontend developer who builds web and mobile apps with React, React Native and Next.js, often from the backend all the way to the App Store.",
+      "I'm Burak Altıntaş (Burak Altintas without the Turkish letters), a frontend developer. I build web and mobile apps with React, React Native and Next.js, and I often take them from the backend all the way to the App Store.",
     ],
     [
-      'Since June 2022 I have worked across the hospitality products of Protel & Simpra: today mainly Resort Manager and Portal UI, and I have delivered PMS, Loyalty, Simphony Ordering Hub and Simphony Manager App. I maintain the shared UiKit and Widget libraries used across products, and on CheckandPlace, a reservation system serving guests from 156+ countries, I built the AI assistant that makes online booking faster and easier.',
+      'Since June 2022 I have worked on the hospitality products of Protel & Simpra. Today that is mainly Resort Manager and Portal UI, and I have delivered PMS, Loyalty, Simphony Ordering Hub and Simphony Manager App. I maintain the UiKit and Widget libraries shared across products. On CheckandPlace, a reservation system serving guests from 156+ countries, I built the AI assistant that makes online booking faster and easier.',
     ],
     [
-      'Alongside that I build products end to end. I founded ',
+      'I also build my own products end to end. I founded ',
       { text: 'Bankacı', slug: 'banker' },
-      ', a loan calculator and loan marketplace on iOS, Android and the web, and run it myself: product, design, the mobile app, the Go backend and the Google Cloud infrastructure. I am also a co-founder of ',
+      ', an app for loans, credit cards, deposits and investments with a loan marketplace, on iOS, Android and the web. I run it myself: product, design, the mobile app, the Go backend and the Google Cloud infrastructure. I co-founded ',
       { text: 'Coffee Dictionary', slug: 'coffee-dictionary' },
-      ', a coffee glossary on iOS, Android and the web, where I run the entire technical side.',
+      ', a coffee glossary on iOS, Android and the web, and I run its whole technical side.',
+    ],
+    [
+      { text: 'Casamiyo', slug: 'casamiyo' },
+      ', a building and apartment management app I built with a business partner, is live on the web, and its iOS and Android apps are coming soon. I am now building ',
+      { text: 'Notanica', slug: 'notanica' },
+      ', a sheet-music app for iPhone, iPad and Android that reads a printed page and plays it.',
     ],
     [
       'My other projects include ',
       { text: 'Boşa Gezme!', slug: 'bosa-gezme' },
-      ', a discovery platform for home and living stores, the ',
+      ', a review site for home and living stores, the ',
       { text: 'Yalınlı', slug: 'yalinli-platform' },
       ' civic platform, ',
       { text: 'MarketMatik', slug: 'marketmatik' },
       ', the ',
       { text: 'Pose Buddy', slug: 'pose-buddy' },
-      ' puzzle game and the ',
+      ' puzzle game, the ',
       { text: 'DomainDock', slug: 'domain-dock' },
       ' Chrome extension and ',
       { text: 'day-zero-kit', slug: 'day-zero-kit' },
@@ -43,20 +49,27 @@ const copy: Record<'en' | 'tr', Part[][]> = {
   ],
   tr: [
     [
-      "Ben Burak Altıntaş; React, React Native ve Next.js ile web ve mobil uygulamalar geliştiren, çoğu zaman backend'den App Store'a kadar tüm süreci üstlenen bir frontend geliştiriciyim.",
+      "Ben Burak Altıntaş, frontend geliştiriciyim. React, React Native ve Next.js ile web ve mobil uygulamalar geliştiriyorum; çoğu zaman backend'den App Store'a kadar işin tamamını üstleniyorum.",
     ],
     [
-      "Haziran 2022'den beri Protel & Simpra'nın misafir ağırlama ürünlerinde çalışıyorum: bugün başta Resort Manager ve Portal UI'da görev alıyorum; PMS, Loyalty, Simphony Ordering Hub ve Simphony Manager App projelerini teslim ettim. Ürünler arasında ortak kullanılan UiKit ve Widget kütüphanelerini geliştiriyorum, 156'dan fazla ülkeden misafire hizmet veren CheckandPlace rezervasyon sisteminde de online rezervasyonu hızlandıran yapay zekâ asistanını geliştirdim.",
+      "Haziran 2022'den beri Protel & Simpra'nın misafir ağırlama ürünlerinde çalışıyorum. Bugün başta Resort Manager ve Portal UI'dayım; PMS, Loyalty, Simphony Ordering Hub ve Simphony Manager App projelerini teslim ettim. Ürünler arasında ortak kullanılan UiKit ve Widget kütüphanelerinin bakımını yapıyorum. 156'dan fazla ülkeden misafire hizmet veren CheckandPlace rezervasyon sisteminde online rezervasyonu hızlandıran yapay zekâ asistanını geliştirdim.",
     ],
     [
-      "Bunun yanında ürünleri uçtan uca geliştiriyorum. iOS, Android ve web'de yayında olan kredi hesaplama ve kredi pazaryeri ",
+      "Bunun yanında kendi ürünlerimi uçtan uca geliştiriyorum. Kredi, kredi kartı, mevduat ve yatırım için iOS, Android ve web'de yayında olan, kredi pazaryeri de içeren ",
       { text: 'Bankacı', slug: 'banker' },
       "'yı kurdum; ürünü, tasarımı, mobil uygulamayı, Go backend'i ve Google Cloud altyapısını kendim yürütüyorum. iOS, Android ve web'deki kahve sözlüğü ",
       { text: 'Coffee Dictionary', slug: 'coffee-dictionary' },
-      "'nin de kurucu ortağıyım ve tüm teknik tarafını yürütüyorum.",
+      "'nin kurucu ortağıyım ve tüm teknik tarafını yürütüyorum.",
     ],
     [
-      'Diğer projelerim arasında ev ve yaşam mağazalarını keşfetme platformu ',
+      'Bir iş ortağıyla birlikte geliştirdiğim site ve apartman yönetimi uygulaması ',
+      { text: 'Casamiyo', slug: 'casamiyo' },
+      " web'de yayında, iOS ve Android uygulamaları da yakında geliyor. Şu sıralar basılı notayı okuyup çalan, iPhone, iPad ve Android için bir nota uygulaması olan ",
+      { text: 'Notanica', slug: 'notanica' },
+      "'yı geliştiriyorum.",
+    ],
+    [
+      'Diğer projelerim arasında ev ve yaşam mağazaları için değerlendirme sitesi ',
       { text: 'Boşa Gezme!', slug: 'bosa-gezme' },
       ', ',
       { text: 'Yalınlı', slug: 'yalinli-platform' },
@@ -64,13 +77,13 @@ const copy: Record<'en' | 'tr', Part[][]> = {
       { text: 'MarketMatik', slug: 'marketmatik' },
       ', ',
       { text: 'Pose Buddy', slug: 'pose-buddy' },
-      ' bulmaca oyunu ve ',
+      ' bulmaca oyunu, ',
       { text: 'DomainDock', slug: 'domain-dock' },
       " Chrome eklentisi ve yapay zekâ ajanları için skill'leriyle açık kaynak kurulum rehberi ",
       { text: 'day-zero-kit', slug: 'day-zero-kit' },
       ' var.',
     ],
-    ["Yazılıma geçmeden önce 2011–2021 arasında Türkiye İş Bankası'nda çalıştım."],
+    ["Yazılıma geçmeden önce 2011'den 2021'e kadar Türkiye İş Bankası'nda çalıştım."],
   ],
 }
 

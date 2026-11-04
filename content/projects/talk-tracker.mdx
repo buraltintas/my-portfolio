@@ -3,91 +3,95 @@ title:
   en: "Talk Tracker"
   tr: "Konuşan Takibi"
 description:
-  en: "You can create a participant list for a meeting and click to mark whether each participant has talked."
-  tr: "Toplantıya katılanlar listesi oluşturup konuşan kişileri işaretleyerek kimin konuştuğunu takip edebilirsiniz."
+  en: "Create a participant list for a meeting, then click each person to mark that they have talked."
+  tr: "Toplantıya katılanların listesini oluşturup konuşanları işaretleyerek kimin konuştuğunu takip edebilirsiniz."
 seoTitle:
   en: "Talk Tracker — Meeting Participation Tracker"
   tr: "Konuşan Takibi — Toplantıda Kim Konuştu?"
 seoDescription:
-  en: "Talk Tracker is a lightweight React web app built by Burak Altıntaş for meetings: add participants, then mark each one as they speak. No sign-up required."
-  tr: "Konuşan Takibi, Burak Altıntaş'ın React ile geliştirdiği hafif bir web uygulaması: toplantı katılımcıları eklenir, konuşanlar işaretlenir. Kayıt gerekmez."
+  en: "Talk Tracker is a small Next.js web app built by Burak Altıntaş for meetings: add participants, then mark each one as they speak. No sign-up required."
+  tr: "Konuşan Takibi, Burak Altıntaş'ın Next.js ile geliştirdiği küçük bir web uygulaması: toplantı katılımcıları eklenir, konuşanlar işaretlenir. Kayıt gerekmez."
 slug: "talk-tracker"
 image: "/images/projects/talk-tracker.webp"
 platformUrls:
   web: "https://talk-tracker.netlify.app/"
 githubUrl: "https://github.com/buraltintas/talk-tracker"
-tech: ["React", "JavaScript", "CSS"]
+tech: ["Next.js", "React", "JavaScript", "CSS", "Cypress"]
 featured: true
-order: 10
+order: 12
 ---
 
 <h2>Overview</h2>
-<p>Talk Tracker is a lightweight meeting tool for tracking which participants have spoken during a session.</p>
+<p>Talk Tracker is a small web tool for keeping track of which participants have spoken in a meeting. It is built with Next.js.</p>
 
 <h2>Problem</h2>
-<p>In meetings, it is easy to lose track of who has already contributed and who still has not spoken.</p>
+<p>In meetings, it is easy to lose track of who has already contributed and who has not spoken yet.</p>
 
 <h2>Solution</h2>
-<p>Talk Tracker gives facilitators a simple way to add participants before a meeting and mark them as they speak.</p>
+<p>The facilitator adds the participants before the meeting and marks each one with a click as they speak. Meetings are saved in the browser's localStorage, so earlier meetings stay in a list. There is no account and no backend.</p>
 
 <h2>My Role</h2>
 <ul>
   <li>Product idea and UX direction</li>
   <li>Frontend development</li>
   <li>Interaction design for quick toggling</li>
+  <li>End-to-end tests with Cypress</li>
 </ul>
 
 <h2>Key Features</h2>
 <ul>
   <li>Participant list creation</li>
   <li>Speaking status tracking</li>
-  <li>Instant meeting use</li>
+  <li>Saved meetings list</li>
   <li>No sign-up required</li>
 </ul>
 
 <h2>Technical Highlights</h2>
 <ul>
-  <li>React</li>
-  <li>JavaScript</li>
-  <li>CSS</li>
-  <li>Lightweight web app structure</li>
+  <li>Next.js 13.4 with the pages router</li>
+  <li>React and JavaScript</li>
+  <li>CSS modules</li>
+  <li>localStorage for saved meetings</li>
+  <li>Cypress end-to-end tests</li>
 </ul>
 
 <h2>Why It Matters</h2>
-<p>Talk Tracker solves a small but real meeting problem with a focused interface that makes participation easier to follow.</p>
+<p>During a meeting, you can see at a glance who has not spoken yet.</p>
 
 contentTr: |
   <h2>Genel Bakış</h2>
-  <p>Talk Tracker, toplantı sırasında hangi katılımcıların konuştuğunu takip etmeye yarayan hafif bir araçtır.</p>
+  <p>Konuşan Takibi, bir toplantıda hangi katılımcıların konuştuğunu takip etmeye yarayan küçük bir web aracıdır. Next.js ile geliştirildi.</p>
 
   <h2>Problem</h2>
-  <p>Toplantılarda kimin konuştuğunu ve kimin henüz katkı vermediğini takip etmek zor olabilir.</p>
+  <p>Toplantılarda kimin konuştuğunu, kimin henüz söz almadığını takip etmek zor olabilir.</p>
 
   <h2>Çözüm</h2>
-  <p>Talk Tracker, katılımcıları toplantı öncesi eklemeyi ve konuşurken işaretlemeyi kolaylaştırır.</p>
+  <p>Toplantıyı yöneten kişi katılımcıları önceden ekler, konuşanları da tek tıkla işaretler. Toplantılar tarayıcının localStorage'ında saklanır, böylece önceki toplantılar bir listede kalır. Hesap da sunucu da yoktur.</p>
 
   <h2>Benim Rolüm</h2>
   <ul>
     <li>Ürün fikri ve UX yönlendirmesi</li>
     <li>Frontend geliştirme</li>
     <li>Hızlı işaretleme için etkileşim tasarımı</li>
+    <li>Cypress ile uçtan uca testler</li>
   </ul>
 
   <h2>Öne Çıkan Özellikler</h2>
   <ul>
     <li>Katılımcı listesi oluşturma</li>
     <li>Konuşma durumu takibi</li>
-    <li>Anında toplantı kullanımı</li>
-    <li>Kayıt gerektirmeyen deneyim</li>
+    <li>Kaydedilen toplantılar listesi</li>
+    <li>Kayıt gerektirmeyen kullanım</li>
   </ul>
 
   <h2>Teknik Öne Çıkanlar</h2>
   <ul>
-    <li>React</li>
-    <li>JavaScript</li>
-    <li>CSS</li>
-    <li>Hafif web uygulaması yapısı</li>
+    <li>Next.js 13.4, pages router</li>
+    <li>React ve JavaScript</li>
+    <li>CSS modülleri</li>
+    <li>Kaydedilen toplantılar için localStorage</li>
+    <li>Cypress ile uçtan uca testler</li>
   </ul>
 
   <h2>Neden Önemli</h2>
-  <p>Talk Tracker, toplantı katılımını takip etmeyi daha net ve hızlı hale getirir.</p>
+  <p>Toplantı sırasında kimin henüz konuşmadığı bir bakışta görülür.</p>
