@@ -15,6 +15,18 @@ slug: 'notanica'
 image: '/images/projects/notanica-promo-en.webp'
 imageTr: '/images/projects/notanica-promo-tr.webp'
 gallery:
+  - src: '/images/projects/notanica/web-en.webp'
+    width: 1600
+    height: 1000
+    caption:
+      en: "notanica.com, live since 4 November 2026 in seven languages."
+      tr: "4 Kasım 2026'dan beri yedi dilde yayında olan notanica.com."
+  - src: '/images/projects/notanica/web-demo-en.webp'
+    width: 1600
+    height: 793
+    caption:
+      en: "The live demo on notanica.com is the app's own score view: play it, change the key or switch to note names and chords."
+      tr: "notanica.com'daki canlı demo, uygulamanın kendi nota ekranı: çalabilir, tonu değiştirebilir, nota adlarına ya da akorlara geçebilirsiniz."
   - src: '/images/projects/notanica/ipad-library-en.webp'
     width: 1600
     height: 1103
@@ -58,6 +70,18 @@ gallery:
       en: "The metronome, with tap tempo."
       tr: "Metronom, dokunarak tempo verme özelliğiyle."
 galleryTr:
+  - src: '/images/projects/notanica/web-tr.webp'
+    width: 1600
+    height: 1000
+    caption:
+      en: "notanica.com, live since 4 November 2026 in seven languages."
+      tr: "4 Kasım 2026'dan beri yedi dilde yayında olan notanica.com."
+  - src: '/images/projects/notanica/web-demo-tr.webp'
+    width: 1600
+    height: 793
+    caption:
+      en: "The live demo on notanica.com is the app's own score view: play it, change the key or switch to note names and chords."
+      tr: "notanica.com'daki canlı demo, uygulamanın kendi nota ekranı: çalabilir, tonu değiştirebilir, nota adlarına ya da akorlara geçebilirsiniz."
   - src: '/images/projects/notanica/ipad-library-tr.webp'
     width: 1600
     height: 1103
@@ -112,7 +136,9 @@ galleryTr:
     caption:
       en: "The metronome, with tap tempo."
       tr: "Metronom, dokunarak tempo verme özelliğiyle."
-platformUrls: {}
+platformUrls:
+  web: 'https://notanica.com/'
+platforms: 'iOS, Android'
 githubUrl: ''
 tech:
   [
@@ -137,7 +163,7 @@ status: 'upcoming'
 contentTr: |
   <h2>Genel Bakış</h2>
   <p>Notanica, iPhone, iPad ve Android için geliştirdiğim bir nota uygulaması. Basılı bir sayfanın fotoğrafını çekiyorsunuz ya da bir PDF, MusicXML veya MIDI dosyası açıyorsunuz; uygulama notaları okuyup çalıyor. Bunun etrafında çalışma, ders ve beste araçları var; Türk makam müziği de uygulamanın içinde. Sloganı "Audi. Disce. Crea.", yani "Dinle. Öğren. Yarat."</p>
-  <p>Uygulama henüz yayında değil, yakında geliyor.</p>
+  <p>Tanıtım sitesi 4 Kasım 2026'dan beri <a href="https://notanica.com/" target="_blank" rel="noopener noreferrer">notanica.com</a> adresinde yedi dilde yayında; uygulamanın nota ekranını tarayıcıda deneyebileceğiniz canlı bir demo da var. iPhone, iPad ve Android uygulamaları yakında geliyor.</p>
 
   <h2>Problem</h2>
   <p>Basılı nota ses çıkarmıyor, bu yüzden bir pasajı henüz rahat okuyamayan öğrenci evde onun nasıl çalındığını duyamıyor. Notayı fotoğraftan okuyan yazılımlar da hata yapıyor ve yanlış okunan bir nota kendinden emin biçimde çalınınca öğrenci yanlışı öğreniyor. Makamda durum daha zor: tanıma motorları koma işaretlerini sıradan diyez ya da bemol olarak okuyor.</p>
@@ -168,7 +194,7 @@ contentTr: |
     <li>API: Go ile yazıldı, Google Cloud Run'da bir Cloudflare uç Worker'ının arkasında çalışıyor. Veritabanı Neon Postgres, dosyalar AB'deki Cloudflare R2'de. Ders ve model indirmelerini uç Worker doğrudan R2'den veriyor; API ve veritabanı bunun için uyanmıyor.</li>
     <li>Nota okuma: Python ile yazılmış bir müzik servisi taranan sayfaları MusicXML'e çeviriyor. Her sayfayı iki optik nota tanıma motoru okuyor: homr ve ikinci görüş olarak bir motor daha. İkisinin anlaşamadığı ölçüler kullanıcıya işaretleniyor.</li>
     <li>Her nota türü, ayrılmış test sayfalarında kendi doğruluk eşiğini geçince açılıyor. O zamana kadar sayfa görüntü olarak kalıyor ve kullanıcı geri çevrilmiyor.</li>
-    <li>Tanıtım sitesi: Cloudflare için Next.js 16 ile yazılmış statik bir site, yedi dilde.</li>
+    <li>Web sitesi: notanica.com, Next.js 16 ile yazılmış ve Cloudflare'da çalışan statik bir site, yedi dilde. Tanıtım sayfası, canlı demo, yasal sayfalar ve telif bildirim formu burada; sınıfta notayı televizyonda açan ekran da notanica.com/tv adresinde.</li>
   </ul>
 
   <h2>Neden Önemli</h2>
@@ -177,7 +203,7 @@ contentTr: |
 
 <h2>Overview</h2>
 <p>Notanica is a sheet-music app I am building for iPhone, iPad and Android. You photograph a printed page or open a PDF, MusicXML or MIDI file, and the app reads the notes and plays them. Around that sit tools to practise, learn and write music, and Turkish makam is built in. The motto is "Audi. Disce. Crea.", Latin for "Listen. Learn. Create."</p>
-<p>The app is in development and coming soon.</p>
+<p>The website has been live at <a href="https://notanica.com/" target="_blank" rel="noopener noreferrer">notanica.com</a> since 4 November 2026, in seven languages, with a live demo of the app's score view that runs in the browser. The iPhone, iPad and Android apps are coming soon.</p>
 
 <h2>Problem</h2>
 <p>A printed score makes no sound, so a student who cannot yet read a passage well has no way to hear how it goes at home. Software that reads sheet music from a photo makes mistakes, and when a misread note is played back with confidence, the student learns the wrong note. Makam is harder still, because recognition engines read its koma accidentals as ordinary sharps and flats.</p>
@@ -208,7 +234,7 @@ contentTr: |
   <li>API: Go on Google Cloud Run, behind a Cloudflare edge Worker, with Neon Postgres and Cloudflare R2 storage in the EU. The edge Worker serves lesson and model downloads straight from R2, so those requests never wake the API or the database.</li>
   <li>Score reading: a Python music worker turns scanned pages into MusicXML. Two optical music recognition engines read every page, homr and a second engine as a second opinion, and measures where they disagree are flagged for the user.</li>
   <li>Each kind of score opens only after it passes its own accuracy threshold on held-out test pages. Until then the page stays an image, and the user is not turned away.</li>
-  <li>Website: a static Next.js 16 site for Cloudflare, in all seven languages.</li>
+  <li>Website: notanica.com, a static Next.js 16 site on Cloudflare in seven languages. It holds the landing page, the live demo, the legal pages and the copyright notice form, and the class screen that shows a score on a TV lives at notanica.com/tv.</li>
 </ul>
 
 <h2>Why It Matters</h2>

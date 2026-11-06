@@ -33,6 +33,8 @@ export interface Project {
   /** Cover for the Turkish pages when it differs (e.g. a Turkish UI). */
   imageTr?: string
   platformUrls: ProjectPlatformUrls
+  /** Platforms label when the links don't show it, e.g. apps not in the stores yet: "iOS, Android". */
+  platforms?: string
   githubUrl: string
   tech: string[]
   featured: boolean
@@ -54,6 +56,7 @@ export interface ProjectCardData {
   description: string
   image: string
   platformUrls: ProjectPlatformUrls
+  platforms?: string
   githubUrl: string
   tech: string[]
   status: ProjectStatus

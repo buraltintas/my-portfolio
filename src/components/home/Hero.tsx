@@ -40,13 +40,6 @@ export function Hero() {
           >
             Simpra
           </a>
-          {t('hero.subtitle.middle')}
-          <a
-            href={path('/projects/banker')}
-            className="font-semibold text-slate-50 underline decoration-slate-600 underline-offset-4 hover:text-blue-300"
-          >
-            Bankacı
-          </a>
           {t('hero.subtitle.after')}
         </p>
 

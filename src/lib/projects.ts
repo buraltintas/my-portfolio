@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import type { Locale } from '@/i18n/types'
 import type { Project, ProjectCardData } from '@/types'
+import { siteOgImage } from '@/lib/seo'
 
 const projectsDirectory = path.join(process.cwd(), 'content/projects')
 
@@ -95,6 +96,7 @@ export function getAllProjects(): Project[] {
         image: data.image,
         imageTr: data.imageTr,
         platformUrls: getPlatformUrls(data),
+        ...(typeof data.platforms === 'string' && data.platforms ? { platforms: data.platforms } : {}),
         githubUrl: data.githubUrl || '',
         tech: data.tech || [],
         featured: data.featured || false,
@@ -135,6 +137,7 @@ export function toCard(project: Project, locale: Locale): ProjectCardData {
     description: project.description[locale],
     image: localizeMedia(project, locale).image,
     platformUrls: project.platformUrls,
+    ...(project.platforms ? { platforms: project.platforms } : {}),
     githubUrl: project.githubUrl,
     tech: project.tech,
     status: project.status,
@@ -142,10 +145,10 @@ export function toCard(project: Project, locale: Locale): ProjectCardData {
 }
 
 /** The 1200×630 share image made for a cover, or the site image. */
-export function projectOgImage(project: Project): string {
+export function projectOgImage(project: Project, locale: Locale): string {
   const match = /^\/images\/projects\/([^/]+)\.\w+$/.exec(project.image)
   const og = match && `/images/projects/og/${match[1]}.jpg`
-  return og && fs.existsSync(path.join(process.cwd(), 'public', og)) ? og : '/og.png'
+  return og && fs.existsSync(path.join(process.cwd(), 'public', og)) ? og : siteOgImage(locale)
 }
 
 /** Up to `count` other projects sharing the most tech; live ones always come first. */

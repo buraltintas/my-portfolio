@@ -13,6 +13,9 @@ export function pageUrl(locale: Locale, path: string): string {
   return localized === '/' ? siteConfig.url : `${siteConfig.url}${localized}`
 }
 
+/** The site's own 1200×630 share image in each language. */
+export const siteOgImage = (locale: Locale): string => `/og-${locale}.png`
+
 /** Absolute URL of a file or page that may already be absolute. */
 export function absoluteUrl(url: string): string {
   return new URL(url, `${siteConfig.url}/`).toString()
@@ -49,10 +52,11 @@ export function pageMetadata({
   title,
   description,
   absoluteTitle = false,
-  image = { url: '/og.png', width: 1200, height: 630, alt: siteConfig.name },
+  image,
   type = 'website',
   index = true,
 }: PageMetadataInput): Metadata {
+  image ??= { url: siteOgImage(locale), width: 1200, height: 630, alt: siteConfig.name }
   const fullTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -96,7 +100,7 @@ export function layoutMetadata(locale: Locale): Metadata {
       siteName: siteConfig.name,
       locale: ogLocale[locale],
       type: 'website',
-      images: [{ url: '/og.png', width: 1200, height: 630, alt: siteConfig.name }],
+      images: [{ url: siteOgImage(locale), width: 1200, height: 630, alt: siteConfig.name }],
     },
     twitter: {
       card: 'summary_large_image',

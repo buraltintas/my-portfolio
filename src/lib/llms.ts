@@ -4,7 +4,7 @@ import { educations } from '@/data/education'
 import { skillCategories } from '@/data/skills'
 import { articles } from '@/data/writing'
 import { getAllProjects } from '@/lib/projects'
-import { projectKinds } from '@/components/projects/kinds'
+import { isChromeExtension, projectKinds } from '@/components/projects/kinds'
 import { pageUrl } from '@/lib/seo'
 
 // /llms.txt (llmstxt.org): who Burak Altıntaş is and what he has built, as
@@ -16,7 +16,7 @@ export function llmsTxt(): string {
   lines.push(`# ${siteConfig.name}`, '')
   lines.push(`> ${siteConfig.bio.en}`, '')
   lines.push(
-    `Also written as "${siteConfig.alternateName}". ${siteConfig.jobTitle} at Protel & Simpra, founder of Bankacı (https://bankaci.app) and co-founder and technical lead of Coffee Dictionary (https://coffeedictionary.com). ` +
+    `Also written as "${siteConfig.alternateName}". ${siteConfig.jobTitle} at Protel & Simpra. He built Bankacı (https://bankaci.app) and co-founded Coffee Dictionary (https://coffeedictionary.com), where he leads the technical side. ` +
       `This site is in English at ${pageUrl('en', '/')} and in Turkish at ${pageUrl('tr', '/')}.`,
     ''
   )
@@ -41,10 +41,12 @@ export function llmsTxt(): string {
 
   lines.push('## Projects', '')
   for (const p of projects) {
+    const site = p.status !== 'discontinued' && p.platformUrls.web && !isChromeExtension(p.platformUrls.web) ? p.platformUrls.web : null
     const facts = [
+      site && `Website: ${site}`,
       projectKinds(p) && `Platforms: ${projectKinds(p)}.`,
       p.tech.length && `Stack: ${p.tech.join(', ')}.`,
-      p.status === 'discontinued' ? 'Status: discontinued.' : p.status === 'upcoming' ? 'Status: in development, not released yet.' : null,
+      p.status === 'discontinued' ? 'Status: discontinued.' : p.status === 'upcoming' ? `Status: in development, not released yet${site ? '; the website is live' : ''}.` : null,
     ].filter(Boolean)
     lines.push(`- [${p.title.en}](${pageUrl('en', `/projects/${p.slug}`)}): ${p.description.en} ${facts.join(' ')}`.trim())
   }

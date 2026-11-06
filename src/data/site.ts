@@ -4,12 +4,12 @@ export const siteConfig = {
   alternateName: 'Burak Altintas',
   jobTitle: 'Frontend Developer',
   title: {
-    en: 'Burak Altıntaş — Frontend Developer & Founder of Bankacı',
-    tr: 'Burak Altıntaş — Frontend Developer, Bankacı Kurucusu',
+    en: 'Burak Altıntaş — Frontend Developer, Web & Mobile Apps',
+    tr: 'Burak Altıntaş — Frontend Developer, Web ve Mobil Uygulamalar',
   },
   description: {
-    en: 'Burak Altıntaş is a frontend developer at Protel & Simpra and the founder of Bankacı. He builds web and mobile apps with React, React Native, Next.js and Go.',
-    tr: "Burak Altıntaş, Protel & Simpra'da Frontend Developer ve Bankacı'nın kurucusu. React, React Native, Next.js ve Go ile web ve mobil uygulamalar geliştiriyor.",
+    en: 'Burak Altıntaş is a frontend developer at Protel & Simpra. He builds web and mobile apps end to end with React, React Native, Next.js, Go and more.',
+    tr: "Burak Altıntaş, Protel & Simpra'da Frontend Developer. React, React Native, Next.js, Go ve daha fazlasıyla web ve mobil uygulamaları uçtan uca geliştiriyor.",
   },
   // Third-person summary, reused in structured data and llms.txt.
   bio: {

@@ -17,6 +17,73 @@
   to = "/projects/marketmatik"
   status = 301
 
+# The site share image now comes in each language.
+[[redirects]]
+  from = "/og.png"
+  to = "/og-en.png"
+  status = 301
+
+# Casamiyo screenshots replaced by the new app design.
+[[redirects]]
+  from = "/images/projects/casamiyo/landing-en.webp"
+  to = "/images/projects/casamiyo/web-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/landing-tr.webp"
+  to = "/images/projects/casamiyo/web-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/overview-en.webp"
+  to = "/images/projects/casamiyo/summary-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/overview-tr.webp"
+  to = "/images/projects/casamiyo/summary-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/receipt-en.webp"
+  to = "/images/projects/casamiyo/upload-receipt-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/receipt-tr.webp"
+  to = "/images/projects/casamiyo/upload-receipt-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/transparency-en.webp"
+  to = "/images/projects/casamiyo/finance-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/transparency-tr.webp"
+  to = "/images/projects/casamiyo/finance-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/requests-en.webp"
+  to = "/images/projects/casamiyo/staff-request-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/requests-tr.webp"
+  to = "/images/projects/casamiyo/staff-request-tr.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/assistant-en.webp"
+  to = "/images/projects/casamiyo/summary-en.webp"
+  status = 301
+
+[[redirects]]
+  from = "/images/projects/casamiyo/assistant-tr.webp"
+  to = "/images/projects/casamiyo/summary-tr.webp"
+  status = 301
+
 # Images that were replaced by smaller WebP files.
 [[redirects]]
   from = "/images/me.png"

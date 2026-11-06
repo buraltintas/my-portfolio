@@ -5,7 +5,8 @@ export const isChromeExtension = (url?: string) =>
   !!url && /chromewebstore\.google\.com|chrome\.google\.com\/webstore/.test(url)
 
 /** Platforms the project runs on, as a short label: "iOS, Android, web". */
-export function projectKinds(project: Pick<Project, 'platformUrls'>): string {
+export function projectKinds(project: Pick<Project, 'platformUrls' | 'platforms'>): string {
+  if (project.platforms) return project.platforms
   const { web, ios, android } = project.platformUrls
   const kinds = [
     ios ? 'iOS' : null,

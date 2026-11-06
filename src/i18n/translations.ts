@@ -12,7 +12,6 @@ const translations = {
     'hero.greeting': "Hi, I'm",
     'hero.title': 'Frontend Developer',
     'hero.subtitle.before': 'Frontend Developer at',
-    'hero.subtitle.middle': ' and founder of ',
     'hero.subtitle.after':
       '. I build web and mobile apps with React, React Native and Next.js, from the backend to the App Store.',
     'hero.cta.projects': 'View Projects',
@@ -108,9 +107,8 @@ const translations = {
     'hero.greeting': 'Merhaba, ben',
     'hero.title': 'Frontend Developer',
     'hero.subtitle.before': '',
-    'hero.subtitle.middle': "'da Frontend Developer ve ",
     'hero.subtitle.after':
-      "'nın kurucusu. React, React Native ve Next.js ile web ve mobil uygulamalar geliştiriyorum; backend'den App Store'a kadar.",
+      "'da Frontend Developer. React, React Native ve Next.js ile web ve mobil uygulamalar geliştiriyorum; backend'den App Store'a kadar.",
     'hero.cta.projects': 'Projeleri Gör',
     'hero.cta.contact': 'İletişime Geç',
     'hero.cta.cv': 'CV İndir',

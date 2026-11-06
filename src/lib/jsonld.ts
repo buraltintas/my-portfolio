@@ -174,12 +174,15 @@ export function projectsGraph(locale: Locale, title: string, description: string
 function projectNode(project: Project, locale: Locale): Node {
   const { web, ios, android } = project.platformUrls
   const live = project.status === 'live'
+  // An app still in development already has its own site to point to.
+  const hasSite = project.status !== 'discontinued'
+  const mobileApp = !!(ios || android) || /\b(iOS|Android)\b/.test(project.platforms ?? '')
   const extension = isChromeExtension(web)
   // A project with no app or site of its own is its source repository.
   const repoOnly = !web && !ios && !android && !!project.githubUrl
   const kind = extension
     ? 'SoftwareApplication'
-    : ios || android
+    : mobileApp
       ? 'MobileApplication'
       : repoOnly
         ? 'SoftwareSourceCode'
@@ -195,7 +198,7 @@ function projectNode(project: Project, locale: Locale): Node {
     description: project.description[locale],
     inLanguage: locale,
     image: absoluteUrl(project.image),
-    ...(live && web && !extension ? { url: web } : {}),
+    ...(hasSite && web && !extension ? { url: web } : {}),
     ...(repoOnly ? { url: project.githubUrl } : {}),
     ...(live && listings.length ? { sameAs: listings } : {}),
     ...(project.released ? { datePublished: project.released } : {}),

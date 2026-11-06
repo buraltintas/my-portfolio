@@ -26,7 +26,7 @@ export function projectMetadata(slug: string, locale: Locale): Metadata {
     title: titleOf(project, locale),
     description: descriptionOf(project, locale),
     type: 'article',
-    image: { url: projectOgImage(localizeMedia(project, locale)), width: 1200, height: 630, alt: project.title[locale] },
+    image: { url: projectOgImage(localizeMedia(project, locale), locale), width: 1200, height: 630, alt: project.title[locale] },
   })
 }
 
