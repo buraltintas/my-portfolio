@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllProjects } from '@/lib/projects'
 import { poseBuddyPages } from '@/data/poseBuddyPages'
+import { ztickyPages } from '@/data/ztickyPages'
 import { locales } from '@/i18n/paths'
 import { pageUrl } from '@/lib/seo'
 
@@ -14,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/projects',
     '/writing',
     ...getAllProjects().map((p) => `/projects/${p.slug}`),
-    ...Object.values(poseBuddyPages)
+    ...[...Object.values(poseBuddyPages), ...Object.values(ztickyPages)]
       .filter((page) => page.index)
       .map((page) => page.path),
   ]
