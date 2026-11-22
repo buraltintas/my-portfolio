@@ -4,7 +4,7 @@ import { educations } from '@/data/education'
 import { skillCategories } from '@/data/skills'
 import { articles } from '@/data/writing'
 import { getAllProjects } from '@/lib/projects'
-import { isChromeExtension, projectKinds } from '@/components/projects/kinds'
+import { isChromeExtension, isYouTube, projectKinds } from '@/components/projects/kinds'
 import { pageUrl } from '@/lib/seo'
 
 // /llms.txt (llmstxt.org): who Burak Altıntaş is and what he has built, as
@@ -43,7 +43,7 @@ export function llmsTxt(): string {
   for (const p of projects) {
     const site = p.status !== 'discontinued' && p.platformUrls.web && !isChromeExtension(p.platformUrls.web) ? p.platformUrls.web : null
     const facts = [
-      site && `Website: ${site}`,
+      site && `${isYouTube(site) ? 'YouTube' : 'Website'}: ${site}`,
       projectKinds(p) && `Platforms: ${projectKinds(p)}.`,
       p.tech.length && `Stack: ${p.tech.join(', ')}.`,
       p.status === 'discontinued' ? 'Status: discontinued.' : p.status === 'upcoming' ? `Status: in development, not released yet${site ? '; the website is live' : ''}.` : null,

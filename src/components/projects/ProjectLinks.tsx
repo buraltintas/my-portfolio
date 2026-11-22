@@ -3,7 +3,7 @@
 import { useLocale } from '@/i18n/useLocale'
 import { cn } from '@/lib/utils'
 import type { Project } from '@/types'
-import { isChromeExtension } from './kinds'
+import { isChromeExtension, isYouTube } from './kinds'
 
 type Linkable = Pick<Project, 'status' | 'platformUrls' | 'githubUrl'>
 
@@ -26,6 +26,8 @@ export function useProjectLinks(project: Linkable): ProjectLink[] {
   const links: ProjectLink[] = []
   if (web && isChromeExtension(web)) {
     links.push({ key: 'web', href: web, label: 'Chrome Web Store', aria: t('projects.platform.chrome') })
+  } else if (web && isYouTube(web)) {
+    links.push({ key: 'web', href: web, label: 'YouTube', aria: t('projects.platform.youtube') })
   } else if (web) {
     links.push({ key: 'web', href: web, label: 'Web', aria: t('projects.platform.web') })
   }

@@ -3,7 +3,7 @@ import { educations } from '@/data/education'
 import type { Locale } from '@/i18n/types'
 import type { Project } from '@/types'
 import type { Article } from '@/data/writing'
-import { isChromeExtension } from '@/components/projects/kinds'
+import { isChromeExtension, isYouTube } from '@/components/projects/kinds'
 import { absoluteUrl, pageUrl } from '@/lib/seo'
 
 // One graph of linked nodes. The home page carries the full Person; every
@@ -186,7 +186,9 @@ function projectNode(project: Project, locale: Locale): Node {
       ? 'MobileApplication'
       : repoOnly
         ? 'SoftwareSourceCode'
-        : 'WebApplication'
+        : isYouTube(web)
+          ? 'CreativeWorkSeries'
+          : 'WebApplication'
   const listings = [web, ios, android, repoOnly ? project.githubUrl : undefined].filter((url): url is string => !!url)
   const bankaci = project.slug === 'banker'
 

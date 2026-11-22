@@ -28,7 +28,14 @@ const copy: Record<'en' | 'tr', Part[][]> = {
       { text: 'Casamiyo', slug: 'casamiyo' },
       ', a building and apartment management app I built with a business partner, is live on the web and the App Store, and its Android app is coming soon. I am now building ',
       { text: 'Notanica', slug: 'notanica' },
-      ', a sheet-music app for iPhone, iPad and Android that reads a printed page and plays it.',
+      ', a sheet-music app for iPhone, iPad and Android that reads a printed page and plays it, and ',
+      { text: 'Zticky', slug: 'zticky' },
+      ', an app that turns photos and videos into WhatsApp stickers.',
+    ],
+    [
+      'I also built the AI video studio behind ',
+      { text: 'Clever Countdown', slug: 'clever-countdown' },
+      ', a YouTube channel that posts a two-minute "on this day in history" video every day.',
     ],
     [
       'My other projects include ',
@@ -66,7 +73,14 @@ const copy: Record<'en' | 'tr', Part[][]> = {
       { text: 'Casamiyo', slug: 'casamiyo' },
       " web'de ve App Store'da yayında, Android uygulaması da yakında geliyor. Şu sıralar basılı notayı okuyup çalan, iPhone, iPad ve Android için bir nota uygulaması olan ",
       { text: 'Notanica', slug: 'notanica' },
-      "'yı geliştiriyorum.",
+      "'yı ve fotoğraf ile videoları WhatsApp çıkartmasına çeviren ",
+      { text: 'Zticky', slug: 'zticky' },
+      "'yi geliştiriyorum.",
+    ],
+    [
+      'Her gün iki dakikalık bir "tarihte bugün" videosu yayınlayan YouTube kanalı ',
+      { text: 'Clever Countdown', slug: 'clever-countdown' },
+      "'ın arkasındaki yapay zekâ video stüdyosunu da ben geliştirdim.",
     ],
     [
       'Diğer projelerim arasında ev ve yaşam mağazaları için değerlendirme sitesi ',
