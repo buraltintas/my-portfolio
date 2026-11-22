@@ -4,7 +4,7 @@ import { useLocale } from '@/i18n/useLocale'
 import { siteConfig } from '@/data/site'
 import { HeroCanvas } from './HeroCanvas'
 
-const techChips = ['React', 'React Native', 'Next.js', 'TypeScript', 'JavaScript', 'Redux']
+const techChips = ['React', 'React Native', 'Next.js', 'TypeScript', 'Expo', 'Go', 'PostgreSQL']
 
 export function Hero() {
   const { t, path } = useLocale()
