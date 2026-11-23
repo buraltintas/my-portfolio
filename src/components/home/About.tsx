@@ -26,11 +26,11 @@ const copy: Record<'en' | 'tr', Part[][]> = {
     ],
     [
       { text: 'Casamiyo', slug: 'casamiyo' },
-      ', a building and apartment management app I built with a business partner, is live on the web and the App Store, and its Android app is coming soon. I am now building ',
-      { text: 'Notanica', slug: 'notanica' },
-      ', a sheet-music app for iPhone, iPad and Android that reads a printed page and plays it, and ',
+      ', a building and apartment management app I built with a business partner, is live on the web and the App Store, and its Android app is coming soon. ',
       { text: 'Zticky', slug: 'zticky' },
-      ', an app that turns photos and videos into WhatsApp stickers.',
+      ', which turns photos and videos into WhatsApp stickers, is on the App Store too. I am now building ',
+      { text: 'Notanica', slug: 'notanica' },
+      ', a sheet-music app for iPhone, iPad and Android that reads a printed page and plays it.',
     ],
     [
       'I also built the AI video studio behind ',
@@ -71,11 +71,11 @@ const copy: Record<'en' | 'tr', Part[][]> = {
     [
       'Bir iş ortağıyla birlikte geliştirdiğim site ve apartman yönetimi uygulaması ',
       { text: 'Casamiyo', slug: 'casamiyo' },
-      " web'de ve App Store'da yayında, Android uygulaması da yakında geliyor. Şu sıralar basılı notayı okuyup çalan, iPhone, iPad ve Android için bir nota uygulaması olan ",
-      { text: 'Notanica', slug: 'notanica' },
-      "'yı ve fotoğraf ile videoları WhatsApp çıkartmasına çeviren ",
+      " web'de ve App Store'da yayında, Android uygulaması da yakında geliyor. Fotoğraf ve videoları WhatsApp çıkartmasına çeviren ",
       { text: 'Zticky', slug: 'zticky' },
-      "'yi geliştiriyorum.",
+      " de App Store'da. Şu sıralar basılı notayı okuyup çalan, iPhone, iPad ve Android için bir nota uygulaması olan ",
+      { text: 'Notanica', slug: 'notanica' },
+      "'yı geliştiriyorum.",
     ],
     [
       'Her gün iki dakikalık bir "tarihte bugün" videosu yayınlayan YouTube kanalı ',
