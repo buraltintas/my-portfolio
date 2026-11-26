@@ -40,7 +40,7 @@ const copy: Record<'en' | 'tr', Part[][]> = {
     [
       'My other projects include ',
       { text: 'Boşa Gezme!', slug: 'bosa-gezme' },
-      ', a review site for home and living stores, the ',
+      ', a review site and iPhone app for home and living stores, the ',
       { text: 'Yalınlı', slug: 'yalinli-platform' },
       ' civic platform, ',
       { text: 'MarketMatik', slug: 'marketmatik' },
@@ -83,7 +83,7 @@ const copy: Record<'en' | 'tr', Part[][]> = {
       "'ın arkasındaki yapay zekâ video stüdyosunu da ben geliştirdim.",
     ],
     [
-      'Diğer projelerim arasında ev ve yaşam mağazaları için değerlendirme sitesi ',
+      'Diğer projelerim arasında ev ve yaşam mağazaları için değerlendirme sitesi ve iPhone uygulaması ',
       { text: 'Boşa Gezme!', slug: 'bosa-gezme' },
       ', ',
       { text: 'Yalınlı', slug: 'yalinli-platform' },
