@@ -29,7 +29,7 @@ export const siteConfig = {
   twitterHandle: '@burak_alti',
   // Store developer pages, listed with the socials in structured data.
   stores: {
-    appStore: 'https://apps.apple.com/us/developer/burak-altintas/id1726544276',
+    appStore: 'https://apps.apple.com/developer/burak-altintas/id1726544276',
     googlePlay: 'https://play.google.com/store/apps/developer?id=Burak+Alt%C4%B1nta%C5%9F',
   },
   // IndexNow (Bing and others): the key file is public/f77079fcf83deadbd8a6624161c0d9fa.txt.
